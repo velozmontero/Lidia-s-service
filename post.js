@@ -8,6 +8,23 @@ $(document).ready(function(){
 
      $('#action').click(postInfo);
      
+     // holidays and days off start------------------->
+     
+     var newYearsEve= {
+          mm: 12,
+          dd: 31
+     }
+     
+     var newYear= {
+          mm: 1,
+          dd: 1
+     }
+     
+     var nonWdays= [newYearsEve, newYear];
+     
+     // holidays and days off end------------------->
+     
+     
      // medical assistant ---------------------->
      
      var COM01= {
@@ -104,7 +121,7 @@ $(document).ready(function(){
           var group= $('#group').val();
           
           function getStartDate() {
-               
+               var c= 1;
                var sd= document.getElementById('startDAte').value;
                var add= 0;
                var sub= 0;
@@ -114,12 +131,22 @@ $(document).ready(function(){
                     var sDate= new Date(sd); 
                     var sNewdate= new Date(sDate);
                     sNewdate.setDate(sNewdate.getDate() + add);
+                    
+                    var weekDay= sNewdate.getDay();
+
+                    while (weekDay === 0 || weekDay === 6) {
+                        sNewdate.setDate(sNewdate.getDate() + mdArr[x].days + 1);
+                        weekDay= sNewdate.getDay();
+                    }
+                    
                     var sD = sNewdate.getDate();
                     var sM = sNewdate.getMonth() + 1;
                     var sY= sNewdate.getFullYear();
                     
-                    var startDate = sM + '/' + sD + '/' + sY; 
-                    console.log("Start Date: "+startDate);
+                    var startDate = sM + '/' + sD + '/' + sY;
+                    
+                    console.log("week day is: "+ weekDay);
+                    console.log(c+" Start Date for course "+mdArr[x].courseCode+": "+startDate);
    
                     sNewdate.setDate(sNewdate.getDate() - sub);
                     sD = sNewdate.getDate();
@@ -130,6 +157,7 @@ $(document).ready(function(){
           
                     sd= startDate;
                     add= mdArr[x].days + 1;
+                    c++; 
                     sub= 1;
                }
           }
@@ -137,20 +165,31 @@ $(document).ready(function(){
           getStartDate();
           
           function getEndDate() {
-               
+               var c= 1;
                var tt= document.getElementById('startDAte').value;
 
                for (var x in mdArr){
                     var date = new Date(tt);
                     var newdate = new Date(date);
                     newdate.setDate(newdate.getDate() + mdArr[x].days);
+                    
+                    var weekDay= newdate.getDay();
+
+                    while (weekDay === 0 || weekDay === 6) {
+                        newdate.setDate(newdate.getDate() + mdArr[x].days + 1);
+                        weekDay= newdate.getDay();
+                    }
+                    
                     var dd = newdate.getDate();
                     var mm = newdate.getMonth() + 1;
                     var y = newdate.getFullYear();
-                
+                    
                     var endDate = mm + '/' + dd + '/' + y;
-                    console.log("end Date: "+endDate);
-                     
+                    
+                    console.log("week day is: "+ weekDay);
+                    console.log(c+" End Date for course "+mdArr[x].courseCode+": "+endDate);
+                    
+                    c++; 
                     tt= endDate;
                }
           }
