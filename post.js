@@ -105,27 +105,32 @@ $(document).ready(function(){
           
           function getStartDate() {
                
-               var sd= document.getElementById('startDAte').value; 
+               var sd= document.getElementById('startDAte').value;
+               var add= 0;
+               var sub= 0;
                
-               for (var x in mdArr){
+               for (var x in mdArr){ 
+                    
                     var sDate= new Date(sd); 
                     var sNewdate= new Date(sDate);
-                    sNewdate.setDate(sNewdate.getDate());
+                    sNewdate.setDate(sNewdate.getDate() + add);
                     var sD = sNewdate.getDate();
                     var sM = sNewdate.getMonth() + 1;
                     var sY= sNewdate.getFullYear();
                     
                     var startDate = sM + '/' + sD + '/' + sY; 
                     console.log("Start Date: "+startDate);
-                    
-                    sNewdate.setDate(sNewdate.getDate() + mdArr[x].days + 1);
+   
+                    sNewdate.setDate(sNewdate.getDate() - sub);
                     sD = sNewdate.getDate();
                     sM = sNewdate.getMonth() + 1;
                     sY= sNewdate.getFullYear();
                     
-                    startDate = sM + '/' + sD + '/' + sY; 
-                    
-                    sd= startDate; 
+                    startDate = sM + '/' + sD + '/' + sY;
+          
+                    sd= startDate;
+                    add= mdArr[x].days + 1;
+                    sub= 1;
                }
           }
           
