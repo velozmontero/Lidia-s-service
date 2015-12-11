@@ -142,7 +142,6 @@ $(document).ready(function(){
                     var date = new Date(tt);
                     var newdate = new Date(date);
                    
-                  
                     for (var i= 1; i < mdArr[x].days; i++) {
                          
                          newdate.setDate(newdate.getDate() + 1);
