@@ -141,13 +141,18 @@ $(document).ready(function(){
                     
                     var date = new Date(tt);
                     var newdate = new Date(date);
-                   
+               
                     for (var i= 1; i < mdArr[x].days; i++) {
                          
                          newdate.setDate(newdate.getDate() + 1);
                          var weekDay= newdate.getDay();
                          
                          while (weekDay === 0 || weekDay === 6) {
+                             newdate.setDate(newdate.getDate() + 1);
+                             weekDay= newdate.getDay();
+                         }
+                  
+                         while ((newdate.getDate() == 31 && (newdate.getMonth()+1) == 12) || (newdate.getDate() == 1 && (newdate.getMonth()+1) == 1)) { 
                              newdate.setDate(newdate.getDate() + 1);
                              weekDay= newdate.getDay();
                          }
