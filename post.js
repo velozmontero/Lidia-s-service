@@ -120,81 +120,62 @@ $(document).ready(function(){
           var course= $('#course').val();
           var group= $('#group').val();
           
-          function getStartDate() {
-               var c= 1;
-               var sd= document.getElementById('startDAte').value;
-               var add= 0;
-               var sub= 0;
+          function getStartAndEndDate() {
                
-               for (var x in mdArr){ 
-                    
-                    var sDate= new Date(sd); 
-                    var sNewdate= new Date(sDate);
-                    sNewdate.setDate(sNewdate.getDate() + add);
-                    
-                    var weekDay= sNewdate.getDay();
-
-                    while (weekDay === 0 || weekDay === 6) {
-                        sNewdate.setDate(sNewdate.getDate() + mdArr[x].days + 1);
-                        weekDay= sNewdate.getDay();
-                    }
-                    
-                    var sD = sNewdate.getDate();
-                    var sM = sNewdate.getMonth() + 1;
-                    var sY= sNewdate.getFullYear();
-                    
-                    var startDate = sM + '/' + sD + '/' + sY;
-                    
-                    console.log("week day is: "+ weekDay);
-                    console.log(c+" Start Date for course "+mdArr[x].courseCode+": "+startDate);
-   
-                    sNewdate.setDate(sNewdate.getDate() - sub);
-                    sD = sNewdate.getDate();
-                    sM = sNewdate.getMonth() + 1;
-                    sY= sNewdate.getFullYear();
-                    
-                    startDate = sM + '/' + sD + '/' + sY;
-          
-                    sd= startDate;
-                    add= mdArr[x].days + 1;
-                    c++; 
-                    sub= 1;
-               }
-          }
-          
-          getStartDate();
-          
-          function getEndDate() {
                var c= 1;
                var tt= document.getElementById('startDAte').value;
-
+          
                for (var x in mdArr){
+                    
+                    var startD= new Date(tt);
+                    var sDate= new Date(startD);
+                    
+                    sDate.setDate(sDate.getDate());
+                    
+                    var sdd = sDate.getDate();
+                    var smm = sDate.getMonth() + 1;
+                    var sy = sDate.getFullYear();
+                    
+                    var startDate= smm + '/' + sdd + '/' + sy;
+                    //---------------->
+                    
                     var date = new Date(tt);
                     var newdate = new Date(date);
-                    newdate.setDate(newdate.getDate() + mdArr[x].days);
-                    
-                    var weekDay= newdate.getDay();
-
-                    while (weekDay === 0 || weekDay === 6) {
-                        newdate.setDate(newdate.getDate() + mdArr[x].days + 1);
-                        weekDay= newdate.getDay();
+                   
+                  
+                    for (var i= 1; i < mdArr[x].days; i++) {
+                         
+                         newdate.setDate(newdate.getDate() + 1);
+                         var weekDay= newdate.getDay();
+                         
+                         while (weekDay === 0 || weekDay === 6) {
+                             newdate.setDate(newdate.getDate() + 1);
+                             weekDay= newdate.getDay();
+                         }
                     }
-                    
+           
                     var dd = newdate.getDate();
                     var mm = newdate.getMonth() + 1;
                     var y = newdate.getFullYear();
-                    
+               
                     var endDate = mm + '/' + dd + '/' + y;
-                    
-                    console.log("week day is: "+ weekDay);
+              
+                    console.log("course days "+mdArr[x].days);
+                    console.log(c+" Start Date for course "+mdArr[x].courseCode+": "+startDate);
                     console.log(c+" End Date for course "+mdArr[x].courseCode+": "+endDate);
+                    console.log("week day is: "+ weekDay);
                     
+                    newdate.setDate(newdate.getDate() + 1);
+                    dd = newdate.getDate();
+                    mm = newdate.getMonth() + 1;
+                    y = newdate.getFullYear();
+                    endDate = mm + '-' + dd + '-' + y;
                     c++; 
                     tt= endDate;
                }
           }
           
-          getEndDate();
+          getStartAndEndDate();
           
           /*console.log(course+' '+courseCode+' '+startDate+' '+endDate+' '+hrs+' '+gradDay+' '+lastDayInClass+' '+group);
           $.ajax({
