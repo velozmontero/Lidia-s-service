@@ -151,7 +151,6 @@ $(document).ready(function(){
                                 (newdate.getDate() == 30 && (newdate.getMonth()+1) == 12) ||
                                 (newdate.getDate() == 31 && (newdate.getMonth()+1) == 12) ||
                                 (newdate.getDate() == 1 && (newdate.getMonth()+1) == 1) ||
-                                (newdate.getDate() == 4 && (newdate.getMonth()+1) == 4) ||
                                 (newdate.getDate() == 4 && (newdate.getMonth()+1) == 7) 
                                 ) { 
                              newdate.setDate(newdate.getDate() + 1);
