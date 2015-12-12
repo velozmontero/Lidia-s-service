@@ -117,7 +117,7 @@ $(document).ready(function(){
           days: Math.ceil(100/4)
      };
      
-     var mdArr= [MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01, ];
+     var mdArr= [MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01];
      
      // medical assitant end --------------------->
         
