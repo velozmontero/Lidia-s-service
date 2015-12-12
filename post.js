@@ -2,7 +2,13 @@ $(document).ready(function(){
      
      moment().format();
      
-     $('#startDAte').datepicker();
+     $('#startDAte').datepicker({
+          beforeShowDay: $.datepicker.noWeekends
+     });
+     
+     $('#nonWorkingD').multiDatesPicker({
+          beforeShowDay: $.datepicker.noWeekends
+     });
      
      $('select').material_select();
 
@@ -111,7 +117,7 @@ $(document).ready(function(){
           days: Math.ceil(100/4)
      };
      
-     var mdArr= [COM01, ECPS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS01, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07];
+     var mdArr= [MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01, ];
      
      // medical assitant end --------------------->
         
