@@ -120,6 +120,28 @@ $(document).ready(function(){
                     var sDate= new Date(startD);
                     
                     sDate.setDate(sDate.getDate());
+                    var wDay= sDate.getDay();
+                    
+                    while (wDay === 0 || wDay === 6) {
+                         sDate.setDate(sDate.getDate() + 1);
+                         wDay= sDate.getDay();
+                    }
+                    
+                    while (
+                         (sDate.getDate() == 24 && (sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 25 && (sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 26 && (sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 27 && (sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 28 && (sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 29 && (sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 30 && (sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 31 && (sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 1 && (sDate.getMonth()+1) == 1) ||
+                         (sDate.getDate() == 4 && (sDate.getMonth()+1) == 7) 
+                         ) { 
+                         sDate.setDate(sDate.getDate() + 1);
+                         wDay= sDate.getDay();
+                    }
                     
                     var sdd = sDate.getDate();
                     var smm = sDate.getMonth() + 1;
@@ -156,8 +178,9 @@ $(document).ready(function(){
                              newdate.setDate(newdate.getDate() + 1);
                              weekDay= newdate.getDay();
                          }
+                         
                     }
-           
+                    
                     var dd = newdate.getDate();
                     var mm = newdate.getMonth() + 1;
                     var y = newdate.getFullYear();
