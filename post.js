@@ -122,23 +122,23 @@ $(document).ready(function(){
                     sDate.setDate(sDate.getDate());
                     var wDay= sDate.getDay();
                     
-                    while (wDay === 0 || wDay === 6) {
-                         sDate.setDate(sDate.getDate() + 1);
-                         wDay= sDate.getDay();
+                    while (
+                         (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 25 && parseInt(sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 26 && parseInt(sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 27 && parseInt(sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 28 && parseInt(sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 29 && parseInt(sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 30 && parseInt(sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 31 && parseInt(sDate.getMonth()+1) == 12) ||
+                         (sDate.getDate() == 1 && parseInt(sDate.getMonth()+1) == 1) ||
+                         (sDate.getDate() == 4 && parseInt(sDate.getMonth()+1) == 7) 
+                         ) { 
+                              sDate.setDate(sDate.getDate() + 1);
+                              wDay= sDate.getDay();
                     }
                     
-                    while (
-                         (sDate.getDate() == 24 && (sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 25 && (sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 26 && (sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 27 && (sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 28 && (sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 29 && (sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 30 && (sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 31 && (sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 1 && (sDate.getMonth()+1) == 1) ||
-                         (sDate.getDate() == 4 && (sDate.getMonth()+1) == 7) 
-                         ) { 
+                    while (wDay === 0 || wDay === 6) {
                          sDate.setDate(sDate.getDate() + 1);
                          wDay= sDate.getDay();
                     }
@@ -158,35 +158,39 @@ $(document).ready(function(){
                          newdate.setDate(newdate.getDate() + 1);
                          var weekDay= newdate.getDay();
                          
+                         while (
+                              (newdate.getDate() == 24 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 25 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 26 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 27 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 28 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 29 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 30 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 31 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() ==  1 && parseInt(newdate.getMonth()+1) ==  1) ||
+                              (newdate.getDate() ==  4 && parseInt(newdate.getMonth()+1) ==  7) 
+                              ) {
+                                   console.log(newdate.getDate()+" "+parseInt(newdate.getMonth()+1));
+                                   newdate.setDate(newdate.getDate() + 1);
+                                   weekDay= newdate.getDay();
+                         }
+                         
                          while (weekDay === 0 || weekDay === 6) {
                              newdate.setDate(newdate.getDate() + 1);
                              weekDay= newdate.getDay();
                          }
-                  
-                         while (
-                                (newdate.getDate() == 24 && (newdate.getMonth()+1) == 12) ||
-                                (newdate.getDate() == 25 && (newdate.getMonth()+1) == 12) ||
-                                (newdate.getDate() == 26 && (newdate.getMonth()+1) == 12) ||
-                                (newdate.getDate() == 27 && (newdate.getMonth()+1) == 12) ||
-                                (newdate.getDate() == 28 && (newdate.getMonth()+1) == 12) ||
-                                (newdate.getDate() == 29 && (newdate.getMonth()+1) == 12) ||
-                                (newdate.getDate() == 30 && (newdate.getMonth()+1) == 12) ||
-                                (newdate.getDate() == 31 && (newdate.getMonth()+1) == 12) ||
-                                (newdate.getDate() == 1 && (newdate.getMonth()+1) == 1) ||
-                                (newdate.getDate() == 4 && (newdate.getMonth()+1) == 7) 
-                                ) { 
-                             newdate.setDate(newdate.getDate() + 1);
-                             weekDay= newdate.getDay();
-                         }
-                         
+               
+                         console.log(" date after loop: "+newdate.getDate()+" "+parseInt(newdate.getMonth()+1));
                     }
-                    
+                 
                     var dd = newdate.getDate();
+                    console.log(newdate.getDate()+" "+parseInt(newdate.getMonth()+1));
                     var mm = newdate.getMonth() + 1;
+                    console.log(mm);
                     var y = newdate.getFullYear();
                
                     var endDate = mm + '/' + dd + '/' + y;
-              
+         
                     console.log("course days "+mdArr[x].days);
                     console.log(c+" Start Date for course "+mdArr[x].courseCode+": "+startDate);
                     console.log(c+" End Date for course "+mdArr[x].courseCode+": "+endDate);
