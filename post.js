@@ -14,23 +14,6 @@ $(document).ready(function(){
 
      $('#action').click(postInfo);
      
-     // holidays and days off start------------------->
-     
-     var newYearsEve= {
-          mm: 12,
-          dd: 31
-     }
-     
-     var newYear= {
-          mm: 1,
-          dd: 1
-     }
-     
-     var nonWdays= [newYearsEve, newYear];
-     
-     // holidays and days off end------------------->
-     
-     
      // medical assistant ---------------------->
      
      var COM01= {
