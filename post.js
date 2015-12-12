@@ -152,14 +152,18 @@ $(document).ready(function(){
                              weekDay= newdate.getDay();
                          }
                   
-                         while ((newdate.getDate() == 21 && (newdate.getMonth()+1) == 12) || (newdate.getDate() == 22 && (newdate.getMonth()+1) == 12) ||
-                                (newdate.getDate() == 23 && (newdate.getMonth()+1) == 12) || (newdate.getDate() == 24 && (newdate.getMonth()+1) == 12) ||
-                                (newdate.getDate() == 25 && (newdate.getMonth()+1) == 12) || (newdate.getDate() == 26 && (newdate.getMonth()+1) == 12) ||
-                                (newdate.getDate() == 27 && (newdate.getMonth()+1) == 12) || (newdate.getDate() == 28 && (newdate.getMonth()+1) == 12) ||
-                                (newdate.getDate() == 29 && (newdate.getMonth()+1) == 12) || (newdate.getDate() == 30 && (newdate.getMonth()+1) == 12) ||
-                                (newdate.getDate() == 31 && (newdate.getMonth()+1) == 12) || (newdate.getDate() == 1 && (newdate.getMonth()+1) == 1) ||
-                                (newdate.getDate() == 2 && (newdate.getMonth()+1) == 1) || (newdate.getDate() == 3 && (newdate.getMonth()+1) == 1) ||
-                                (newdate.getDate() == 4 && (newdate.getMonth()+1) == 1) 
+                         while (
+                                (newdate.getDate() == 24 && (newdate.getMonth()+1) == 12) ||
+                                (newdate.getDate() == 25 && (newdate.getMonth()+1) == 12) ||
+                                (newdate.getDate() == 26 && (newdate.getMonth()+1) == 12) ||
+                                (newdate.getDate() == 27 && (newdate.getMonth()+1) == 12) ||
+                                (newdate.getDate() == 28 && (newdate.getMonth()+1) == 12) ||
+                                (newdate.getDate() == 29 && (newdate.getMonth()+1) == 12) ||
+                                (newdate.getDate() == 30 && (newdate.getMonth()+1) == 12) ||
+                                (newdate.getDate() == 31 && (newdate.getMonth()+1) == 12) ||
+                                (newdate.getDate() == 1 && (newdate.getMonth()+1) == 1) ||
+                                (newdate.getDate() == 4 && (newdate.getMonth()+1) == 4) ||
+                                (newdate.getDate() == 4 && (newdate.getMonth()+1) == 7) 
                                 ) { 
                              newdate.setDate(newdate.getDate() + 1);
                              weekDay= newdate.getDay();
