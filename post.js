@@ -3,11 +3,38 @@ $(document).ready(function(){
      moment().format();
      
      $('#startDAte').datepicker({
-          beforeShowDay: $.datepicker.noWeekends
+         beforeShow: function (input, inst) {
+               setTimeout(function () {
+                    inst.dpDiv.css({
+                         position: "relative",
+                         margin: "0 auto",
+                         left: 0,
+                         right: 0,
+                         top: 0,
+                    });
+               }, 0);
+          },
+          beforeShowDay: $.datepicker.noWeekends, 
+          numberOfMonths: [3,4],
      });
      
-     $('#nonWorkingD').multiDatesPicker({
-          beforeShowDay: $.datepicker.noWeekends
+     var today = new Date();
+     var y = today.getFullYear();
+     
+     $("#nonWorkingD").multiDatesPicker({
+          beforeShow: function (input, inst) {
+               setTimeout(function () {
+                    inst.dpDiv.css({
+                         position: "relative",
+                         margin: "0 auto",
+                         left: 0,
+                         right: 0,
+                         top: 0,
+                    });
+               }, 0);
+          },
+          beforeShowDay: $.datepicker.noWeekends, 
+          numberOfMonths: [3,4],
      });
      
      $('select').material_select();
