@@ -128,10 +128,14 @@ $(document).ready(function(){
      };
      
      var mdArr= [MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01];
+     var dates= [];
      
      // medical assitant end --------------------->
         
      function postInfo(){
+          
+          dates = $('#nonWorkingD').multiDatesPicker('getDates');
+          
           event.preventDefault();
           var course= $('#course').val();
           var group= $('#group').val();
@@ -213,7 +217,6 @@ $(document).ready(function(){
                     var dd = newdate.getDate();
                     console.log(newdate.getDate()+" "+parseInt(newdate.getMonth()+1));
                     var mm = newdate.getMonth() + 1;
-                    console.log(mm);
                     var y = newdate.getFullYear();
                
                     var endDate = mm + '/' + dd + '/' + y;
