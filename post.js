@@ -133,6 +133,7 @@ $(document).ready(function(){
      // medical assitant end --------------------->
         
      function postInfo(){
+          $('#response').removeClass('hide');
           
           dates = $('#nonWorkingD').multiDatesPicker('getDates');
           
