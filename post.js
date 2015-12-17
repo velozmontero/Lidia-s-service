@@ -44,6 +44,7 @@ $(document).ready(function(){
      $('#action').click(postInfo);
      
      $('#clear').click(function(){
+         $('#response').addClass('hide'); 
          $('#info').html("");
          $('#startDAte').val("");
      });
