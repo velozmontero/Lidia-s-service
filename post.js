@@ -216,7 +216,18 @@ $(document).ready(function(){
                          var nonWorkingDay= nwmm + '/' + nwdd + '/' + nwy;
                          
                          console.log("var o in dates is "+nonWorkingDay);
-                         while (nonWorkingDay == startDate || wDay === 0 || wDay === 6) {
+                         while(nonWorkingDay == startDate || wDay === 0 || wDay === 6 ||
+                              (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 25 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 26 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 27 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 28 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 29 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 30 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 31 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 1 && parseInt(sDate.getMonth()+1) == 1) ||
+                              (sDate.getDate() == 4 && parseInt(sDate.getMonth()+1) == 7)   
+                              ) {
                               sDate.setDate(sDate.getDate() + 1);
                               wDay= sDate.getDay();
                               sdd = sDate.getDate();
@@ -279,7 +290,18 @@ $(document).ready(function(){
                               var nonWorkingDayE= nwmmE + '/' + nwddE + '/' + nwyE;
                               
                               console.log("var c in dates is "+ nonWorkingDayE);
-                              while (nonWorkingDayE == endDate || wDay === 0 || wDay === 6) {
+                              while(nonWorkingDayE == endDate || wDay === 0 || wDay === 6 ||
+                                   (newdate.getDate() == 24 && parseInt(newdate.getMonth()+1) == 12) ||
+                                   (newdate.getDate() == 25 && parseInt(newdate.getMonth()+1) == 12) ||
+                                   (newdate.getDate() == 26 && parseInt(newdate.getMonth()+1) == 12) ||
+                                   (newdate.getDate() == 27 && parseInt(newdate.getMonth()+1) == 12) ||
+                                   (newdate.getDate() == 28 && parseInt(newdate.getMonth()+1) == 12) ||
+                                   (newdate.getDate() == 29 && parseInt(newdate.getMonth()+1) == 12) ||
+                                   (newdate.getDate() == 30 && parseInt(newdate.getMonth()+1) == 12) ||
+                                   (newdate.getDate() == 31 && parseInt(newdate.getMonth()+1) == 12) ||
+                                   (newdate.getDate() ==  1 && parseInt(newdate.getMonth()+1) ==  1) ||
+                                   (newdate.getDate() ==  4 && parseInt(newdate.getMonth()+1) ==  7) 
+                                   ) {
                                    newdate.setDate(newdate.getDate() + 1);
                                    wDay= newdate.getDay();
                                    dd = newdate.getDate();
@@ -359,7 +381,18 @@ $(document).ready(function(){
                               var lDCInClass= lDCmm + '/' + lDCdd + '/' + lDCy;
                               
                               console.log("var l in dates is "+ lDCInClass);
-                              while (lDCInClass == lastDayInClass || dOFDW === 0 || dOFDW === 6) {
+                              while(lDCInClass == lastDayInClass || dOFDW === 0 || dOFDW === 6 ||
+                                   (lastD.getDate() == 24 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 25 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 26 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 27 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 28 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 29 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 30 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 31 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() ==  1 && parseInt(lastD.getMonth()+1) ==  1) ||
+                                   (lastD.getDate() ==  4 && parseInt(lastD.getMonth()+1) ==  7) 
+                                   ) {
                                    lastD.setDate(lastD.getDate() + 1);
                                    ldd = lastD.getDate();
                                    lmm = lastD.getMonth() + 1;
@@ -422,7 +455,18 @@ $(document).ready(function(){
                               var graduDay= gramm + '/' + gradd + '/' + gray;
                               
                               console.log("var c in dates is "+graduDay);
-                              while (graduDay == gradDay || dayOFDW === 0 || dayOFDW === 6) {
+                              while(graduDay == gradDay || dayOFDW === 0 || dayOFDW === 6 ||
+                                   (gDate.getDate() == 24 && parseInt(gDate.getMonth()+1) == 12) ||
+                                   (gDate.getDate() == 25 && parseInt(gDate.getMonth()+1) == 12) ||
+                                   (gDate.getDate() == 26 && parseInt(gDate.getMonth()+1) == 12) ||
+                                   (gDate.getDate() == 27 && parseInt(gDate.getMonth()+1) == 12) ||
+                                   (gDate.getDate() == 28 && parseInt(gDate.getMonth()+1) == 12) ||
+                                   (gDate.getDate() == 29 && parseInt(gDate.getMonth()+1) == 12) ||
+                                   (gDate.getDate() == 30 && parseInt(gDate.getMonth()+1) == 12) ||
+                                   (gDate.getDate() == 31 && parseInt(gDate.getMonth()+1) == 12) ||
+                                   (gDate.getDate() ==  1 && parseInt(gDate.getMonth()+1) ==  1) ||
+                                   (gDate.getDate() ==  4 && parseInt(gDate.getMonth()+1) ==  7)  
+                                   ) {
                                    gDate.setDate(gDate.getDate() + 1);
                                    gdd = gDate.getDate();
                                    gmm = gDate.getMonth() + 1;
@@ -511,7 +555,18 @@ $(document).ready(function(){
                          var nonWorkingDayE= nwmmE + '/' + nwddE + '/' + nwyE;
                          
                          console.log("var c in dates is "+ nonWorkingDayE);
-                         while (nonWorkingDayE == endDate || wDay === 0 || wDay === 6) {
+                         while(nonWorkingDayE == endDate || wDay === 0 || wDay === 6 ||
+                              (newdate.getDate() == 24 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 25 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 26 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 27 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 28 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 29 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 30 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() == 31 && parseInt(newdate.getMonth()+1) == 12) ||
+                              (newdate.getDate() ==  1 && parseInt(newdate.getMonth()+1) ==  1) ||
+                              (newdate.getDate() ==  4 && parseInt(newdate.getMonth()+1) ==  7) 
+                              ) {
                               newdate.setDate(newdate.getDate() + 1);
                               wDay= newdate.getDay();
                               dd = newdate.getDate();
