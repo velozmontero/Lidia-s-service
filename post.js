@@ -140,14 +140,16 @@ $(document).ready(function(){
      
      var mdArr= [MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01];
      var dates= [];
+     var arr= [];
      
      // medical assitant end --------------------->
         
      function postInfo(){
           var totalDays = 0;
           if ($('#course').val() == "ma") {
-               for (var t in mdArr){
-                    totalDays+= mdArr[t].days;
+               arr= mdArr;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
                }
           }
           console.log("total days "+totalDays);
@@ -165,10 +167,10 @@ $(document).ready(function(){
                var c= 1;
                var tt= document.getElementById('startDAte').value;
           
-               for (var x in mdArr){
+               for (var x in arr){
                     
-                    var hrs= mdArr[x].hours;
-                    var courseCode= mdArr[x].courseCode;
+                    var hrs= arr[x].hours;
+                    var courseCode= arr[x].courseCode;
                     var startD= new Date(tt);
                     var sDate= new Date(startD);
                     
@@ -242,7 +244,7 @@ $(document).ready(function(){
                     var date = new Date(tt);
                     var newdate = new Date(date);
                
-                    for (var i= 1; i < mdArr[x].days; i++) {
+                    for (var i= 1; i < arr[x].days; i++) {
                          
                          newdate.setDate(newdate.getDate() + 1);
                          var weekDay= newdate.getDay();
@@ -323,9 +325,9 @@ $(document).ready(function(){
                     
                     console.log(newdate.getDate()+" "+parseInt(newdate.getMonth()+1));
                     
-                    console.log("course days "+mdArr[x].days);
-                    console.log(c+" Start Date for course "+mdArr[x].courseCode+": "+startDate);
-                    console.log(c+" End Date for course "+mdArr[x].courseCode+": "+endDate);
+                    console.log("course days "+arr[x].days);
+                    console.log(c+" Start Date for course "+arr[x].courseCode+": "+startDate);
+                    console.log(c+" End Date for course "+arr[x].courseCode+": "+endDate);
                     console.log("week day is: "+ weekDay);
                     
                     lastDayInClass= startDate;
