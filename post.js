@@ -465,10 +465,63 @@ $(document).ready(function(){
                     });*/
                     
                     newdate.setDate(newdate.getDate() + 1);
-                    dd = newdate.getDate();
-                    mm = newdate.getMonth() + 1;
-                    y = newdate.getFullYear();
-                    endDate = mm + '-' + dd + '-' + y;
+                    
+                    weekDay= newdate.getDay();
+                         
+                    while (
+                         (newdate.getDate() == 24 && parseInt(newdate.getMonth()+1) == 12) ||
+                         (newdate.getDate() == 25 && parseInt(newdate.getMonth()+1) == 12) ||
+                         (newdate.getDate() == 26 && parseInt(newdate.getMonth()+1) == 12) ||
+                         (newdate.getDate() == 27 && parseInt(newdate.getMonth()+1) == 12) ||
+                         (newdate.getDate() == 28 && parseInt(newdate.getMonth()+1) == 12) ||
+                         (newdate.getDate() == 29 && parseInt(newdate.getMonth()+1) == 12) ||
+                         (newdate.getDate() == 30 && parseInt(newdate.getMonth()+1) == 12) ||
+                         (newdate.getDate() == 31 && parseInt(newdate.getMonth()+1) == 12) ||
+                         (newdate.getDate() ==  1 && parseInt(newdate.getMonth()+1) ==  1) ||
+                         (newdate.getDate() ==  4 && parseInt(newdate.getMonth()+1) ==  7) 
+                         ) {
+                              console.log(newdate.getDate()+" "+parseInt(newdate.getMonth()+1));
+                              newdate.setDate(newdate.getDate() + 1);
+                              weekDay= newdate.getDay();
+                    }
+                    
+                    while (weekDay === 0 || weekDay === 6) {
+                        newdate.setDate(newdate.getDate() + 1);
+                        weekDay= newdate.getDay();
+                    }
+                    
+                    var dd = newdate.getDate();
+                    console.log(newdate.getDate()+" "+parseInt(newdate.getMonth()+1));
+                    var mm = newdate.getMonth() + 1;
+                    var y = newdate.getFullYear();
+               
+                    var endDate = mm + '/' + dd + '/' + y;
+                    
+                    for (var c in dates) {
+                    
+                         var nonWDE= new Date(dates[c]);
+                         var nWorkingDE= new Date(nonWDE);
+                         
+                         nWorkingDE.setDate(nWorkingDE.getDate());
+                         
+                         var nwddE = nWorkingDE.getDate();
+                         var nwmmE = nWorkingDE.getMonth() + 1;
+                         var nwyE = nWorkingDE.getFullYear();
+                         
+                         var nonWorkingDayE= nwmmE + '/' + nwddE + '/' + nwyE;
+                         
+                         console.log("var c in dates is "+ nonWorkingDayE);
+                         while (nonWorkingDayE == endDate || wDay === 0 || wDay === 6) {
+                              newdate.setDate(newdate.getDate() + 1);
+                              wDay= newdate.getDay();
+                              dd = newdate.getDate();
+                              mm = newdate.getMonth() + 1;
+                              y = newdate.getFullYear();
+                         
+                              endDate = mm + '/' + dd + '/' + y;
+                         }
+                    }
+                    
                     c++; 
                     tt= endDate;
                }
