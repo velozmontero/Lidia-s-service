@@ -6,11 +6,12 @@ $(document).ready(function(){
          beforeShow: function (input, inst) {
                setTimeout(function () {
                     inst.dpDiv.css({
-                         position: "relative",
+                         position: "absolute",
                          margin: "0 auto",
                          left: 0,
                          right: 0,
-                         top: 0,
+                         top: "91px",
+                         "z-index": "1000"
                     });
                }, 0);
           },
@@ -25,11 +26,12 @@ $(document).ready(function(){
           beforeShow: function (input, inst) {
                setTimeout(function () {
                     inst.dpDiv.css({
-                         position: "relative",
+                         position: "absolute",
                          margin: "0 auto",
                          left: 0,
                          right: 0,
-                         top: 0,
+                         top: "91px",
+                         "z-index": "1000"
                     });
                }, 0);
           },
@@ -40,6 +42,11 @@ $(document).ready(function(){
      $('select').material_select();
 
      $('#action').click(postInfo);
+     
+     $('#clear').click(function(){
+         $('#info').html("");
+         $('#startDAte').val("");
+     });
   
      /*$('#startDAte').change(checkInput);
      
@@ -145,6 +152,8 @@ $(document).ready(function(){
      // medical assitant end --------------------->
         
      function postInfo(){
+          var tt= document.getElementById('startDAte').value;
+          
           var totalDays = 0;
           if ($('#course').val() == "ma") {
                arr= mdArr;
@@ -165,8 +174,7 @@ $(document).ready(function(){
           function getStartAndEndDate() {
                
                var c= 1;
-               var tt= document.getElementById('startDAte').value;
-          
+    
                for (var x in arr){
                     
                     var hrs= arr[x].hours;
@@ -583,7 +591,7 @@ $(document).ready(function(){
                     tt= endDate;
                }
           }
-          
           getStartAndEndDate();
+          $('#startDAte').val(tt);
      };
 });
