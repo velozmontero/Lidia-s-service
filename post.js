@@ -40,7 +40,18 @@ $(document).ready(function(){
      $('select').material_select();
 
      $('#action').click(postInfo);
+  
+     /*$('#startDAte').change(checkInput);
      
+     function checkInput() {
+          if ($('#startDAte').val()){
+                $('#action').removeClass('hide');
+          }
+          else {
+               $('#action').addClass('hide');
+          }
+     }*/
+  
      // medical assistant ---------------------->
      
      var COM01= {
@@ -133,11 +144,19 @@ $(document).ready(function(){
      // medical assitant end --------------------->
         
      function postInfo(){
+          var totalDays = 0;
+          if ($('#course').val() == "ma") {
+               for (var t in mdArr){
+                    totalDays+= mdArr[t].days;
+               }
+          }
+          console.log("total days "+totalDays);
+          event.preventDefault();
+          
           $('#response').removeClass('hide');
           
           dates = $('#nonWorkingD').multiDatesPicker('getDates');
-          
-          event.preventDefault();
+          var lastDayInClass;
           var course= $('#course').val();
           var group= $('#group').val();
           
@@ -148,6 +167,8 @@ $(document).ready(function(){
           
                for (var x in mdArr){
                     
+                    var hrs= mdArr[x].hours;
+                    var courseCode= mdArr[x].courseCode;
                     var startD= new Date(tt);
                     var sDate= new Date(startD);
                     
@@ -284,6 +305,164 @@ $(document).ready(function(){
                     console.log(c+" Start Date for course "+mdArr[x].courseCode+": "+startDate);
                     console.log(c+" End Date for course "+mdArr[x].courseCode+": "+endDate);
                     console.log("week day is: "+ weekDay);
+                    
+                    lastDayInClass= startDate;
+                    
+                    //---------------------------------------------------------------------------------------------->
+                    
+                    var lastDay= new Date(lastDayInClass);
+                    var lastD= new Date(lastDay);
+                    
+                    for (var i= 1; i < totalDays; i++) {
+                         lastD.setDate(lastD.getDate() + 1);
+                         var dOFDW= lastD.getDay();
+                         
+                         while (
+                              (lastD.getDate() == 24 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 25 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 26 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 27 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 28 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 29 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 30 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 31 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() ==  1 && parseInt(lastD.getMonth()+1) ==  1) ||
+                              (lastD.getDate() ==  4 && parseInt(lastD.getMonth()+1) ==  7) 
+                              ) {
+                                   console.log(lastD.getDate()+" "+parseInt(lastD.getMonth()+1));
+                                   lastD.setDate(lastD.getDate() + 1);
+                                   dOFDW= lastD.getDay();
+                         }
+                         
+                         while (dOFDW === 0 || dOFDW === 6) {
+                              lastD.setDate(lastD.getDate() + 1);
+                              dOFDW= lastD.getDay();
+                         }
+                         
+                         var ldd = lastD.getDate();
+                         var lmm = lastD.getMonth() + 1;
+                         var ly = lastD.getFullYear();
+                         
+                         lastDayInClass= lmm + '/' + ldd + '/' + ly;
+                         
+                         for (var l in dates) {
+                              
+                              var lastDin= new Date(dates[l]);
+                              var lDC= new Date(lastDin);
+                              
+                              lDC.setDate(lDC.getDate());
+                              
+                              var lDCdd = lDC.getDate();
+                              var lDCmm = lDC.getMonth() + 1;
+                              var lDCy = lDC.getFullYear();
+                              
+                              var lDCInClass= lDCmm + '/' + lDCdd + '/' + lDCy;
+                              
+                              console.log("var l in dates is "+ lDCInClass);
+                              while (lDCInClass == lastDayInClass || dOFDW === 0 || dOFDW === 6) {
+                                   lastD.setDate(lastD.getDate() + 1);
+                                   ldd = lastD.getDate();
+                                   lmm = lastD.getMonth() + 1;
+                                   ly = lastD.getFullYear();
+                                   
+                                   lastDayInClass= lmm + '/' + ldd + '/' + ly;
+                                   dOFDW= lastD.getDay();
+                              }
+                         }    
+                    }
+                    
+                    //---------------------------------------------------------------------------------------------->
+                    
+                    var graduationDay= new Date(lastDayInClass);
+                    var gDate= new Date(graduationDay);
+                    
+                    for (var i= 1; i < 20; i++) {
+                         gDate.setDate(gDate.getDate() + 1);
+                         var dayOFDW= gDate.getDay();
+                         
+                         while (
+                              (gDate.getDate() == 24 && parseInt(gDate.getMonth()+1) == 12) ||
+                              (gDate.getDate() == 25 && parseInt(gDate.getMonth()+1) == 12) ||
+                              (gDate.getDate() == 26 && parseInt(gDate.getMonth()+1) == 12) ||
+                              (gDate.getDate() == 27 && parseInt(gDate.getMonth()+1) == 12) ||
+                              (gDate.getDate() == 28 && parseInt(gDate.getMonth()+1) == 12) ||
+                              (gDate.getDate() == 29 && parseInt(gDate.getMonth()+1) == 12) ||
+                              (gDate.getDate() == 30 && parseInt(gDate.getMonth()+1) == 12) ||
+                              (gDate.getDate() == 31 && parseInt(gDate.getMonth()+1) == 12) ||
+                              (gDate.getDate() ==  1 && parseInt(gDate.getMonth()+1) ==  1) ||
+                              (gDate.getDate() ==  4 && parseInt(gDate.getMonth()+1) ==  7) 
+                              ) {
+                                   console.log(gDate.getDate()+" "+parseInt(gDate.getMonth()+1));
+                                   gDate.setDate(gDate.getDate() + 1);
+                                   dayOFDW= gDate.getDay();
+                         }
+                         
+                         while (dayOFDW === 0 || dayOFDW === 6) {
+                              gDate.setDate(gDate.getDate() + 1);
+                              dayOFDW= gDate.getDay();
+                         }
+                         
+                         var gdd = gDate.getDate();
+                         var gmm = gDate.getMonth() + 1;
+                         var gy = gDate.getFullYear();
+                         
+                         gradDay= gmm + '/' + gdd + '/' + gy;
+                         
+                         for (var c in dates) {
+                              
+                              var gradD= new Date(dates[c]);
+                              var graduationD= new Date(gradD);
+                              
+                              graduationD.setDate(graduationD.getDate());
+                              
+                              var gradd = graduationD.getDate();
+                              var gramm = graduationD.getMonth() + 1;
+                              var gray = graduationD.getFullYear();
+                              
+                              var graduDay= gramm + '/' + gradd + '/' + gray;
+                              
+                              console.log("var c in dates is "+graduDay);
+                              while (graduDay == gradDay || dayOFDW === 0 || dayOFDW === 6) {
+                                   gDate.setDate(gDate.getDate() + 1);
+                                   gdd = gDate.getDate();
+                                   gmm = gDate.getMonth() + 1;
+                                   gy = gDate.getFullYear();
+                                   
+                                   gradDay= gmm + '/' + gdd + '/' + gy;
+                                   dayOFDW= gDate.getDay();
+                              }
+                         }    
+                    }
+                         
+                    console.log("the last day in class is "+ lastDayInClass);
+                    console.log("the graduation day is "+ gradDay);
+                    
+                    //-------------------------------------------------------------------------------------------------->
+                    console.log(course+' '+courseCode+' '+startDate+' '+endDate+' '+hrs+' '+gradDay+' '+lastDayInClass+' '+group);
+                    
+                     $('#info').append(
+                        '<tr>'+'<td>'+courseCode+'</td>'+
+                        '<td>'+startDate+'</td>'+
+                        '<td>'+endDate+'</td>'+
+                        '<td>'+hrs+'</td>'+
+                        '<td>'+lastDayInClass+'</td>'+
+                        '<td>'+gradDay+'</td>'+
+                        '</tr>'
+                    );
+                   
+                    /*$.ajax({
+          
+                         url: 'http://159.203.70.55:5255/'+course+'/'+courseCode+'/'+startDate+'/'+endDate+'/'+hrs+'/'+gradDay+'/'+lastDayInClass+'/'+group,
+                          
+                         type:"POST",
+                          
+                         success: function(res){
+                             console.log(res);
+                         },
+                         error: function(request,errortype,errorMessage){
+                             console.log("it is not working");
+                         }
+                    });*/
                     
                     newdate.setDate(newdate.getDate() + 1);
                     dd = newdate.getDate();

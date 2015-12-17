@@ -1,38 +1,26 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
     
     getInfo();
     
-    $('#grade').change(getInfo);
-    $('#sections').change(function(){
-        if ($('#sections').val()=="all"){
-            getInfo();
-        }
-        else{
-            getInfoBySection();
-        }
-    });
+    $('#getInfo').click(getInfo);
 
     function getInfo(){
-        $('#sections').html("");
-        var grade= $('#grade').val();
-        getSection(grade);
          $('#info').html("");
          $.ajax({
 
-            url: "http://159.203.70.55:5255/transactions/"+grade,
+            url: 'http://159.203.70.55:5255/'+course+'/'+courseCode+'/'+startDate+'/'+endDate+'/'+hrs+'/'+gradDay+'/'+lastDayInClass+'/'+group,
 
             success: function(res){
                 for (var x in res){
                     $('#info').append(
-                        '<tr>'+'<td>'+res[x].sid+'</td>'+
-                        '<td>'+res[x].fname+'</td>'+
-                        '<td>'+res[x].lname+'</td>'+
-                        '<td>'+res[x].donation.toFixed(2)+'</td>'+
-                        '<td>'+res[x].grade+'</td>'+
+                        '<tr>'+'<td>'+res[x].courseCode+'</td>'+
+                        '<td>'+res[x].startDate+'</td>'+
+                        '<td>'+res[x].endDate+'</td>'+
+                        '<td>'+res[x].hrs+'</td>'+
+                        '<td>'+res[x].lastDayInClass+'</td>'+
+                        '<td>'+res[x].gradDay+'</td>'+
                         '</tr>'
                     );
-                    
-                    console.log(res[0].donation);
                     console.log(res);
                 }
             },
@@ -41,52 +29,4 @@ $(document).ready(function(){
             }
         });
      };
-    
-    function getInfoBySection(){
-        var sectionSelected= $('#sections').val();
-        $('#info').html("");
-        $.ajax({
-
-            url: "http://159.203.70.55:5238/getSectionSelected/"+sectionSelected,
-            
-            success: function(res){
-                for (var x in res){
-                    $('#info').append(
-                        '<tr>'+'<td>'+res[x].sid+'</td>'+
-                        '<td>'+res[x].fname+'</td>'+
-                        '<td>'+res[x].lname+'</td>'+
-                        '<td>'+res[x].donation.toFixed(2)+'</td>'+
-                        '<td>'+res[x].grade+'</td>'+
-                        '</tr>'
-                    );
-                    
-                    console.log(res[0].donation);
-                    console.log(res);
-                }
-            },
-            error: function(request,errortype,errorMessage){
-                console.log("it is not working");
-            }
-        });
-    }
-    
-    function getSection(grade){
-         $.ajax({
-
-            url: "http://159.203.70.55:5238/getgrade/"+grade,
-
-            success: function(res){
-                $('#sections').append('<option value="all" >All</option>');
-                for (var x in res){
-                    $('#sections').append( 
-                        '<option value="'+res[x].section_id+'">'+res[x].section_id+' '+res[x].teacher_name+'</option>'
-                    );
-                  
-                }
-            },
-            error: function(request,errortype,errorMessage){
-                console.log("it is not working");
-            }
-        });
-     };
-});
+});*/
