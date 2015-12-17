@@ -15,13 +15,14 @@
     <body>
         <div class="container">
             <div class= "row">
-                <table>
+                <table class="no-print">
                     <tbody id="send-info">
                         <th data-field="id">
                             <select id="course">
                               <option value="" disabled selected>Select Course</option>
                               <option value="ma">Medical Assistant</option>
                               <option value="pct">Patient Care Technician</option>
+							  <option value="pht">Pharmacy Technician</option>
                               <option value="wda">Web Developer Engineer</option>  
                             </select>
                         </th>
@@ -39,11 +40,11 @@
             </div>
 			<center>
 				
-				<button class="btn waves-effect waves-light space" type="submit" name="getInfo" id="getInfo">Schedule
+				<button class="no-print btn waves-effect waves-light space" type="submit" name="getInfo" id="getInfo">Schedule
 					<i class="material-icons right">description</i>
 				</button>
 				
-				<button class="btn waves-effect waves-light  light-green accent-2 space" type="submit" name="action" id="action">Generate
+				<button class="no-print btn waves-effect waves-light  light-green accent-2 space" type="submit" name="action" id="action">Generate
 					<i class="material-icons right">send</i>
 				</button>
 				
