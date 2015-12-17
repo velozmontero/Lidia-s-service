@@ -528,22 +528,5 @@ $(document).ready(function(){
           }
           
           getStartAndEndDate();
-          
-          /*console.log(course+' '+courseCode+' '+startDate+' '+endDate+' '+hrs+' '+gradDay+' '+lastDayInClass+' '+group);
-          $.ajax({
-          
-               url: 'http://159.203.70.55:5255/'+course+'/'+courseCode+'/'+startDate+'/'+endDate+'/'+hrs+'/'+gradDay+'/'+lastDayInClass+'/'+group,
-                
-               type:"POST",
-                
-               success: function(res){
-                   $('#studentId').val('');
-                   $('#donation').val(''); 
-                   console.log(res);
-               },
-               error: function(request,errortype,errorMessage){
-                   console.log("it is not working");
-               }
-          });*/
      };
 });
