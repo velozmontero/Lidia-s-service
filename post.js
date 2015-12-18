@@ -49,17 +49,6 @@ $(document).ready(function(){
          $('#startDAte').val("");
      });
   
-     /*$('#startDAte').change(checkInput);
-     
-     function checkInput() {
-          if ($('#startDAte').val()){
-                $('#action').removeClass('hide');
-          }
-          else {
-               $('#action').addClass('hide');
-          }
-     }*/
-  
      // medical assistant ---------------------->
      
      var COM01= {
@@ -146,18 +135,123 @@ $(document).ready(function(){
           days: Math.ceil(100/4)
      };
      
-     var mdArr= [MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01];
-     var dates= [];
-     var arr= [];
+     var mdArr1= [MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01];
+     var mdArr2= [CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01, MAS01];
+     var mdArr3= [PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01, MAS01, CPR01];
+     var mdArr4= [HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01, MAS01, CPR01, PCT02];
+     var mdArr5= [MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01, MAS01, CPR01, PCT02, HAE01];
+     var mdArr6= [MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01, MAS01, CPR01, PCT02, HAE01, MAT01];
+     var mdArr7= [MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01, MAS01, CPR01, PCT02, HAE01, MAT01, MAT02];
+     var mdArr8= [MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01, MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02];
+     var mdArr9= [MAS04, MAS05, MAS06, MAS07, COM01, ECPS01, MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03];
+     var mdArr10= [MAS05, MAS06, MAS07, COM01, ECPS01, MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04];
+     var mdArr11= [MAS06, MAS07, COM01, ECPS01, MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05];
+     var mdArr12= [MAS07, COM01, ECPS01, MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06];
+     var mdArr13= [COM01, ECPS01, MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07];
+     var mdArr14= [ECPS01, MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01 ];
      
      // medical assitant end --------------------->
-        
+     
+     var dates= [];
+     var arr= [];
+
+     $('#course').change(getActiveCourse);
+     function getActiveCourse(){
+          if ($('#course').val() == "ma"){
+               $('#startClass').html("");
+               $('#startClass').append('<option value="" disabled selected>Starting Class</option>');
+               for (var t in mdArr1){
+                    console.log("working");
+                    $('#startClass').append('<option value="'+mdArr1[t].courseCode+'">'+mdArr1[t].courseCode+'</option>');
+               }
+               $('#startClass').material_select();
+          }
+     }
+     
      function postInfo(){
           var tt= document.getElementById('startDAte').value;
           
           var totalDays = 0;
-          if ($('#course').val() == "ma") {
-               arr= mdArr;
+          if ($('#course').val() == "ma" && $('#startClass').val() == "MAS01") {
+               arr= mdArr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#course').val() == "ma" && $('#startClass').val() == "CPR01") {
+               arr= mdArr2;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#course').val() == "ma" && $('#startClass').val() == "PCT02") {
+               arr= mdArr3;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#course').val() == "ma" && $('#startClass').val() == "HAE01") {
+               arr= mdArr4;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAT01") {
+               arr= mdArr5;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAT02") {
+               arr= mdArr6;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAS02") {
+               arr= mdArr7;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAS03") {
+               arr= mdArr8;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAS04") {
+               arr= mdArr9;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAS05") {
+               arr= mdArr10;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAS06") {
+               arr= mdArr11;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAS07") {
+               arr= mdArr12;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#course').val() == "ma" && $('#startClass').val() == "COM01") {
+               arr= mdArr13;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#course').val() == "ma" && $('#startClass').val() == "ECPS01") {
+               arr= mdArr14;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
