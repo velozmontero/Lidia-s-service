@@ -256,6 +256,12 @@ $(document).ready(function(){
                     totalDays+= arr[t].days;
                }
           }
+          else{
+               arr= mdArr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
           console.log("total days "+totalDays);
           event.preventDefault();
           
