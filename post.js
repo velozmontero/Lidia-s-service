@@ -391,6 +391,100 @@ $(document).ready(function(){
      
      // Pharmacy Technician end ------------------------------------------------------------------------------------------------->
      
+     // Patient Care Technician start------------------->
+     var PCT16 = {
+          courseCode: "PCT16",
+          hours: 100,
+          days: Math.ceil(100/4)
+     };     
+     var PCT11 = {
+          courseCode: "PCT11",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     var PCT12 = {
+          courseCode: "PCT12",
+          hours: 20,
+          days: Math.ceil(20/4)
+     };
+     var PCT13 = {
+          courseCode: "PCT13",
+          hours: 20,
+          days: Math.ceil(20/4)
+     };
+     var PCT14 = {
+          courseCode: "PCT14",
+          hours: 40,
+          days: Math.ceil(40/4)
+     };
+     var PCT15 = {
+          courseCode: "PCT15",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     var ECP01 = {
+          courseCode: "ECP01",
+          hours: 20,
+          days: Math.ceil(20/4)
+     };
+     var PCT01 = {
+          courseCode: "PCT01",
+          hours: 84,
+          days: Math.ceil(84/4)
+     };
+ 	 var BLSF01 = {
+          courseCode: "BLSF01",
+          hours: 4,
+          days: Math.ceil(4/4)
+     };                          
+     var PCT02 = {
+          courseCode: "PCT02",
+          hours: 50,
+          days: Math.ceil(50/4)
+     };
+     var HAE01 = {
+          courseCode: "HAE01",
+          hours: 4,
+          days: Math.ceil(4/4)
+     };
+     var PCT03 = {
+          courseCode: "PCT03",
+          hours: 10,
+          days: Math.ceil(10/4)
+     };
+     var PCT04 = {
+          courseCode: "PCT04",
+          hours: 18,
+          days: Math.ceil(18/4)
+     };
+     var PCT06 = {
+          courseCode: "PCT06",
+          hours: 12,
+          days: Math.ceil(12/4)
+     };
+     var PCT05 = {
+          courseCode: "PCT06",
+          hours: 16,
+          days: Math.ceil(16/4)
+     };
+     var PCT07 = {
+          courseCode: "PCT07",
+          hours: 12,
+          days: Math.ceil(12/4)
+     };
+     var PCT08 = {
+          courseCode: "PCT08",
+          hours: 14,
+          days: Math.ceil(14/4)
+     };
+     var PCT09 = {
+          courseCode: "PCT09",
+          hours: 16,
+          days: Math.ceil(16/4)
+     };
+     
+     // Patient Care Technician end ------------------------------------------------------------------------------------------------->
+     
      var dates= [];
      var arr= [];
 
