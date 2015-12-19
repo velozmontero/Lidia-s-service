@@ -392,6 +392,7 @@ $(document).ready(function(){
      // Pharmacy Technician end ------------------------------------------------------------------------------------------------->
      
      // Patient Care Technician start------------------->
+     
      var PCT16 = {
           courseCode: "PCT16",
           hours: 100,
@@ -483,6 +484,142 @@ $(document).ready(function(){
           days: Math.ceil(16/4)
      };
      
+     var pctArr1= [PCT16, PCT11, PCT12, PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06, PCT05, PCT07, PCT08, PCT09];
+     var pctArr2= [PCT11, PCT12, PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06, PCT05, PCT07, PCT08, PCT09, PCT16];
+     var pctArr3= [PCT12, PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06, PCT05, PCT07, PCT08, PCT09, PCT16, PCT11];
+     var pctArr4= [PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06, PCT05, PCT07, PCT08, PCT09, PCT16, PCT11, PCT12];
+     var pctArr5= [PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06, PCT05, PCT07, PCT08, PCT09, PCT16, PCT11, PCT12, PCT13];
+     var pctArr6= [PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06, PCT05, PCT07, PCT08, PCT09, PCT16, PCT11, PCT12, PCT13, PCT14];
+     var pctArr7= [ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06, PCT05, PCT07, PCT08, PCT09, PCT16, PCT11, PCT12, PCT13, PCT14, PCT15];
+     var pctArr8= [PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06, PCT05, PCT07, PCT08, PCT09, PCT16, PCT11, PCT12, PCT13, PCT14, PCT15, ECP01];
+     var pctArr9= [BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06, PCT05, PCT07, PCT08, PCT09, PCT16, PCT11, PCT12, PCT13, PCT14, PCT15, ECP01, PCT01];
+     var pctArr10= [PCT02, HAE01, PCT03, PCT04, PCT06, PCT05, PCT07, PCT08, PCT09, PCT16, PCT11, PCT12, PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01];
+     var pctArr11= [HAE01, PCT03, PCT04, PCT06, PCT05, PCT07, PCT08, PCT09, PCT16, PCT11, PCT12, PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02];
+     var pctArr12= [PCT03, PCT04, PCT06, PCT05, PCT07, PCT08, PCT09, PCT16, PCT11, PCT12, PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01];
+     var pctArr13= [PCT04, PCT06, PCT05, PCT07, PCT08, PCT09, PCT16, PCT11, PCT12, PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03];
+     var pctArr14= [PCT06, PCT05, PCT07, PCT08, PCT09, PCT16, PCT11, PCT12, PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04];
+     var pctArr15= [PCT05, PCT07, PCT08, PCT09, PCT16, PCT11, PCT12, PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06];
+     var pctArr16= [PCT07, PCT08, PCT09, PCT16, PCT11, PCT12, PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06, PCT05];
+     var pctArr17= [PCT08, PCT09, PCT16, PCT11, PCT12, PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06, PCT05, PCT07];
+     var pctArr18= [PCT09, PCT16, PCT11, PCT12, PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06, PCT05, PCT07, PCT08];
+     
+     function checkPCT() {
+          if ($('#startClass').val() == "PCT16") {
+               arr= pctArr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT11") {
+               arr= pctArr2;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT12") {
+               arr= pctArr3;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT13") {
+               arr= pctArr4;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT14") {
+               arr= pctArr5;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT15") {
+               arr= pctArr6;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "ECP01") {
+               arr= pctArr7;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT01") {
+               arr= pctArr8;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "BLSF01") {
+               arr= pctArr9;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT02") {
+               arr= pctArr10;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "HAE01") {
+               arr= pctArr11;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT03") {
+               arr= pctArr12;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT04") {
+               arr= pctArr13;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT06") {
+               arr= pctArr14;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT05") {
+               arr= pctArr15;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT07") {
+               arr= pctArr16;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT08") {
+               arr= pctArr17;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT09") {
+               arr= pctArr18;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else{
+               arr= pctArr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+     }
+     
      // Patient Care Technician end ------------------------------------------------------------------------------------------------->
      
      var dates= [];
@@ -505,6 +642,15 @@ $(document).ready(function(){
                for (var t in phArr1){
                     console.log("working");
                     $('#startClass').append('<option value="'+phArr1[t].courseCode+'">'+phArr1[t].courseCode+'</option>');
+               }
+               $('#startClass').material_select();
+          }
+          if ($('#course').val() == "pct"){
+               $('#startClass').html("");
+               $('#startClass').append('<option value="" disabled selected>Starting Class</option>');
+               for (var t in pctArr1){
+                    console.log("working");
+                    $('#startClass').append('<option value="'+pctArr1[t].courseCode+'">'+pctArr1[t].courseCode+'</option>');
                }
                $('#startClass').material_select();
           }
@@ -597,6 +743,15 @@ $(document).ready(function(){
           }
           
          // Pharmacy Technician checking end ------------------------------------------------------------------------------------------------->
+          
+          
+          // Patient Care Technician start -------------------------------->
+          
+          if ($('#course').val() == "pct"){
+               checkPCT();
+          }
+          
+          // Patient Care Technician end ------------------------------------------------------------------------------------------------->
           
           console.log("total days "+totalDays);
           event.preventDefault();
