@@ -1,5 +1,5 @@
 .up-space {
-    margin-top: 40px !important;
+    margin-bottom: 40px !important;
 }
 
 .space{
@@ -11,10 +11,8 @@
 	.ui-datepicker-calendar td {border: 1px solid transparent;}
 /* end: jQuery UI Datepicker moving pixels fix */
 
-@media print
-{    
-    .no-print
-    {
+@media print{    
+    .no-print{
         display: none !important;
     }
 }
