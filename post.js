@@ -1,8 +1,13 @@
 $(document).ready(function(){
      
      var totalDays = 0;
-     
+     var dates= [];
+     var arr= [];
      moment().format();
+     
+     $('#printinfo').click(function(){
+          window.print();
+     });
      
      $('#startDAte').datepicker({
          beforeShow: function (input, inst) {
@@ -621,9 +626,6 @@ $(document).ready(function(){
      }
      
      // Patient Care Technician end ------------------------------------------------------------------------------------------------->
-     
-     var dates= [];
-     var arr= [];
 
      $('#course').change(getActiveCourse);
      function getActiveCourse(){
@@ -705,7 +707,7 @@ $(document).ready(function(){
                
                var nonWorkingDaytt= nwttmm + '/' + nwttdd + '/' + nwtty;
                
-               console.log("var o in dates is "+nonWorkingDay);
+               console.log("var o in dates is "+nonWorkingDaytt);
                while(nonWorkingDaytt == tt || wDaytt === 0 || wDaytt === 6 ||
                     (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
                     (stt.getDate() == 25 && parseInt(stt.getMonth()+1) == 12) ||
@@ -1043,9 +1045,9 @@ $(document).ready(function(){
                          
                          gradDay= gmm + '/' + gdd + '/' + gy;
                          
-                         for (var c in dates) {
+                         for (var u in dates) {
                               
-                              var gradD= new Date(dates[c]);
+                              var gradD= new Date(dates[u]);
                               var graduationD= new Date(gradD);
                               
                               graduationD.setDate(graduationD.getDate());
@@ -1056,7 +1058,7 @@ $(document).ready(function(){
                               
                               var graduDay= gramm + '/' + gradd + '/' + gray;
                               
-                              console.log("var c in dates is "+graduDay);
+                              console.log("var u in dates is "+graduDay);
                               while(graduDay == gradDay || dayOFDW === 0 || dayOFDW === 6 ||
                                    (gDate.getDate() == 24 && parseInt(gDate.getMonth()+1) == 12) ||
                                    (gDate.getDate() == 25 && parseInt(gDate.getMonth()+1) == 12) ||
@@ -1185,5 +1187,6 @@ $(document).ready(function(){
           }
           getStartAndEndDate();
           $('#startDAte').val(tt);
+          totalDays = 0;
      };
 });
