@@ -1,5 +1,7 @@
 $(document).ready(function(){
      
+     var totalDays = 0;
+     
      moment().format();
      
      $('#startDAte').datepicker({
@@ -150,7 +152,244 @@ $(document).ready(function(){
      var mdArr13= [COM01, ECPS01, MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07];
      var mdArr14= [ECPS01, MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01 ];
      
-     // medical assitant end --------------------->
+     function checkMA() {
+          if ($('#startClass').val() == "MAS01") {
+               arr= mdArr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "CPR01") {
+               arr= mdArr2;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT02") {
+               arr= mdArr3;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "HAE01") {
+               arr= mdArr4;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAT01") {
+               arr= mdArr5;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAT02") {
+               arr= mdArr6;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS02") {
+               arr= mdArr7;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS03") {
+               arr= mdArr8;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS04") {
+               arr= mdArr9;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS05") {
+               arr= mdArr10;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS06") {
+               arr= mdArr11;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS07") {
+               arr= mdArr12;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "COM01") {
+               arr= mdArr13;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "ECPS01") {
+               arr= mdArr14;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else{
+               arr= mdArr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+     }
+     
+     // medical assitant end ---------------------------------------------------------------------------------------------------->
+     
+     // Pharmacy Technician start ---------------------->
+     
+     var PHA01= {
+          courseCode: "PHA01",
+          hours: 80,
+          days: Math.ceil(80/4)
+     };
+     
+     var PHB02= {
+          courseCode: "PHB02",
+          hours: 80,
+          days: Math.ceil(80/4)
+     };
+     
+     var PHC03= {
+          courseCode: "PHB02",
+          hours: 80,
+          days: Math.ceil(80/4)
+     };
+     
+     var PHD04= {
+          courseCode: "PHD04",
+          hours: 80,
+          days: Math.ceil(80/4)
+     };
+     
+     var PHE05= {
+          courseCode: "PHE05",
+          hours: 76,
+          days: Math.ceil(76/4)
+     };
+     
+     var PHF06= {
+          courseCode: "PHF06",
+          hours: 80,
+          days: Math.ceil(80/4)
+     };
+     
+     var PHG07= {
+          courseCode: "PHG07",
+          hours: 80,
+          days: Math.ceil(80/4)
+     };
+     
+     var CPR01= {
+          courseCode: "CPR01",
+          hours: 4,
+          days: Math.ceil(4/4)
+     };
+     
+     var PHH08= {
+          courseCode: "PHH08",
+          hours: 80,
+          days: Math.ceil(80/4)
+     };
+     
+     var PHI09= {
+          courseCode: "PHI09",
+          hours: 80,
+          days: Math.ceil(80/4)
+     };
+     
+     var phArr1= [PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, CPR01, PHH08, PHI09];
+     var phArr2= [PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, CPR01, PHH08, PHI09, PHA01];
+     var phArr3= [PHC03, PHD04, PHE05, PHF06, PHG07, CPR01, PHH08, PHI09, PHA01, PHB02];
+     var phArr4= [PHD04, PHE05, PHF06, PHG07, CPR01, PHH08, PHI09, PHA01, PHB02, PHC03];
+     var phArr5= [PHE05, PHF06, PHG07, CPR01, PHH08, PHI09, PHA01, PHB02, PHC03, PHD04];
+     var phArr6= [PHF06, PHG07, CPR01, PHH08, PHI09, PHA01, PHB02, PHC03, PHD04, PHE05];
+     var phArr7= [PHG07, CPR01, PHH08, PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06];
+     var phArr8= [CPR01, PHH08, PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07];
+     var phArr9= [PHH08, PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, CPR01];
+     var phArr10= [PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, CPR01, PHH08];
+     
+     function checkPHT() {
+          if ($('#startClass').val() == "PHA01") {
+               arr= phArr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PHB02") {
+               arr= phArr2;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PHC03") {
+               arr= phArr3;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PHD04") {
+               arr= phArr4;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PHE05") {
+               arr= phArr5;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PHF06") {
+               arr= phArr6;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PHG07") {
+               arr= phArr7;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "CPR01") {
+               arr= phArr8;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PHH08") {
+               arr= phArr9;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PHI09") {
+               arr= phArr10;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else{
+               arr= phArr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+     }
+     
+     // Pharmacy Technician end ------------------------------------------------------------------------------------------------->
      
      var dates= [];
      var arr= [];
@@ -166,102 +405,105 @@ $(document).ready(function(){
                }
                $('#startClass').material_select();
           }
+          if ($('#course').val() == "pht"){
+               $('#startClass').html("");
+               $('#startClass').append('<option value="" disabled selected>Starting Class</option>');
+               for (var t in phArr1){
+                    console.log("working");
+                    $('#startClass').append('<option value="'+phArr1[t].courseCode+'">'+phArr1[t].courseCode+'</option>');
+               }
+               $('#startClass').material_select();
+          }
      }
      
      function postInfo(){
           var tt= document.getElementById('startDAte').value;
+  
+          var sDatett= new Date(tt);
+          var stt= new Date(sDatett);
           
-          var totalDays = 0;
-          if ($('#course').val() == "ma" && $('#startClass').val() == "MAS01") {
-               arr= mdArr1;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
+          stt.setDate(stt.getDate());
+          var wDaytt= stt.getDay();
+          
+          while (
+               (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
+               (stt.getDate() == 25 && parseInt(stt.getMonth()+1) == 12) ||
+               (stt.getDate() == 26 && parseInt(stt.getMonth()+1) == 12) ||
+               (stt.getDate() == 27 && parseInt(stt.getMonth()+1) == 12) ||
+               (stt.getDate() == 28 && parseInt(stt.getMonth()+1) == 12) ||
+               (stt.getDate() == 29 && parseInt(stt.getMonth()+1) == 12) ||
+               (stt.getDate() == 30 && parseInt(stt.getMonth()+1) == 12) ||
+               (stt.getDate() == 31 && parseInt(stt.getMonth()+1) == 12) ||
+               (stt.getDate() == 1 && parseInt(stt.getMonth()+1) == 1) ||
+               (stt.getDate() == 4 && parseInt(stt.getMonth()+1) == 7) 
+               ) { 
+                    stt.setDate(stt.getDate() + 1);
+                    wDaytt= stt.getDay();
+          }
+          
+          while (wDaytt === 0 || wDaytt === 6) {
+               stt.setDate(stt.getDate() + 1);
+               wDaytt= stt.getDay();
+          }
+          
+          var ttdd = stt.getDate();
+          var ttmm = stt.getMonth() + 1;
+          var tty = stt.getFullYear();
+          
+          tt= ttmm + '/' + ttdd + '/' + tty;
+
+          for (var z in dates) {
+               
+               var nonWDtt= new Date(dates[z]);
+               var nWorkingDtt= new Date(nonWDtt);
+               
+               nWorkingDtt.setDate(nWorkingDtt.getDate());
+               
+               var nwttdd = nWorkingDtt.getDate();
+               var nwttmm = nWorkingDtt.getMonth() + 1;
+               var nwtty = nWorkingDtt.getFullYear();
+               
+               var nonWorkingDaytt= nwttmm + '/' + nwttdd + '/' + nwtty;
+               
+               console.log("var o in dates is "+nonWorkingDay);
+               while(nonWorkingDaytt == tt || wDaytt === 0 || wDaytt === 6 ||
+                    (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 25 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 26 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 27 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 28 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 29 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 30 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 31 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 1 && parseInt(stt.getMonth()+1) == 1) ||
+                    (stt.getDate() == 4 && parseInt(stt.getMonth()+1) == 7)   
+                    ) {
+                    stt.setDate( stt.getDate() + 1);
+                    wDaytt=  stt.getDay();
+                    ttdd = stt.getDate();
+                    ttmm = stt.getMonth() + 1;
+                    tty = stt.getFullYear();
+                    
+                    tt= ttmm + '/' + ttdd + '/' + tty;
                }
           }
-          else if ($('#course').val() == "ma" && $('#startClass').val() == "CPR01") {
-               arr= mdArr2;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
+          
+          // medical assistant checking start---------------------->
+          
+          if ($('#course').val() == "ma"){
+               checkMA();
           }
-          else if ($('#course').val() == "ma" && $('#startClass').val() == "PCT02") {
-               arr= mdArr3;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
+          
+          // medical assistant checking end--------------------------------------------------------------------------------------------------->
+          
+          // Pharmacy Technician checking start------------------------------->
+          
+          if ($('#course').val() == "pht"){
+               checkPHT();
           }
-          else if ($('#course').val() == "ma" && $('#startClass').val() == "HAE01") {
-               arr= mdArr4;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
-          }
-          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAT01") {
-               arr= mdArr5;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
-          }
-          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAT02") {
-               arr= mdArr6;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
-          }
-          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAS02") {
-               arr= mdArr7;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
-          }
-          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAS03") {
-               arr= mdArr8;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
-          }
-          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAS04") {
-               arr= mdArr9;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
-          }
-          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAS05") {
-               arr= mdArr10;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
-          }
-          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAS06") {
-               arr= mdArr11;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
-          }
-          else if ($('#course').val() == "ma" && $('#startClass').val() == "MAS07") {
-               arr= mdArr12;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
-          }
-          else if ($('#course').val() == "ma" && $('#startClass').val() == "COM01") {
-               arr= mdArr13;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
-          }
-          else if ($('#course').val() == "ma" && $('#startClass').val() == "ECPS01") {
-               arr= mdArr14;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
-          }
-          else{
-               arr= mdArr1;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-               }
-          }
+          
+         // Pharmacy Technician checking end ------------------------------------------------------------------------------------------------->
+          
           console.log("total days "+totalDays);
           event.preventDefault();
           
