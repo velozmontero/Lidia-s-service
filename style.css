@@ -6,6 +6,19 @@
     margin-bottom: 20px;
 }
 
+.moveit{
+    position: absolute;
+    transition: all 0.5s ease;
+    right: 50px;
+    z-index:1010;
+}
+
+.calendario{
+    margin: 0 auto;
+    top: 91px;
+    z-index:1000;
+}
+
 /* begin: jQuery UI Datepicker moving pixels fix */
 	table.ui-datepicker-calendar {border-collapse: separate;}
 	.ui-datepicker-calendar td {border: 1px solid transparent;}

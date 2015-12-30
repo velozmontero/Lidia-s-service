@@ -40,9 +40,9 @@
                             </select>
                         </th>
                         <th data-field="Start-date"><input type="text" id="startDAte" placeholder="Select Start Date" required></th>
-                        <th data-field="non-working-dates"><input type="text" id="nonWorkingD" placeholder="Select Special Dates" required></th> 
                     </tbody>
-                </table>         
+                </table>
+				<center><div id="nonWorkingD" class="space hide calendario"></div></center>
             </div>
 			<center class="up-space">
 				<button class="no-print btn waves-effect waves-light space" type="submit" name="printinfo" id="printinfo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Print&nbsp;
@@ -57,7 +57,10 @@
 					<i class="material-icons right">replay</i>
 				</button>
 				
+				<button class="no-print btn waves-effect waves-light  purple lighten-1 space" type="submit" name="clear" id="btnspecialdates">Special Dates
+				</button>
 			</center>
+			
             <div class="row hide" id="response">
 				<h3 id="coursein" class="center"></h3>
                 <table  class="centered highlight">

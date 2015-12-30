@@ -6,6 +6,16 @@ $(document).ready(function(){
      var coursein= "";
      moment().format();
      
+     $('#btnspecialdates').click(function(){
+          $('#printinfo').toggleClass("hide");
+          $('#action').toggleClass("hide");
+          $('#clear').toggleClass("hide");
+          $(this).text(function(i, text){
+               return text=== "Done" ? "Special Dates" : "Done";     
+          })
+          $("#nonWorkingD").toggleClass("hide");
+     });
+     
      $('#printinfo').click(function(){
           window.print();
      });
@@ -49,7 +59,14 @@ $(document).ready(function(){
      
      $('select').material_select();
 
-     $('#action').click(postInfo);
+     $('#action').click(function(){
+          if (!$('#startDAte').val()) {
+            alert("Please Select a Start Date")
+          }
+          else {
+               postInfo();
+          }
+     });
      
      $('#clear').click(function(){
          $('#response').addClass('hide'); 
