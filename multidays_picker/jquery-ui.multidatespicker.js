@@ -67,6 +67,7 @@
 							this.multiDatesPicker.originalBeforeShow.call(this, input, inst);
 					},
 					onSelect : function(dateText, inst) {
+
 						var $this = $(this);
 						this.multiDatesPicker.changed = true;
 						

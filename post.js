@@ -43,7 +43,7 @@ $(document).ready(function(){
                }, 0);
           },
           beforeShowDay: $.datepicker.noWeekends, 
-          numberOfMonths: [3,4],
+          numberOfMonths: [3,4]
      });
      
      $('select').material_select();
