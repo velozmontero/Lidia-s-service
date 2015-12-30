@@ -11,7 +11,10 @@
 	.ui-datepicker-calendar td {border: 1px solid transparent;}
 /* end: jQuery UI Datepicker moving pixels fix */
 
-@media print{    
+@media print{
+    h3{
+        font-size: 20px !important;
+    }
     .no-print{
         display: none !important;
     }

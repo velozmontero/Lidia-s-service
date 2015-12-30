@@ -3,6 +3,7 @@ $(document).ready(function(){
      var totalDays = 0;
      var dates= [];
      var arr= [];
+     var coursein= "";
      moment().format();
      
      $('#printinfo').click(function(){
@@ -158,6 +159,7 @@ $(document).ready(function(){
      var mdArr14= [ECPS01, MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01 ];
      
      function checkMA() {
+          coursein= "Medical Assistant";
           if ($('#startClass').val() == "MAS01") {
                arr= mdArr1;
                for (var t in arr){
@@ -326,6 +328,7 @@ $(document).ready(function(){
      var phArr10= [PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, CPR01, PHH08];
      
      function checkPHT() {
+          coursein= "Pharmacy Technician";
           if ($('#startClass').val() == "PHA01") {
                arr= phArr1;
                for (var t in arr){
@@ -509,6 +512,7 @@ $(document).ready(function(){
      var pctArr18= [PCT09, PCT16, PCT11, PCT12, PCT13, PCT14, PCT15, ECP01, PCT01, BLSF01, PCT02, HAE01, PCT03, PCT04, PCT06, PCT05, PCT07, PCT08];
      
      function checkPCT() {
+          coursein= "Patient Care Technician";
           if ($('#startClass').val() == "PCT16") {
                arr= pctArr1;
                for (var t in arr){
@@ -1142,8 +1146,8 @@ $(document).ready(function(){
                     
                     //-------------------------------------------------------------------------------------------------->
                     console.log(course+' '+courseCode+' '+startDate+' '+endDate+' '+hrs+' '+gradDay+' '+midPoint+' '+lastDayInClass+' '+group);
-                    
-                     $('#info').append(
+                    $('#coursein').html("<b>"+coursein+" "+$('#group').val()+"</b>");
+                    $('#info').append(
                         '<tr>'+'<td>'+courseCode+'</td>'+
                         '<td>'+startDate+'</td>'+
                         '<td>'+endDate+'</td>'+
