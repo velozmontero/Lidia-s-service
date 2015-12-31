@@ -4,6 +4,7 @@ $(document).ready(function(){
      var dates= [];
      var arr= [];
      var coursein= "";
+     var externship= 0;
      moment().format();
      
      $('#btnspecialdates').click(function(){
@@ -750,6 +751,7 @@ $(document).ready(function(){
           // medical assistant checking start---------------------->
           
           if ($('#course').val() == "ma"){
+               externship= 20;
                checkMA();
           }
           
@@ -758,6 +760,7 @@ $(document).ready(function(){
           // Pharmacy Technician checking start------------------------------->
           
           if ($('#course').val() == "pht"){
+               externship= 50;
                checkPHT();
           }
           
@@ -767,6 +770,7 @@ $(document).ready(function(){
           // Patient Care Technician start -------------------------------->
           
           if ($('#course').val() == "pct"){
+               externship= 10;
                checkPCT();
           }
           
@@ -1093,7 +1097,7 @@ $(document).ready(function(){
                     var graduationDay= new Date(lastDayInClass);
                     var gDate= new Date(graduationDay);
                     
-                    for (var i= 1; i < 20; i++) {
+                    for (var i= 1; i < externship; i++) {
                          gDate.setDate(gDate.getDate() + 1);
                          var dayOFDW= gDate.getDay();
                          
@@ -1261,5 +1265,6 @@ $(document).ready(function(){
           getStartAndEndDate();
           $('#startDAte').val(tt);
           totalDays = 0;
+          externship= 0;
      };
 });
