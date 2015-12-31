@@ -5,6 +5,7 @@ $(document).ready(function(){
      var arr= [];
      var coursein= "";
      var externship= 0;
+     var gradDay;
      moment().format();
      
      $('#btnspecialdates').click(function(){
@@ -977,7 +978,7 @@ $(document).ready(function(){
           // Web Developer Engineer start --------------------------------->
           
           if ($('#course').val() == "wda"){
-               externship= 10;
+               externship= 0;
                checkWDA();
           }
           
@@ -1412,11 +1413,15 @@ $(document).ready(function(){
                                    gradDay= gmm + '/' + gdd + '/' + gy;
                                    dayOFDW= gDate.getDay();
                               }
-                         }    
+                         }
                     }
-                         
+                       
                     console.log("the last day in class is "+ lastDayInClass);
                     console.log("the graduation day is "+ gradDay);
+                    
+                    if ($('#course').val() == "wda"){
+                        gradDay= lastDayInClass; 
+                    }
                     
                     //-------------------------------------------------------------------------------------------------->
                     console.log(course+' '+courseCode+' '+startDate+' '+endDate+' '+hrs+' '+gradDay+' '+midPoint+' '+lastDayInClass+' '+group);
