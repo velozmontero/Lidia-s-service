@@ -60,16 +60,8 @@ $(document).ready(function(){
      });
      
      $('select').material_select();
-
-     function loaderStart() {
-        $('#loadingDiv').removeClass("hide");
-     }
-     function loaderEnd() {
-        $('#loadingDiv').addClass("hide");
-     }
      
      $('#action').click(function(){
-          event.preventDefault;
           if (!$('#startDAte').val() || !$('#course').val()) {
                //do nothing
           }
@@ -865,7 +857,7 @@ $(document).ready(function(){
           stt.setDate(stt.getDate());
           var wDaytt= stt.getDay();
           
-          if ($('#course').val() == "wda"){
+          if ($('#course').val() == "wda" || $('#course').val() == "pht"){
                while (
                     (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
                     (stt.getDate() == 25 && parseInt(stt.getMonth()+1) == 12) ||
@@ -1011,7 +1003,7 @@ $(document).ready(function(){
                     sDate.setDate(sDate.getDate());
                     var wDay= sDate.getDay();
                     
-                    if ($('#course').val() == "wda"){
+                    if ($('#course').val() == "wda" || $('#course').val() == "pht"){
                          while (
                               (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
                               (sDate.getDate() == 25 && parseInt(sDate.getMonth()+1) == 12) ||
@@ -1068,7 +1060,7 @@ $(document).ready(function(){
                          
                          console.log("var o in dates is "+nonWorkingDay);
                          
-                         if ($('#course').val() == "wda"){
+                         if ($('#course').val() == "wda" || $('#course').val() == "pht"){
                               while(nonWorkingDay == startDate ||
                                     wDay === 0 || wDay === 4 || wDay === 5 || wDay === 6 ||
                                    (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
