@@ -3,7 +3,7 @@
     <head>
         <title>FVI Class Shcedule</title>
          <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="css/materialize.css">
+        <link rel="stylesheet" href="css/materialize.min.css">
            <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
@@ -13,74 +13,77 @@
    
     </head>
     <body>
+		<div class="loader hide" id="loadingDiv"></div>
         <div class="container">
-            <div class= "row">
-                <table class="no-print">
-                    <tbody id="send-info">
-                        <th data-field="course">
-                            <select id="course">
-                              <option value="" disabled selected>Select Course</option>
-                              <option value="ma">Medical Assistant</option>
-							  <option value="pht">Pharmacy Technician</option>
-							  <option value="pct">Patient Care Technician</option>
-                              <option value="wda">Web Developer Engineer</option>  
-                            </select>
-                        </th>
-						<th data-field="stratingClass">
-                            <select id="startClass" name="startClass">
-								<option value="" disabled selected>Starting Class</option> 
-                            </select>
-                        </th>
-                        <th data-field="group">
-                            <select id="group">
-                              <option value="" disabled selected>Select Group</option>
-                              <option value="Group 1">Group 1</option>
-                              <option value="Group 2">Group 2</option>
-							  <option value="Group 3">Group 3</option>
-                            </select>
-                        </th>
-                        <th data-field="Start-date"><input type="text" id="startDAte" placeholder="Select Start Date" required></th>
-                    </tbody>
-                </table>
-				<center><div id="nonWorkingD" class="space hide calendario"></div></center>
-            </div>
-			<center class="up-space" id="btnholder">
-				<button class="no-print btn waves-effect waves-light space" type="submit" name="printinfo" id="printinfo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Print&nbsp;
-					<i class="material-icons right">description</i>
-				</button>
+			<form id="form">			
+				<div class= "row">
+					<table class="no-print">
+						<tbody id="send-info">
+							<th data-field="course">
+								<select id="course" required>
+								  <option value="" disabled selected>Select Course</option>
+								  <option value="ma">Medical Assistant</option>
+								  <option value="pht">Pharmacy Technician</option>
+								  <option value="pct">Patient Care Technician</option>
+								  <option value="wda">Web Developer Engineer</option>  
+								</select>
+							</th>
+							<th data-field="stratingClass">
+								<select id="startClass" name="startClass">
+									<option value="" disabled selected>Starting Class</option> 
+								</select>
+							</th>
+							<th data-field="group">
+								<select id="group">
+								  <option value="" disabled selected>Select Group</option>
+								  <option value="Group 1">Group 1</option>
+								  <option value="Group 2">Group 2</option>
+								  <option value="Group 3">Group 3</option>
+								</select>
+							</th>
+							<th data-field="Start-date"><input type="text" id="startDAte" placeholder="Select Start Date" required></th>
+						</tbody>
+					</table>
+					<center><div id="nonWorkingD" class="space hide calendario"></div></center>
+				</div>
+				<center class="up-space" id="btnholder">
+					<div class="no-print btn waves-effect waves-light space" name="printinfo" id="printinfo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Print&nbsp;
+						<i class="material-icons right">description</i>
+					</div>
+					
+					<div class="no-print btn waves-effect waves-light  light-green accent-2 space" type="submit" name="action" id="action">Generate
+						<i class="material-icons right">send</i>
+					</div>
+					
+					<div class="no-print btn waves-effect waves-light  red lighten-1 space" name="clear" id="clear">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear&nbsp;
+						<i class="material-icons right">replay</i>
+					</div>
+					
+					<div class="no-print btn waves-effect waves-light  purple lighten-1 space" name="btnspecialdates" id="btnspecialdates">Special Dates
+					</div>
+				</center>
 				
-				<button class="no-print btn waves-effect waves-light  light-green accent-2 space" type="submit" name="action" id="action">Generate
-					<i class="material-icons right">send</i>
-				</button>
-				
-				<button class="no-print btn waves-effect waves-light  red lighten-1 space" type="submit" name="clear" id="clear">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear&nbsp;
-					<i class="material-icons right">replay</i>
-				</button>
-				
-				<button class="no-print btn waves-effect waves-light  purple lighten-1 space" type="submit" name="clear" id="btnspecialdates">Special Dates
-				</button>
-			</center>
-			
-            <div class="row hide" id="response">
-				<h3 id="coursein" class="center"></h3>
-                <table  class="centered highlight">
-                    <thead>
-                      <tr>
-                          <th data-field="CC">Course Code</th>
-                          <th data-field="SD">Start Date</th>
-                          <th data-field="ED">End Date</th>
-                          <th data-field="H">Hrs</th>
-						  <th data-field="MP">Midpoint</th>
-                          <th data-field="LDIC">Last Day in class</th>
-                          <th data-field="GD">Graduation Date</th>
-                      </tr>
-                    </thead>
-    
-                    <tbody id="info">
-    
-                    </tbody>
-                  </table>
-            </div>
+				<div class="row hide" id="response">
+					<h3 id="coursein" class="center"></h3>
+					<table  class="centered highlight">
+						<thead>
+						  <tr>
+							  <th data-field="CC">Course Code</th>
+							  <th data-field="SD">Start Date</th>
+							  <th data-field="ED">End Date</th>
+							  <th data-field="H">Hrs</th>
+							  <th data-field="MP">Midpoint</th>
+							  <th data-field="LDIC">Last Day in class</th>
+							  <th data-field="GD">Graduation Date</th>
+						  </tr>
+						</thead>
+		
+						<tbody id="info">
+		
+						</tbody>
+					  </table>
+				</div>
+			</form>	
         </div>   
         <script src="jquery-2.1.4.min.js"> </script>
         <script type="text/javascript" src="multidays_picker/js/jquery-ui-1.11.1.js"></script>

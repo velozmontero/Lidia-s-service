@@ -60,9 +60,17 @@ $(document).ready(function(){
      
      $('select').material_select();
 
+     function loaderStart() {
+        $('#loadingDiv').removeClass("hide");
+     }
+     function loaderEnd() {
+        $('#loadingDiv').addClass("hide");
+     }
+     
      $('#action').click(function(){
-          if (!$('#startDAte').val()) {
-            alert("Please Select a Start Date")
+          event.preventDefault;
+          if (!$('#startDAte').val() || !$('#course').val()) {
+               //do nothing
           }
           else {
                postInfo();
@@ -856,22 +864,43 @@ $(document).ready(function(){
           stt.setDate(stt.getDate());
           var wDaytt= stt.getDay();
           
-          while (
-               (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
-               (stt.getDate() == 25 && parseInt(stt.getMonth()+1) == 12) ||
-               (stt.getDate() == 26 && parseInt(stt.getMonth()+1) == 12) ||
-               (stt.getDate() == 27 && parseInt(stt.getMonth()+1) == 12) ||
-               (stt.getDate() == 28 && parseInt(stt.getMonth()+1) == 12) ||
-               (stt.getDate() == 29 && parseInt(stt.getMonth()+1) == 12) ||
-               (stt.getDate() == 30 && parseInt(stt.getMonth()+1) == 12) ||
-               (stt.getDate() == 31 && parseInt(stt.getMonth()+1) == 12) ||
-               (stt.getDate() == 1 && parseInt(stt.getMonth()+1) == 1) ||
-               (stt.getDate() == 4 && parseInt(stt.getMonth()+1) == 7) ||
-               wDaytt === 0 || wDaytt === 6
-               ) { 
-                    stt.setDate(stt.getDate() + 1);
-                    wDaytt= stt.getDay();
+          if ($('#course').val() == "wda"){
+               while (
+                    (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 25 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 26 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 27 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 28 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 29 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 30 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 31 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 1 && parseInt(stt.getMonth()+1) == 1) ||
+                    (stt.getDate() == 4 && parseInt(stt.getMonth()+1) == 7) ||
+                    wDaytt === 0 || wDaytt === 4 || wDaytt === 5 || wDaytt === 6 
+                    ) { 
+                         stt.setDate(stt.getDate() + 1);
+                         wDaytt= stt.getDay();
+               }
           }
+          else{
+               while (
+                    (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 25 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 26 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 27 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 28 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 29 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 30 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 31 && parseInt(stt.getMonth()+1) == 12) ||
+                    (stt.getDate() == 1 && parseInt(stt.getMonth()+1) == 1) ||
+                    (stt.getDate() == 4 && parseInt(stt.getMonth()+1) == 7) ||
+                    wDaytt === 0 || wDaytt === 6
+                    ) { 
+                         stt.setDate(stt.getDate() + 1);
+                         wDaytt= stt.getDay();
+               }
+          }
+          
           
           var ttdd = stt.getDate();
           var ttmm = stt.getMonth() + 1;
@@ -915,6 +944,8 @@ $(document).ready(function(){
                }
           }
           
+          //****************************************************  INITIALIZERS START  ****************************************************
+          
           // medical assistant checking start---------------------->
           
           if ($('#course').val() == "ma"){
@@ -943,6 +974,17 @@ $(document).ready(function(){
           
           // Patient Care Technician end ------------------------------------------------------------------------------------------------->
           
+          // Web Developer Engineer start --------------------------------->
+          
+          if ($('#course').val() == "wda"){
+               externship= 10;
+               checkWDA();
+          }
+          
+          // Web Developer Engineer end -------------------------------------------------------------------------------------------------->
+          
+          //****************************************************  INITIALIZERS END  ****************************************************
+          
           console.log("total days "+totalDays);
           event.preventDefault();
           
@@ -968,23 +1010,42 @@ $(document).ready(function(){
                     sDate.setDate(sDate.getDate());
                     var wDay= sDate.getDay();
                     
-                    while (
-                         (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 25 && parseInt(sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 26 && parseInt(sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 27 && parseInt(sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 28 && parseInt(sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 29 && parseInt(sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 30 && parseInt(sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 31 && parseInt(sDate.getMonth()+1) == 12) ||
-                         (sDate.getDate() == 1 && parseInt(sDate.getMonth()+1) == 1) ||
-                         (sDate.getDate() == 4 && parseInt(sDate.getMonth()+1) == 7) ||
-                         wDay === 0 || wDay === 6
-                         ) { 
-                              sDate.setDate(sDate.getDate() + 1);
-                              wDay= sDate.getDay();
+                    if ($('#course').val() == "wda"){
+                         while (
+                              (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 25 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 26 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 27 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 28 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 29 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 30 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 31 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 1 && parseInt(sDate.getMonth()+1) == 1) ||
+                              (sDate.getDate() == 4 && parseInt(sDate.getMonth()+1) == 7) ||
+                              wDay === 0 || wDay === 4 || wDay === 5 || wDay === 6 
+                              ) { 
+                                   sDate.setDate(sDate.getDate() + 1);
+                                   wDay= sDate.getDay();
+                         }
                     }
-               
+                    else {
+                         while (
+                              (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 25 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 26 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 27 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 28 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 29 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 30 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 31 && parseInt(sDate.getMonth()+1) == 12) ||
+                              (sDate.getDate() == 1 && parseInt(sDate.getMonth()+1) == 1) ||
+                              (sDate.getDate() == 4 && parseInt(sDate.getMonth()+1) == 7) ||
+                              wDay === 0 || wDay === 6
+                              ) { 
+                                   sDate.setDate(sDate.getDate() + 1);
+                                   wDay= sDate.getDay();
+                         }
+                    }
                     var sdd = sDate.getDate();
                     var smm = sDate.getMonth() + 1;
                     var sy = sDate.getFullYear();
@@ -1005,24 +1066,49 @@ $(document).ready(function(){
                          var nonWorkingDay= nwmm + '/' + nwdd + '/' + nwy;
                          
                          console.log("var o in dates is "+nonWorkingDay);
-                         while(nonWorkingDay == startDate || wDay === 0 || wDay === 6 ||
-                              (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
-                              (sDate.getDate() == 25 && parseInt(sDate.getMonth()+1) == 12) ||
-                              (sDate.getDate() == 26 && parseInt(sDate.getMonth()+1) == 12) ||
-                              (sDate.getDate() == 27 && parseInt(sDate.getMonth()+1) == 12) ||
-                              (sDate.getDate() == 28 && parseInt(sDate.getMonth()+1) == 12) ||
-                              (sDate.getDate() == 29 && parseInt(sDate.getMonth()+1) == 12) ||
-                              (sDate.getDate() == 30 && parseInt(sDate.getMonth()+1) == 12) ||
-                              (sDate.getDate() == 31 && parseInt(sDate.getMonth()+1) == 12) ||
-                              (sDate.getDate() == 1 && parseInt(sDate.getMonth()+1) == 1) ||
-                              (sDate.getDate() == 4 && parseInt(sDate.getMonth()+1) == 7)   
-                              ) {
-                              sDate.setDate(sDate.getDate() + 1);
-                              wDay= sDate.getDay();
-                              sdd = sDate.getDate();
-                              smm = sDate.getMonth() + 1;
-                              sy = sDate.getFullYear();
-                              startDate= smm + '/' + sdd + '/' + sy;
+                         
+                         if ($('#course').val() == "wda"){
+                              while(nonWorkingDay == startDate ||
+                                    wDay === 0 || wDay === 4 || wDay === 5 || wDay === 6 ||
+                                   (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 25 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 26 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 27 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 28 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 29 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 30 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 31 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 1 && parseInt(sDate.getMonth()+1) == 1) ||
+                                   (sDate.getDate() == 4 && parseInt(sDate.getMonth()+1) == 7)   
+                                   ) {
+                                   sDate.setDate(sDate.getDate() + 1);
+                                   wDay= sDate.getDay();
+                                   sdd = sDate.getDate();
+                                   smm = sDate.getMonth() + 1;
+                                   sy = sDate.getFullYear();
+                                   startDate= smm + '/' + sdd + '/' + sy;
+                              }
+                         }
+                         else {
+                              while(nonWorkingDay == startDate || wDay === 0 || wDay === 6 ||
+                                   (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 25 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 26 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 27 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 28 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 29 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 30 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 31 && parseInt(sDate.getMonth()+1) == 12) ||
+                                   (sDate.getDate() == 1 && parseInt(sDate.getMonth()+1) == 1) ||
+                                   (sDate.getDate() == 4 && parseInt(sDate.getMonth()+1) == 7)   
+                                   ) {
+                                   sDate.setDate(sDate.getDate() + 1);
+                                   wDay= sDate.getDay();
+                                   sdd = sDate.getDate();
+                                   smm = sDate.getMonth() + 1;
+                                   sy = sDate.getFullYear();
+                                   startDate= smm + '/' + sdd + '/' + sy;
+                              }
                          }
                     }
        
