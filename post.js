@@ -1097,7 +1097,7 @@ $(document).ready(function(){
                     var graduationDay= new Date(lastDayInClass);
                     var gDate= new Date(graduationDay);
                     
-                    for (var i= 1; i < externship; i++) {
+                    for (var i= 0; i < externship; i++) {
                          gDate.setDate(gDate.getDate() + 1);
                          var dayOFDW= gDate.getDay();
                          
