@@ -648,7 +648,165 @@ $(document).ready(function(){
      }
      
      // Patient Care Technician end ------------------------------------------------------------------------------------------------->
+     
+     // Web Developer Engineer start --------------------------------------------->
+     
+      var WEB1010 = {
+          courseCode: "WEB1010",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var WEB1000 = {
+          courseCode: "WEB1000",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var WEB2000 = {
+          courseCode: "WEB2000",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var WEB2010 = {
+          courseCode: "WEB2010",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
 
+     var WEB2020 = {
+          courseCode: "WEB2020",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+
+     var WEB2040 = {
+          courseCode: "WEB2040",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var WEB2900 = {
+          courseCode: "WEB2900",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+
+     var WEB2910 = {
+          courseCode: "WEB2910",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var ROR1000 = {
+          courseCode: "ROR1000",
+          hours: 120,
+          days: Math.ceil(120/4)
+     };
+     
+     var WEB3000 = {
+          courseCode: "WEB3000",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var CAP2000 = {
+          courseCode: "CAP2000",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var wdaArr1= [WEB1010, WEB1000, WEB2000, WEB2010, WEB2020, WEB2040, WEB2900, WEB2910, ROR1000, WEB3000, CAP2000];
+     var wdaArr2= [WEB1000, WEB2000, WEB2010, WEB2020, WEB2040, WEB2900, WEB2910, ROR1000, WEB3000, CAP2000, WEB1010];
+     var wdaArr3= [WEB2000, WEB2010, WEB2020, WEB2040, WEB2900, WEB2910, ROR1000, WEB3000, CAP2000, WEB1010, WEB1000];
+     var wdaArr4= [WEB2010, WEB2020, WEB2040, WEB2900, WEB2910, ROR1000, WEB3000, CAP2000, WEB1010, WEB1000, WEB2000];
+     var wdaArr5= [WEB2020, WEB2040, WEB2900, WEB2910, ROR1000, WEB3000, CAP2000, WEB1010, WEB1000, WEB2000, WEB2010];
+     var wdaArr6= [WEB2040, WEB2900, WEB2910, ROR1000, WEB3000, CAP2000, WEB1010, WEB1000, WEB2000, WEB2010, WEB2020];
+     var wdaArr7= [WEB2900, WEB2910, ROR1000, WEB3000, CAP2000, WEB1010, WEB1000, WEB2000, WEB2010, WEB2020, WEB2040];
+     var wdaArr8= [WEB2910, ROR1000, WEB3000, CAP2000, WEB1010, WEB1000, WEB2000, WEB2010, WEB2020, WEB2040, WEB2900];
+     var wdaArr9= [ROR1000, WEB3000, CAP2000, WEB1010, WEB1000, WEB2000, WEB2010, WEB2020, WEB2040, WEB2900, WEB2910];
+     var wdaArr10= [WEB3000, CAP2000, WEB1010, WEB1000, WEB2000, WEB2010, WEB2020, WEB2040, WEB2900, WEB2910, ROR1000];
+     var wdaArr11= [CAP2000, WEB1010, WEB1000, WEB2000, WEB2010, WEB2020, WEB2040, WEB2900, WEB2910, ROR1000, WEB3000];
+     
+     function checkWDA() {
+          coursein= "Web Developer Engineer";
+          if ($('#startClass').val() == "WEB1010") {
+               arr= wdaArr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "WEB1000") {
+               arr= wdaArr2;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "WEB2000") {
+               arr= wdaArr3;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "WEB2010") {
+               arr= wdaArr4;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "WEB2020") {
+               arr= wdaArr5;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "WEB2040") {
+               arr= wdaArr6;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "WEB2900") {
+               arr= wdaArr7;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "WEB2910") {
+               arr= wdaArr8;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "ROR1000") {
+               arr= wdaArr9;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "WEB3000") {
+               arr= wdaArr10;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "CAP2000") {
+               arr= wdaArr11;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else{
+               arr= wdaArr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+     }
+     
+     // Web Developer Engineer end ------------------------------------------------------------------------------------------------->
+     
      $('#course').change(getActiveCourse);
      function getActiveCourse(){
           if ($('#course').val() == "ma"){
@@ -675,6 +833,15 @@ $(document).ready(function(){
                for (var t in pctArr1){
                     console.log("working");
                     $('#startClass').append('<option value="'+pctArr1[t].courseCode+'">'+pctArr1[t].courseCode+'</option>');
+               }
+               $('#startClass').material_select();
+          }
+          if ($('#course').val() == "wda"){
+               $('#startClass').html("");
+               $('#startClass').append('<option value="" disabled selected>Starting Class</option>');
+               for (var t in wdaArr1){
+                    console.log("working");
+                    $('#startClass').append('<option value="'+wdaArr1[t].courseCode+'">'+wdaArr1[t].courseCode+'</option>');
                }
                $('#startClass').material_select();
           }
