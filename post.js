@@ -8,6 +8,12 @@ $(document).ready(function(){
      var gradDay;
      moment().format();
      
+     function addTitle() {
+        $('#coursein').html("<b>"+coursein+" "+$('#group').val()+"</b>");
+     }
+     
+     $('#group').change(addTitle);
+     
      $('#btnspecialdates').click(function(){
           $('#printinfo').toggleClass("hide");
           $('#action').toggleClass("hide");
@@ -849,6 +855,7 @@ $(document).ready(function(){
      }
      
      function postInfo(){
+          event.preventDefault();
           var tt= document.getElementById('startDAte').value;
   
           var sDatett= new Date(tt);
@@ -1417,7 +1424,12 @@ $(document).ready(function(){
                     
                     //-------------------------------------------------------------------------------------------------->
                     console.log(course+' '+courseCode+' '+startDate+' '+endDate+' '+hrs+' '+gradDay+' '+midPoint+' '+lastDayInClass+' '+group);
-                    $('#coursein').html("<b>"+coursein+" "+$('#group').val()+"</b>");
+                    
+                    if (!$('#group').val()) {
+                         $('#group').val("Group 1");
+                    }
+                    else{addTitle();}
+                   
                     $('#info').append(
                         '<tr>'+'<td>'+courseCode+'</td>'+
                         '<td>'+startDate+'</td>'+
