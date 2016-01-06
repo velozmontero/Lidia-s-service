@@ -840,6 +840,142 @@ $(document).ready(function(){
      
      // Patient Care Technician end ------------------------------------------------------------------------------------------------->
      
+     // Patient Care Technician 516 start------------------->
+     
+     var PCTGEN110 = {
+          courseCode: "GEN110",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     var PCTGEN120 = {
+          courseCode: "GEN120",
+          hours: 60,
+          days: Math.ceil(60/4)
+     }; 
+     var PCT101 = {
+          courseCode: "PCT101",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     var PCT102 = {
+          courseCode: "PCT102",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     var PCT103 = {
+          courseCode: "PCT103",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     var PCT104 = {
+          courseCode: "PCT104",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     var PCT105 = {
+          courseCode: "PCT105",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     var PCT106 = {
+          courseCode: "PCT106",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     var PCT107 = {
+          courseCode: "PCT107",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     var PCT108 = {
+          courseCode: "PCT108",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var pct516Arr1= [PCTGEN110, PCTGEN120, PCT101, PCT102, PCT103, PCT104, PCT105, PCT106, PCT107, PCT108];
+     var pct516Arr2= [PCTGEN120, PCT101, PCT102, PCT103, PCT104, PCT105, PCT106, PCT107, PCT108, PCTGEN110];
+     var pct516Arr3= [PCT101, PCT102, PCT103, PCT104, PCT105, PCT106, PCT107, PCT108, PCTGEN110, PCTGEN120];
+     var pct516Arr4= [PCT102, PCT103, PCT104, PCT105, PCT106, PCT107, PCT108, PCTGEN110, PCTGEN120, PCT101];
+     var pct516Arr5= [PCT103, PCT104, PCT105, PCT106, PCT107, PCT108, PCTGEN110, PCTGEN120, PCT101, PCT102];
+     var pct516Arr6= [PCT104, PCT105, PCT106, PCT107, PCT108, PCTGEN110, PCTGEN120, PCT101, PCT102, PCT103];
+     var pct516Arr7= [PCT105, PCT106, PCT107, PCT108, PCTGEN110, PCTGEN120, PCT101, PCT102, PCT103, PCT104];
+     var pct516Arr8= [PCT106, PCT107, PCT108, PCTGEN110, PCTGEN120, PCT101, PCT102, PCT103, PCT104, PCT105];
+     var pct516Arr9= [PCT107, PCT108, PCTGEN110, PCTGEN120, PCT101, PCT102, PCT103, PCT104, PCT105, PCT106];
+     var pct516Arr10= [PCT108, PCTGEN110, PCTGEN120, PCT101, PCT102, PCT103, PCT104, PCT105, PCT106, PCT107];
+     
+     function checkPCT516() {
+          coursein= "Patient Care Technician";
+          if ($('#startClass').val() == "PCTGEN110") {
+               arr= pct516Arr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          if ($('#startClass').val() == "PCTGEN120") {
+               arr= pct516Arr2;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT101") {
+               arr= pct516Arr3;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT102") {
+               arr= pct516Arr4;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT103") {
+               arr= pct516Arr5;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT104") {
+               arr= pct516Arr6;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT105") {
+               arr= pct516Arr7;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT106") {
+               arr= pct516Arr8;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT107") {
+               arr= pct516Arr9;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "PCT108") {
+               arr= pct516Arr10;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else{
+               arr= pct516Arr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+     }
+     
+     // Patient Care Technician 516 end ------------------------------------------------------------------------------------------------->
+     
      // Web Developer Engineer start --------------------------------------------->
      
       var WEB1010 = {
@@ -1036,6 +1172,15 @@ $(document).ready(function(){
                }
                $('#startClass').material_select();
           }
+          if ($('#course').val() == "pct516"){
+               $('#startClass').html("");
+               $('#startClass').append('<option value="" disabled selected>Starting Class</option>');
+               for (var t in pct516Arr1){
+                    console.log("working");
+                    $('#startClass').append('<option value="'+pct516Arr1[t].courseCode+'">'+pct516Arr1[t].courseCode+'</option>');
+               }
+               $('#startClass').material_select();
+          }
           if ($('#course').val() == "wda"){
                $('#startClass').html("");
                $('#startClass').append('<option value="" disabled selected>Starting Class</option>');
@@ -1057,7 +1202,7 @@ $(document).ready(function(){
           stt.setDate(stt.getDate());
           var wDaytt= stt.getDay();
           
-          if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416"){
+          if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516"){
                while (
                     (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
                     (stt.getDate() == 25 && parseInt(stt.getMonth()+1) == 12) ||
@@ -1177,6 +1322,16 @@ $(document).ready(function(){
           
           // Patient Care Technician end ------------------------------------------------------------------------------------------------->
           
+          // Patient Care Technician 516 start -------------------------------->
+          
+          if ($('#course').val() == "pct516"){
+               externship= 60;
+               checkPCT516();
+          }
+          
+          // Patient Care Technician 516 end ------------------------------------------------------------------------------------------------->
+          
+          
           // Web Developer Engineer start --------------------------------->
           
           if ($('#course').val() == "wda"){
@@ -1213,7 +1368,7 @@ $(document).ready(function(){
                     sDate.setDate(sDate.getDate());
                     var wDay= sDate.getDay();
                     
-                    if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416"){
+                    if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516"){
                          while (
                               (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
                               (sDate.getDate() == 25 && parseInt(sDate.getMonth()+1) == 12) ||
@@ -1270,7 +1425,7 @@ $(document).ready(function(){
                          
                          console.log("var o in dates is "+nonWorkingDay);
                          
-                         if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416"){
+                         if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516"){
                               while(nonWorkingDay == startDate ||
                                     wDay === 0 || wDay === 4 || wDay === 5 || wDay === 6 ||
                                    (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
