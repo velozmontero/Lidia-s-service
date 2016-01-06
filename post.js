@@ -82,7 +82,7 @@ $(document).ready(function(){
          $('#startDAte').val("");
      });
   
-     // medical assistant ---------------------->
+     // medical assistant start ---------------------->
      
      var COM01= {
           courseCode: "COM01",
@@ -278,6 +278,190 @@ $(document).ready(function(){
      }
      
      // medical assitant end ---------------------------------------------------------------------------------------------------->
+     
+      // medical assistant 416 start---------------------->
+     
+     var GEN110= {
+          courseCode: "GEN110",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var GEN120= {
+          courseCode: "GEN120",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var MAS101= {
+          courseCode: "MAS101",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var MAS102= {
+          courseCode: "MAS102",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var MAS103= {
+          courseCode: "MAS103",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var MAS104= {
+          courseCode: "MAS104",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var MAS105= {
+          courseCode: "MAS105",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var MAS106= {
+          courseCode: "MAS106",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+      var MAS107= {
+          courseCode: "MAS107",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+      var MAS108= {
+          courseCode: "MAS108",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var MAS109= {
+          courseCode: "MAS109",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var MAS110= {
+          courseCode: "MAS110",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var GEN120= {
+          courseCode: "GEN120",
+          hours: 60,
+          days: Math.ceil(60/4)
+     };
+     
+     var md416Arr1= [GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120];
+     var md416Arr2= [GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110];
+     var md416Arr3= [MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120];
+     var md416Arr4= [MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101];
+     var md416Arr5= [MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102];
+     var md416Arr6= [MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103];
+     var md416Arr7= [MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104];
+     var md416Arr8= [MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105];
+     var md416Arr9= [MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106];
+     var md416Arr10= [MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107];
+     var md416Arr11= [MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108];
+     var md416Arr12= [MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109];
+     var md416Arr13= [GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110];
+     
+     function checkMA416() {
+          coursein= "Medical Assistant 416";
+          if ($('#startClass').val() == "GEN110") {
+               arr= md416Arr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "GEN120") {
+               arr= md416Arr2;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS101") {
+               arr= md416Arr3;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS102") {
+               arr= md416Arr4;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS103") {
+               arr= md416Arr5;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS104") {
+               arr= md416Arr6;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS105") {
+               arr= md416Arr7;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS106") {
+               arr= md416Arr8;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS107") {
+               arr= md416Arr9;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS108") {
+               arr= md416Arr10;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS109") {
+               arr= md416Arr11;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "MAS110") {
+               arr= md416Arr12;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else if ($('#startClass').val() == "GEN120") {
+               arr= md416Arr13;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+          else{
+               arr= md416Arr1;
+               for (var t in arr){
+                    totalDays+= arr[t].days;
+               }
+          }
+     }
+     
+     // medical assitant 416 end ---------------------------------------------------------------------------------------------------->
      
      // Pharmacy Technician start ---------------------->
      
@@ -825,6 +1009,15 @@ $(document).ready(function(){
                }
                $('#startClass').material_select();
           }
+          if ($('#course').val() == "ma416"){
+               $('#startClass').html("");
+               $('#startClass').append('<option value="" disabled selected>Starting Class</option>');
+               for (var t in md416Arr1){
+                    console.log("working");
+                    $('#startClass').append('<option value="'+md416Arr1[t].courseCode+'">'+md416Arr1[t].courseCode+'</option>');
+               }
+               $('#startClass').material_select();
+          }
           if ($('#course').val() == "pht"){
                $('#startClass').html("");
                $('#startClass').append('<option value="" disabled selected>Starting Class</option>');
@@ -864,7 +1057,7 @@ $(document).ready(function(){
           stt.setDate(stt.getDate());
           var wDaytt= stt.getDay();
           
-          if ($('#course').val() == "wda" || $('#course').val() == "pht"){
+          if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416"){
                while (
                     (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
                     (stt.getDate() == 25 && parseInt(stt.getMonth()+1) == 12) ||
@@ -955,6 +1148,16 @@ $(document).ready(function(){
           
           // medical assistant checking end--------------------------------------------------------------------------------------------------->
           
+          // medical assistant 416 checking start---------------------->
+          
+          if ($('#course').val() == "ma416"){
+               externship= 30;
+               checkMA416();
+          }
+          
+          // medical assistant 416 checking end--------------------------------------------------------------------------------------------------->
+          
+          
           // Pharmacy Technician checking start------------------------------->
           
           if ($('#course').val() == "pht"){
@@ -1010,7 +1213,7 @@ $(document).ready(function(){
                     sDate.setDate(sDate.getDate());
                     var wDay= sDate.getDay();
                     
-                    if ($('#course').val() == "wda" || $('#course').val() == "pht"){
+                    if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416"){
                          while (
                               (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
                               (sDate.getDate() == 25 && parseInt(sDate.getMonth()+1) == 12) ||
@@ -1067,7 +1270,7 @@ $(document).ready(function(){
                          
                          console.log("var o in dates is "+nonWorkingDay);
                          
-                         if ($('#course').val() == "wda" || $('#course').val() == "pht"){
+                         if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416"){
                               while(nonWorkingDay == startDate ||
                                     wDay === 0 || wDay === 4 || wDay === 5 || wDay === 6 ||
                                    (sDate.getDate() == 24 && parseInt(sDate.getMonth()+1) == 12) ||
@@ -1206,7 +1409,7 @@ $(document).ready(function(){
                     
                     var midDay= new Date(midPoint);
                     var midD= new Date(midDay);
-                    var halfDays= totalDays/2;
+                    var halfDays= (totalDays+externship)/2;
                     
                     for (var i= 1; i < halfDays; i++) {
                          midD.setDate(midD.getDate() + 1);
