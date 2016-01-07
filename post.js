@@ -217,8 +217,8 @@ $(document).ready(function(){
      
      var MAS05= {
           courseCode: "MAS05",
-          hours: 140,
-          days: Math.ceil(140/4)
+          hours: 40,
+          days: Math.ceil(40/4)
      };
      
      var MAS06= {
@@ -229,8 +229,8 @@ $(document).ready(function(){
      
      var MAS07= {
           courseCode: "MAS07",
-          hours: 100,
-          days: Math.ceil(100/4)
+          hours: 200,
+          days: Math.ceil(200/4)
      };
      
      var mdArr1= [MAS01, CPR01, PCT02, HAE01, MAT01, MAT02, MAS02, MAS03, MAS04, MAS05, MAS06, MAS07, COM01, ECPS01];
@@ -1417,7 +1417,7 @@ $(document).ready(function(){
           // Patient Care Technician 516 start -------------------------------->
           
           if ($('#course').val() == "pct516"){
-               externship= 60;
+               externship= 15;
                checkPCT516();
           }
           
