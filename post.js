@@ -1285,7 +1285,7 @@ $(document).ready(function(){
                }
           }
           else{
-               while (
+               while(
                     (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
                     (stt.getDate() == 25 && parseInt(stt.getMonth()+1) == 12) ||
                     (stt.getDate() == 26 && parseInt(stt.getMonth()+1) == 12) ||
@@ -1302,7 +1302,6 @@ $(document).ready(function(){
                          wDaytt= stt.getDay();
                }
           }
-          
           
           var ttdd = stt.getDate();
           var ttmm = stt.getMonth() + 1;
@@ -1495,7 +1494,10 @@ $(document).ready(function(){
                     var sy = sDate.getFullYear();
                     
                     var startDate= smm + '/' + sdd + '/' + sy;
-
+                    console.log("start date after checking holidays, thursdays, fridays and weekends: "+startDate);
+                    tt= smm + '/' + sdd + '/' + sy;
+                    console.log("tt date: "+tt);
+                    
                     for (var o in dates) {
                          
                          var nonWD= new Date(dates[o]);
@@ -1529,6 +1531,9 @@ $(document).ready(function(){
                                    smm = sDate.getMonth() + 1;
                                    sy = sDate.getFullYear();
                                    startDate= smm + '/' + sdd + '/' + sy;
+                                   console.log("start date after checking nonworking days: "+startDate);
+                                   tt= smm + '/' + sdd + '/' + sy;
+                                   console.log("tt date: "+tt);
                               }
                          }
                          else {
@@ -1550,12 +1555,16 @@ $(document).ready(function(){
                                    smm = sDate.getMonth() + 1;
                                    sy = sDate.getFullYear();
                                    startDate= smm + '/' + sdd + '/' + sy;
+                                   console.log("start date after checking nonworking days: "+startDate);
+                                   tt= smm + '/' + sdd + '/' + sy;
+                                   console.log("tt date: "+tt);
                               }
                          }
                     }
-       
-                    //---------------->
+                    console.log("start date: "+startDate);
                     
+                    //---------------->
+                    console.log("tt date: "+tt);
                     var date = new Date(tt);
                     var newdate = new Date(date);
                
@@ -1623,8 +1632,6 @@ $(document).ready(function(){
                                    endDate = mm + '/' + dd + '/' + y;
                               }
                          }
-                         
-                         console.log(" date after loop: "+newdate.getDate()+" "+parseInt(newdate.getMonth()+1));
                     }
                  
                     dd = newdate.getDate();
