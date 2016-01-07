@@ -15,7 +15,6 @@ $(document).ready(function(){
      $('#group').change(addTitle);
      
      $('#btnspecialdates').click(function(){
-          localStorage.clear();
           $('#printinfo').toggleClass("hide");
           $('#action').toggleClass("hide");
           $('#clear').toggleClass("hide");
@@ -25,6 +24,7 @@ $(document).ready(function(){
      });
      
      $('#btnDone').click(function(){
+          localStorage.clear();
           saveDates();
           $('#printinfo').toggleClass("hide");
           $('#action').toggleClass("hide");
@@ -57,7 +57,7 @@ $(document).ready(function(){
 
      function saveDates() {
           var selectedDates = $('#nonWorkingD').multiDatesPicker('getDates');
-          console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX "+selectedDates);
+          console.log("selected dates "+selectedDates);
           var arrToSve= JSON.stringify(selectedDates);
           if (arrToSve.length > 0) {
                localStorage.setItem('date', arrToSve);
