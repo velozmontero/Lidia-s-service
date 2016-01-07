@@ -57,7 +57,6 @@ $(document).ready(function(){
 
      function saveDates() {
           var selectedDates = $('#nonWorkingD').multiDatesPicker('getDates');
-          console.log("selected dates "+selectedDates);
           var arrToSve= JSON.stringify(selectedDates);
           if (arrToSve.length > 0) {
                localStorage.setItem('date', arrToSve);
@@ -67,7 +66,6 @@ $(document).ready(function(){
      var test = localStorage.getItem("date");
      var obj = [];
      if (test) {
-          console.log(test);
           obj= JSON.parse(test);
           console.log(obj);
           
@@ -1325,8 +1323,6 @@ $(document).ready(function(){
                
                var nonWorkingDaytt= nwttmm + '/' + nwttdd + '/' + nwtty;
                
-               console.log("var o in dates is "+nonWorkingDaytt);
-               
                if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516"){
                     while(nonWorkingDaytt == tt ||
                          (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
@@ -1434,8 +1430,7 @@ $(document).ready(function(){
           // Web Developer Engineer end -------------------------------------------------------------------------------------------------->
           
           //****************************************************  INITIALIZERS END  ****************************************************
-          
-          console.log("total days "+totalDays);
+
           event.preventDefault();
           
           $('#response').removeClass('hide');
@@ -1514,8 +1509,6 @@ $(document).ready(function(){
                          
                          var nonWorkingDay= nwmm + '/' + nwdd + '/' + nwy;
                          
-                         console.log("var o in dates is "+nonWorkingDay);
-                         
                          if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516"){
                               while(nonWorkingDay == startDate ||
                                     wDay === 0 || wDay === 4 || wDay === 5 || wDay === 6 ||
@@ -1584,13 +1577,13 @@ $(document).ready(function(){
                               (newdate.getDate() ==  4 && parseInt(newdate.getMonth()+1) ==  7) ||
                               weekDay === 0 || weekDay === 6
                               ) {
-                                   console.log(newdate.getDate()+" "+parseInt(newdate.getMonth()+1));
+                                   
                                    newdate.setDate(newdate.getDate() + 1);
                                    weekDay= newdate.getDay();
                          }
                          
                          var dd = newdate.getDate();
-                         console.log(newdate.getDate()+" "+parseInt(newdate.getMonth()+1));
+                         
                          var mm = newdate.getMonth() + 1;
                          var y = newdate.getFullYear();
                     
@@ -1609,7 +1602,6 @@ $(document).ready(function(){
                               
                               var nonWorkingDayE= nwmmE + '/' + nwddE + '/' + nwyE;
                               
-                              console.log("var c in dates is "+ nonWorkingDayE);
                               while(nonWorkingDayE == endDate || wDay === 0 || wDay === 6 ||
                                    (newdate.getDate() == 24 && parseInt(newdate.getMonth()+1) == 12) ||
                                    (newdate.getDate() == 25 && parseInt(newdate.getMonth()+1) == 12) ||
@@ -1641,13 +1633,6 @@ $(document).ready(function(){
                
                     endDate = mm + '/' + dd + '/' + y;
                     
-                    console.log(newdate.getDate()+" "+parseInt(newdate.getMonth()+1));
-                    
-                    console.log("course days "+arr[x].days);
-                    console.log(c+" Start Date for course "+arr[x].courseCode+": "+startDate);
-                    console.log(c+" End Date for course "+arr[x].courseCode+": "+endDate);
-                    console.log("week day is: "+ weekDay);
-                    
                     lastDayInClass= startDate;
                     midPoint= startDate;
                     
@@ -1674,7 +1659,6 @@ $(document).ready(function(){
                               (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7) ||
                               middOFDW === 0 || middOFDW === 6
                               ) {
-                                   console.log(midD.getDate()+" "+parseInt(midD.getMonth()+1));
                                    midD.setDate(midD.getDate() + 1);
                                    middOFDW= midD.getDay();
                          }
@@ -1698,7 +1682,6 @@ $(document).ready(function(){
                               
                               var midDCInClass= midDCmm + '/' + midDCdd + '/' + midDCy;
                               
-                              console.log("var q in dates is "+ midDCInClass);
                               while(midDCInClass == midPoint || middOFDW === 0 || middOFDW === 6 ||
                                    (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
                                    (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
@@ -1746,7 +1729,6 @@ $(document).ready(function(){
                               (lastD.getDate() ==  4 && parseInt(lastD.getMonth()+1) ==  7) ||
                               dOFDW === 0 || dOFDW === 6
                               ) {
-                                   console.log(lastD.getDate()+" "+parseInt(lastD.getMonth()+1));
                                    lastD.setDate(lastD.getDate() + 1);
                                    dOFDW= lastD.getDay();
                          }
@@ -1770,7 +1752,6 @@ $(document).ready(function(){
                               
                               var lDCInClass= lDCmm + '/' + lDCdd + '/' + lDCy;
                               
-                              console.log("var l in dates is "+ lDCInClass);
                               while(lDCInClass == lastDayInClass || dOFDW === 0 || dOFDW === 6 ||
                                    (lastD.getDate() == 24 && parseInt(lastD.getMonth()+1) == 12) ||
                                    (lastD.getDate() == 25 && parseInt(lastD.getMonth()+1) == 12) ||
@@ -1816,7 +1797,6 @@ $(document).ready(function(){
                               (gDate.getDate() ==  4 && parseInt(gDate.getMonth()+1) ==  7) ||
                               dayOFDW === 0 || dayOFDW === 6
                               ) {
-                                   console.log(gDate.getDate()+" "+parseInt(gDate.getMonth()+1));
                                    gDate.setDate(gDate.getDate() + 1);
                                    dayOFDW= gDate.getDay();
                          }
@@ -1840,7 +1820,6 @@ $(document).ready(function(){
                               
                               var graduDay= gramm + '/' + gradd + '/' + gray;
                               
-                              console.log("var u in dates is "+graduDay);
                               while(graduDay == gradDay || dayOFDW === 0 || dayOFDW === 6 ||
                                    (gDate.getDate() == 24 && parseInt(gDate.getMonth()+1) == 12) ||
                                    (gDate.getDate() == 25 && parseInt(gDate.getMonth()+1) == 12) ||
@@ -1863,9 +1842,6 @@ $(document).ready(function(){
                               }
                          }
                     }
-                       
-                    console.log("the last day in class is "+ lastDayInClass);
-                    console.log("the graduation day is "+ gradDay);
                     
                     if ($('#course').val() == "wda"){
                         gradDay= lastDayInClass; 
@@ -1921,13 +1897,11 @@ $(document).ready(function(){
                          (newdate.getDate() ==  4 && parseInt(newdate.getMonth()+1) ==  7) ||
                          weekDay === 0 || weekDay === 6
                          ) {
-                              console.log(newdate.getDate()+" "+parseInt(newdate.getMonth()+1));
                               newdate.setDate(newdate.getDate() + 1);
                               weekDay= newdate.getDay();
                     }
                     
                     var dd = newdate.getDate();
-                    console.log(newdate.getDate()+" "+parseInt(newdate.getMonth()+1));
                     var mm = newdate.getMonth() + 1;
                     var y = newdate.getFullYear();
                
@@ -1946,7 +1920,6 @@ $(document).ready(function(){
                          
                          var nonWorkingDayE= nwmmE + '/' + nwddE + '/' + nwyE;
                          
-                         console.log("var c in dates is "+ nonWorkingDayE);
                          while(nonWorkingDayE == endDate || wDay === 0 || wDay === 6 ||
                               (newdate.getDate() == 24 && parseInt(newdate.getMonth()+1) == 12) ||
                               (newdate.getDate() == 25 && parseInt(newdate.getMonth()+1) == 12) ||
