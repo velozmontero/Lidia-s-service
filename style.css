@@ -64,11 +64,11 @@
 }
 
 .loading {
-    background-image: url("images/Preloader.gif");
+    background-image: url("images/fvi-logo.png");
     background-repeat: no-repeat;
     background-position: center;
     height: 128px;
-    z-index: 10000;
+    z-index: -1;
     top: 40%;
     left: 0;
     right: 0;

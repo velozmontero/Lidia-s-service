@@ -15,12 +15,22 @@ $(document).ready(function(){
      $('#group').change(addTitle);
      
      $('#btnspecialdates').click(function(){
+          localStorage.clear();
           $('#printinfo').toggleClass("hide");
           $('#action').toggleClass("hide");
           $('#clear').toggleClass("hide");
-          $(this).text(function(i, text){
-               return text=== "Done" ? "Special Dates" : "Done";     
-          })
+          $('#btnDone').toggleClass("hide");
+          $(this).toggleClass("hide");
+          $("#nonWorkingD").toggleClass("hide");
+     });
+     
+     $('#btnDone').click(function(){
+          saveDates();
+          $('#printinfo').toggleClass("hide");
+          $('#action').toggleClass("hide");
+          $('#clear').toggleClass("hide");
+          $('#btnspecialdates').toggleClass("hide");
+          $(this).toggleClass("hide");
           $("#nonWorkingD").toggleClass("hide");
      });
      
@@ -44,26 +54,79 @@ $(document).ready(function(){
           beforeShowDay: $.datepicker.noWeekends, 
           numberOfMonths: [3,4],
      });
-     
-     var today = new Date();
-     var y = today.getFullYear();
-     
-     $("#nonWorkingD").multiDatesPicker({
-          beforeShow: function (input, inst) {
-               setTimeout(function () {
-                    inst.dpDiv.css({
-                         position: "absolute",
-                         margin: "0 auto",
-                         left: 0,
-                         right: 0,
-                         top: "91px",
-                         "z-index": "1000"
-                    });
-               }, 0);
-          },
-          beforeShowDay: $.datepicker.noWeekends, 
-          numberOfMonths: [3,4]
-     });
+
+     function saveDates() {
+          var selectedDates = $('#nonWorkingD').multiDatesPicker('getDates');
+          console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX "+selectedDates);
+          var arrToSve= JSON.stringify(selectedDates);
+          if (arrToSve.length > 0) {
+               localStorage.setItem('date', arrToSve);
+          }  
+     }
+          
+     var test = localStorage.getItem("date");
+     var obj = [];
+     if (test) {
+          console.log(test);
+          obj= JSON.parse(test);
+          console.log(obj);
+          
+          if (obj.length > 0) {
+               $("#nonWorkingD").multiDatesPicker({
+                    beforeShow: function (input, inst) {
+                         setTimeout(function () {
+                              inst.dpDiv.css({
+                                   position: "absolute",
+                                   margin: "0 auto",
+                                   left: 0,
+                                   right: 0,
+                                   top: "91px",
+                                   "z-index": "1000"
+                              });
+                         }, 0);
+                    },
+                    addDates: obj,
+                    beforeShowDay: $.datepicker.noWeekends, 
+                    numberOfMonths: [3,4]
+               });
+          }
+          else{
+               $("#nonWorkingD").multiDatesPicker({
+                    beforeShow: function (input, inst) {
+                         setTimeout(function () {
+                              inst.dpDiv.css({
+                                   position: "absolute",
+                                   margin: "0 auto",
+                                   left: 0,
+                                   right: 0,
+                                   top: "91px",
+                                   "z-index": "1000"
+                              });
+                         }, 0);
+                    },
+                    beforeShowDay: $.datepicker.noWeekends, 
+                    numberOfMonths: [3,4]
+               });
+          }         
+     }
+     else{
+          $("#nonWorkingD").multiDatesPicker({
+               beforeShow: function (input, inst) {
+                    setTimeout(function () {
+                         inst.dpDiv.css({
+                              position: "absolute",
+                              margin: "0 auto",
+                              left: 0,
+                              right: 0,
+                              top: "91px",
+                              "z-index": "1000"
+                         });
+                    }, 0);
+               },
+               beforeShowDay: $.datepicker.noWeekends, 
+               numberOfMonths: [3,4]
+          }); 
+     }
      
      $('select').material_select();
      
@@ -72,14 +135,16 @@ $(document).ready(function(){
                //do nothing
           }
           else {
+               $('#loadingDiv').addClass('hide');
                postInfo();
           }
      });
      
      $('#clear').click(function(){
-         $('#response').addClass('hide'); 
-         $('#info').html("");
-         $('#startDAte').val("");
+          $('#response').addClass('hide'); 
+          $('#info').html("");
+          $('#startDAte').val("");
+          $('#loadingDiv').removeClass('hide');
      });
   
      // medical assistant start ---------------------->
@@ -905,7 +970,7 @@ $(document).ready(function(){
      var pct516Arr10= [PCT108, PCTGEN110, PCTGEN120, PCT101, PCT102, PCT103, PCT104, PCT105, PCT106, PCT107];
      
      function checkPCT516() {
-          coursein= "Patient Care Technician";
+          coursein= "Patient Care Technician 516";
           if ($('#startClass').val() == "PCTGEN110") {
                arr= pct516Arr1;
                for (var t in arr){
@@ -1194,6 +1259,7 @@ $(document).ready(function(){
      
      function postInfo(){
           event.preventDefault();
+          dates = $('#nonWorkingD').multiDatesPicker('getDates');
           var tt= document.getElementById('startDAte').value;
   
           var sDatett= new Date(tt);
@@ -1260,25 +1326,51 @@ $(document).ready(function(){
                var nonWorkingDaytt= nwttmm + '/' + nwttdd + '/' + nwtty;
                
                console.log("var o in dates is "+nonWorkingDaytt);
-               while(nonWorkingDaytt == tt || wDaytt === 0 || wDaytt === 6 ||
-                    (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
-                    (stt.getDate() == 25 && parseInt(stt.getMonth()+1) == 12) ||
-                    (stt.getDate() == 26 && parseInt(stt.getMonth()+1) == 12) ||
-                    (stt.getDate() == 27 && parseInt(stt.getMonth()+1) == 12) ||
-                    (stt.getDate() == 28 && parseInt(stt.getMonth()+1) == 12) ||
-                    (stt.getDate() == 29 && parseInt(stt.getMonth()+1) == 12) ||
-                    (stt.getDate() == 30 && parseInt(stt.getMonth()+1) == 12) ||
-                    (stt.getDate() == 31 && parseInt(stt.getMonth()+1) == 12) ||
-                    (stt.getDate() == 1 && parseInt(stt.getMonth()+1) == 1) ||
-                    (stt.getDate() == 4 && parseInt(stt.getMonth()+1) == 7)   
-                    ) {
-                    stt.setDate( stt.getDate() + 1);
-                    wDaytt=  stt.getDay();
-                    ttdd = stt.getDate();
-                    ttmm = stt.getMonth() + 1;
-                    tty = stt.getFullYear();
-                    
-                    tt= ttmm + '/' + ttdd + '/' + tty;
+               
+               if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516"){
+                    while(nonWorkingDaytt == tt ||
+                         (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 25 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 26 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 27 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 28 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 29 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 30 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 31 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 1 && parseInt(stt.getMonth()+1) == 1) ||
+                         (stt.getDate() == 4 && parseInt(stt.getMonth()+1) == 7) ||
+                         wDaytt === 0 || wDaytt === 4 || wDaytt === 5 || wDaytt === 6 
+                         ) { 
+                         stt.setDate( stt.getDate() + 1);
+                         wDaytt=  stt.getDay();
+                         ttdd = stt.getDate();
+                         ttmm = stt.getMonth() + 1;
+                         tty = stt.getFullYear();
+                         
+                         tt= ttmm + '/' + ttdd + '/' + tty;
+                         }
+                    }
+               else{
+                    while(nonWorkingDaytt == tt || wDaytt === 0 || wDaytt === 6 ||
+                         (stt.getDate() == 24 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 25 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 26 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 27 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 28 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 29 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 30 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 31 && parseInt(stt.getMonth()+1) == 12) ||
+                         (stt.getDate() == 1 && parseInt(stt.getMonth()+1) == 1) ||
+                         (stt.getDate() == 4 && parseInt(stt.getMonth()+1) == 7)   
+                         ) {
+                         stt.setDate( stt.getDate() + 1);
+                         wDaytt=  stt.getDay();
+                         ttdd = stt.getDate();
+                         ttmm = stt.getMonth() + 1;
+                         tty = stt.getFullYear();
+                         
+                         tt= ttmm + '/' + ttdd + '/' + tty;
+                    }
                }
           }
           
@@ -1348,7 +1440,6 @@ $(document).ready(function(){
           
           $('#response').removeClass('hide');
           
-          dates = $('#nonWorkingD').multiDatesPicker('getDates');
           var midPoint;
           var lastDayInClass;
           var course= $('#course').val();
