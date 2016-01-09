@@ -1,4 +1,5 @@
 $(document).ready(function(){
+     var startDate;
      var addaDay= 0;
      var totalDays = 0;
      var dates= [];
@@ -1342,9 +1343,6 @@ $(document).ready(function(){
                     (stt.getDate() == 4 && parseInt(stt.getMonth()+1) == 7) ||
                     wDaytt === 0 || wDaytt === 4 || wDaytt === 5 || wDaytt === 6 
                     ) {
-                         if (wDaytt === 4 || wDaytt === 5) {
-                              addaDay+=1;   
-                         }
                          stt.setDate(stt.getDate() + 1);
                          wDaytt= stt.getDay();
                }
@@ -1401,9 +1399,6 @@ $(document).ready(function(){
                          (stt.getDate() == 4 && parseInt(stt.getMonth()+1) == 7) ||
                          wDaytt === 0 || wDaytt === 4 || wDaytt === 5 || wDaytt === 6 
                          ) {
-                              if (wDaytt === 4 || wDaytt === 5) {
-                                   addaDay+=1;   
-                              }
                               stt.setDate( stt.getDate() + 1);
                               wDaytt=  stt.getDay();
                               ttdd = stt.getDate();
@@ -1472,9 +1467,7 @@ $(document).ready(function(){
                               (sDate.getDate() == 4 && parseInt(sDate.getMonth()+1) == 7) ||
                               wDay === 0 || wDay === 4 || wDay === 5 || wDay === 6 
                               ) {
-                                   if (wDay === 4 || wDay === 5) {
-                                        addaDay+=1;   
-                                   }
+
                                    sDate.setDate(sDate.getDate() + 1);
                                    wDay= sDate.getDay();
                          }
@@ -1501,7 +1494,7 @@ $(document).ready(function(){
                     var smm = sDate.getMonth() + 1;
                     var sy = sDate.getFullYear();
                     
-                    var startDate= smm + '/' + sdd + '/' + sy;
+                    startDate= smm + '/' + sdd + '/' + sy;
                     console.log("start date after checking holidays, thursdays, fridays and weekends: "+startDate);
                     tt= smm + '/' + sdd + '/' + sy;
                     console.log("tt date: "+tt);
@@ -1533,9 +1526,7 @@ $(document).ready(function(){
                                    (sDate.getDate() == 1 && parseInt(sDate.getMonth()+1) == 1) ||
                                    (sDate.getDate() == 4 && parseInt(sDate.getMonth()+1) == 7)   
                                    ) {
-                                        if (wDay === 4 || wDay === 5) {
-                                             addaDay+=1;   
-                                        }
+                              
                                         sDate.setDate(sDate.getDate() + 1);
                                         wDay= sDate.getDay();
                                         sdd = sDate.getDate();
@@ -1654,11 +1645,16 @@ $(document).ready(function(){
                     lastDayInClass= startDate;
                     midPoint= startDate;
                     
-                    //---------------------------------------------------------------------------------------------->
+                    // where the magic happens --------------------------------------------------------------------->
                     
+                    if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516"){
+                         getStartDay();
+                    }
+                    
+                    //---------------------------------------------------------------------------------------------->
                     var midDay= new Date(midPoint);
                     var midD= new Date(midDay);
-                    var halfDays= (totalDays+externship)/2;
+                    var halfDays= (addaDay+totalDays+externship)/2;
                     
                     for (var i= 1; i < halfDays; i++) {
                          midD.setDate(midD.getDate() + 1);
@@ -1729,16 +1725,48 @@ $(document).ready(function(){
                     
                     var lastDay= new Date(lastDayInClass);
                     var lastD= new Date(lastDay);
-                    
-                    if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516"){
-                             
-                    } 
-                    else{
-                         for (var i= 1; i < totalDays; i++) {
-                              lastD.setDate(lastD.getDate() + 1);
-                              var dOFDW= lastD.getDay();    
+               
+                    for (var i= 1; i < (totalDays+addaDay); i++) {
+                         lastD.setDate(lastD.getDate() + 1);
+                         var dOFDW= lastD.getDay();    
+                         
+                         while (
+                              (lastD.getDate() == 24 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 25 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 26 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 27 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 28 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 29 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 30 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() == 31 && parseInt(lastD.getMonth()+1) == 12) ||
+                              (lastD.getDate() ==  1 && parseInt(lastD.getMonth()+1) ==  1) ||
+                              (lastD.getDate() ==  4 && parseInt(lastD.getMonth()+1) ==  7) ||
+                              dOFDW === 0 || dOFDW === 6
+                              ) {
+                                   lastD.setDate(lastD.getDate() + 1);
+                                   dOFDW= lastD.getDay();
+                         }
+                         
+                         var ldd = lastD.getDate();
+                         var lmm = lastD.getMonth() + 1;
+                         var ly = lastD.getFullYear();
+                         
+                         lastDayInClass= lmm + '/' + ldd + '/' + ly;
+                         
+                         for (var l in dates) {
                               
-                              while (
+                              var lastDin= new Date(dates[l]);
+                              var lDC= new Date(lastDin);
+                              
+                              lDC.setDate(lDC.getDate());
+                              
+                              var lDCdd = lDC.getDate();
+                              var lDCmm = lDC.getMonth() + 1;
+                              var lDCy = lDC.getFullYear();
+                              
+                              var lDCInClass= lDCmm + '/' + lDCdd + '/' + lDCy;
+                              
+                              while(lDCInClass == lastDayInClass || dOFDW === 0 || dOFDW === 6 ||
                                    (lastD.getDate() == 24 && parseInt(lastD.getMonth()+1) == 12) ||
                                    (lastD.getDate() == 25 && parseInt(lastD.getMonth()+1) == 12) ||
                                    (lastD.getDate() == 26 && parseInt(lastD.getMonth()+1) == 12) ||
@@ -1748,57 +1776,21 @@ $(document).ready(function(){
                                    (lastD.getDate() == 30 && parseInt(lastD.getMonth()+1) == 12) ||
                                    (lastD.getDate() == 31 && parseInt(lastD.getMonth()+1) == 12) ||
                                    (lastD.getDate() ==  1 && parseInt(lastD.getMonth()+1) ==  1) ||
-                                   (lastD.getDate() ==  4 && parseInt(lastD.getMonth()+1) ==  7) ||
-                                   dOFDW === 0 || dOFDW === 6
+                                   (lastD.getDate() ==  4 && parseInt(lastD.getMonth()+1) ==  7) 
                                    ) {
-                                        lastD.setDate(lastD.getDate() + 1);
-                                        dOFDW= lastD.getDay();
+                                   lastD.setDate(lastD.getDate() + 1);
+                                   ldd = lastD.getDate();
+                                   lmm = lastD.getMonth() + 1;
+                                   ly = lastD.getFullYear();
+                                   
+                                   lastDayInClass= lmm + '/' + ldd + '/' + ly;
+                                   dOFDW= lastD.getDay();
+                                   console.log("last day in class after filter: "+lastDayInClass);
                               }
-                              
-                              var ldd = lastD.getDate();
-                              var lmm = lastD.getMonth() + 1;
-                              var ly = lastD.getFullYear();
-                              
-                              lastDayInClass= lmm + '/' + ldd + '/' + ly;
-                              
-                              for (var l in dates) {
-                                   
-                                   var lastDin= new Date(dates[l]);
-                                   var lDC= new Date(lastDin);
-                                   
-                                   lDC.setDate(lDC.getDate());
-                                   
-                                   var lDCdd = lDC.getDate();
-                                   var lDCmm = lDC.getMonth() + 1;
-                                   var lDCy = lDC.getFullYear();
-                                   
-                                   var lDCInClass= lDCmm + '/' + lDCdd + '/' + lDCy;
-                                   
-                                   while(lDCInClass == lastDayInClass || dOFDW === 0 || dOFDW === 6 ||
-                                        (lastD.getDate() == 24 && parseInt(lastD.getMonth()+1) == 12) ||
-                                        (lastD.getDate() == 25 && parseInt(lastD.getMonth()+1) == 12) ||
-                                        (lastD.getDate() == 26 && parseInt(lastD.getMonth()+1) == 12) ||
-                                        (lastD.getDate() == 27 && parseInt(lastD.getMonth()+1) == 12) ||
-                                        (lastD.getDate() == 28 && parseInt(lastD.getMonth()+1) == 12) ||
-                                        (lastD.getDate() == 29 && parseInt(lastD.getMonth()+1) == 12) ||
-                                        (lastD.getDate() == 30 && parseInt(lastD.getMonth()+1) == 12) ||
-                                        (lastD.getDate() == 31 && parseInt(lastD.getMonth()+1) == 12) ||
-                                        (lastD.getDate() ==  1 && parseInt(lastD.getMonth()+1) ==  1) ||
-                                        (lastD.getDate() ==  4 && parseInt(lastD.getMonth()+1) ==  7) 
-                                        ) {
-                                        lastD.setDate(lastD.getDate() + 1);
-                                        ldd = lastD.getDate();
-                                        lmm = lastD.getMonth() + 1;
-                                        ly = lastD.getFullYear();
-                                        
-                                        lastDayInClass= lmm + '/' + ldd + '/' + ly;
-                                        dOFDW= lastD.getDay();
-                                        console.log("last day in class after filter: "+lastDayInClass);
-                                   }
-                              }     
-                         }
-                            
+                         }     
                     }
+                            
+                    
                     
                     //---------------------------------------------------------------------------------------------->
                     
@@ -1969,13 +1961,283 @@ $(document).ready(function(){
                     
                     c++; 
                     tt= endDate;
+                    addaDay= 0;
                }
           }
           getStartAndEndDate();
           $('#startDAte').val(tt);
           totalDays = 0;
           externship= 0;
-          console.log("total days added"+addaDay);
-          addaDay= 0;
+          
+          ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          
+          function getStartDay(){     
+               var LDCttQ;
+               var LDCttS= startDate;
+               var LDCDatett= new Date(LDCttS);
+               var LDCtt= new Date(LDCDatett);
+           
+               LDCtt.setDate(LDCtt.getDate());
+               var LDCwDaytt= LDCtt.getDay();
+               while (
+                    (LDCtt.getDate() == 24 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                    (LDCtt.getDate() == 25 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                    (LDCtt.getDate() == 26 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                    (LDCtt.getDate() == 27 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                    (LDCtt.getDate() == 28 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                    (LDCtt.getDate() == 29 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                    (LDCtt.getDate() == 30 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                    (LDCtt.getDate() == 31 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                    (LDCtt.getDate() == 1 && parseInt(LDCtt.getMonth()+1) == 1) ||
+                    (LDCtt.getDate() == 4 && parseInt(LDCtt.getMonth()+1) == 7) ||
+                    LDCwDaytt === 0 || LDCwDaytt === 4 || LDCwDaytt === 5 || LDCwDaytt === 6 
+               ) {
+                    if (LDCwDaytt === 4 || LDCwDaytt === 5) {
+                         addaDay+=1;   
+                    }
+                    LDCtt.setDate(LDCtt.getDate() + 1);
+                    LDCwDaytt= LDCtt.getDay();
+               }
+               
+               var LDCttdd = LDCtt.getDate();
+               var LDCttmm = LDCtt.getMonth() + 1;
+               var LDCtty = LDCtt.getFullYear();
+               
+               var LDCttD= LDCttmm + '/' + LDCttdd + '/' + LDCtty;
+               
+               //--------------------------
+               
+               for (var c in dates) {
+                    
+                    var nonWDE= new Date(dates[c]);
+                    var nWorkingDE= new Date(nonWDE);
+                    
+                    nWorkingDE.setDate(nWorkingDE.getDate());
+                    
+                    var nwddE = nWorkingDE.getDate();
+                    var nwmmE = nWorkingDE.getMonth() + 1;
+                    var nwyE = nWorkingDE.getFullYear();
+                    
+                    var nonWorkingDayE= nwmmE + '/' + nwddE + '/' + nwyE;
+                    
+                    while(nonWorkingDayE == LDCttD || 
+                         (LDCtt.getDate() == 24 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                              (LDCtt.getDate() == 25 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                              (LDCtt.getDate() == 26 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                              (LDCtt.getDate() == 27 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                              (LDCtt.getDate() == 28 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                              (LDCtt.getDate() == 29 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                              (LDCtt.getDate() == 30 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                              (LDCtt.getDate() == 31 && parseInt(LDCtt.getMonth()+1) == 12) ||
+                              (LDCtt.getDate() == 1 && parseInt(LDCtt.getMonth()+1) == 1) ||
+                              (LDCtt.getDate() == 4 && parseInt(LDCtt.getMonth()+1) == 7) ||
+                              LDCwDaytt === 0 || LDCwDaytt === 4 || LDCwDaytt === 5 || LDCwDaytt === 6 
+                         ) {
+                              if (LDCwDaytt === 4 || LDCwDaytt === 5) {
+                                   addaDay+=1;   
+                              }
+                              LDCtt.setDate(LDCtt.getDate() + 1);
+                              LDCwDaytt= LDCtt.getDay();
+
+                              LDCttdd = LDCtt.getDate();
+                              LDCttmm = LDCtt.getMonth() + 1;
+                              LDCtty = LDCtt.getFullYear();
+                              
+                              LDCttD= LDCttmm + '/' + LDCttdd + '/' + LDCtty;
+                         }
+               }
+               
+               //-------------------------------
+               
+               var testDay= LDCttD;
+               console.log("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy "+LDCttD);
+               
+               LDCtt.setDate(LDCtt.getDate() + 1);
+               LDCwDaytt= LDCtt.getDay();
+               LDCttdd = LDCtt.getDate();
+               LDCttmm = LDCtt.getMonth() + 1;
+               LDCtty = LDCtt.getFullYear();
+               
+               LDCttD= LDCttmm + '/' + LDCttdd + '/' + LDCtty;
+               
+               for (var n= 1; n < arr.length; n++){
+                    
+                    for (var i= 1; i < (arr[n].days); i++) {
+                         console.log("pppppppppppppppppppppppppppppppppp "+arr[n].courseCode);
+                         LDCttQ= LDCttD;
+                         var LDCDatettQ= new Date(LDCttQ);
+                         var LDCttQ= new Date(LDCDatettQ);
+                         
+                         var LDCttddQ = LDCttQ.getDate();
+                         var LDCttmmQ = LDCttQ.getMonth() + 1;
+                         var LDCttyQ = LDCttQ.getFullYear();
+                         
+                         var LDCttQCHECK= LDCttmmQ + '/' + LDCttddQ + '/' + LDCttyQ;
+                         //console.log("XXXXXXXXXXXXXXXXX CHECK "+LDCttQCHECK);
+                         
+                         LDCttQ.setDate(LDCttQ.getDate() + 1);
+                         var LDCwDaytt= LDCttQ.getDay();
+                         LDCttddQ = LDCttQ.getDate();
+                         LDCttmmQ = LDCttQ.getMonth() + 1;
+                         LDCttyQ = LDCttQ.getFullYear();
+                         
+                         var LDCttQFG= LDCttmmQ + '/' + LDCttddQ + '/' + LDCttyQ;
+                         
+                         var LDCDatettQZZ= new Date(LDCttQFG);
+                         var LDCttQZZ= new Date(LDCDatettQZZ);
+                         LDCttQZZ.setDate(LDCttQZZ.getDate());
+                         var LDCwDayttZZ= LDCttQZZ.getDay();
+                         
+                         while(nonWorkingDayE == LDCttQFG || 
+                              (LDCttQZZ.getDate() == 24 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                              (LDCttQZZ.getDate() == 25 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                              (LDCttQZZ.getDate() == 26 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                              (LDCttQZZ.getDate() == 27 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                              (LDCttQZZ.getDate() == 28 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                              (LDCttQZZ.getDate() == 29 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                              (LDCttQZZ.getDate() == 30 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                              (LDCttQZZ.getDate() == 31 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                              (LDCttQZZ.getDate() == 1 && parseInt(LDCttQZZ.getMonth()+1) == 1) ||
+                              (LDCttQZZ.getDate() == 4 && parseInt(LDCttQZZ.getMonth()+1) == 7) ||
+                              LDCwDayttZZ === 0 || LDCwDayttZZ === 6 
+                              ){
+                                   LDCttQZZ.setDate(LDCttQZZ.getDate() + 1);
+                                   LDCwDayttZZ= LDCttQZZ.getDay();
+                               
+                                   LDCttddQ = LDCttQZZ.getDate();
+                                   LDCttmmQ = LDCttQZZ.getMonth() + 1;
+                                   LDCttyQ = LDCttQZZ.getFullYear();
+                                        
+                                   LDCttQFG= LDCttmmQ + '/' + LDCttddQ + '/' + LDCttyQ;
+                              }
+                              LDCttQ=LDCttQFG;
+                              
+                         for (var c in dates) {
+                              var nonWDE= new Date(dates[c]);
+                              var nWorkingDE= new Date(nonWDE);
+                              
+                              nWorkingDE.setDate(nWorkingDE.getDate());
+                              
+                              var nwddE = nWorkingDE.getDate();
+                              var nwmmE = nWorkingDE.getMonth() + 1;
+                              var nwyE = nWorkingDE.getFullYear();
+                              
+                              var nonWorkingDayE= nwmmE + '/' + nwddE + '/' + nwyE;
+                              
+                              while(nonWorkingDayE == LDCttQFG || 
+                                   (LDCttQZZ.getDate() == 24 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                                   (LDCttQZZ.getDate() == 25 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                                   (LDCttQZZ.getDate() == 26 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                                   (LDCttQZZ.getDate() == 27 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                                   (LDCttQZZ.getDate() == 28 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                                   (LDCttQZZ.getDate() == 29 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                                   (LDCttQZZ.getDate() == 30 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                                   (LDCttQZZ.getDate() == 31 && parseInt(LDCttQZZ.getMonth()+1) == 12) ||
+                                   (LDCttQZZ.getDate() == 1 && parseInt(LDCttQZZ.getMonth()+1) == 1) ||
+                                   (LDCttQZZ.getDate() == 4 && parseInt(LDCttQZZ.getMonth()+1) == 7) ||
+                                   LDCwDayttZZ === 0 || LDCwDayttZZ === 6 
+                                   ){
+                                        LDCttQZZ.setDate(LDCttQZZ.getDate() + 1);
+                                        LDCwDayttZZ= LDCttQZZ.getDay();
+                                    
+                                        LDCttddQ = LDCttQZZ.getDate();
+                                        LDCttmmQ = LDCttQZZ.getMonth() + 1;
+                                        LDCttyQ = LDCttQZZ.getFullYear();
+                                             
+                                        LDCttQFG= LDCttmmQ + '/' + LDCttddQ + '/' + LDCttyQ;
+                                   }
+                                   
+                                   LDCttQ=LDCttQFG;
+                         }
+                         LDCttD= LDCttQ;
+                         //console.log("DAY IN LOOP: "+LDCttQ+"DAY OF THE WEEK "+ LDCwDaytt);
+                    }
+                    var LDCttQR= LDCttD;
+                    var LDCDatettQR= new Date(LDCttQR);
+                    var LDCttQR= new Date(LDCDatettQR);
+                    
+                    var LDCwDayttR= LDCttQR.getDay();
+                    while(
+                         (LDCttQR.getDate() == 24 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                         (LDCttQR.getDate() == 25 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                         (LDCttQR.getDate() == 26 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                         (LDCttQR.getDate() == 27 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                         (LDCttQR.getDate() == 28 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                         (LDCttQR.getDate() == 29 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                         (LDCttQR.getDate() == 30 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                         (LDCttQR.getDate() == 31 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                         (LDCttQR.getDate() == 1 && parseInt(LDCttQR.getMonth()+1) == 1) ||
+                         (LDCttQR.getDate() == 4 && parseInt(LDCttQR.getMonth()+1) == 7) ||
+                         LDCwDayttR === 0 || LDCwDayttR === 4 || LDCwDayttR === 5 || LDCwDayttR === 6 
+                         ) {
+                              if (LDCwDayttR === 4 || LDCwDayttR === 5) {
+                                   addaDay+=1;   
+                              }
+                              LDCttQR.setDate(LDCttQR.getDate() + 1);
+                              LDCwDayttR= LDCttQR.getDay();
+                          }
+                          
+                    var LDCttddQR = LDCttQR.getDate();
+                    var LDCttmmQR = LDCttQR.getMonth() + 1;
+                    var LDCttyQR = LDCttQR.getFullYear();
+                    
+                    var LDCttQRA= LDCttmmQR + '/' + LDCttddQR + '/' + LDCttyQR;
+                    
+                    for (var c in dates) {
+               
+                         var nonWDE= new Date(dates[c]);
+                         var nWorkingDE= new Date(nonWDE);
+                         
+                         nWorkingDE.setDate(nWorkingDE.getDate());
+                         
+                         var nwddE = nWorkingDE.getDate();
+                         var nwmmE = nWorkingDE.getMonth() + 1;
+                         var nwyE = nWorkingDE.getFullYear();
+                         
+                         var nonWorkingDayE= nwmmE + '/' + nwddE + '/' + nwyE;
+                         
+                         while(nonWorkingDayE == LDCttQRA || 
+                              (LDCttQR.getDate() == 24 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                              (LDCttQR.getDate() == 25 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                              (LDCttQR.getDate() == 26 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                              (LDCttQR.getDate() == 27 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                              (LDCttQR.getDate() == 28 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                              (LDCttQR.getDate() == 29 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                              (LDCttQR.getDate() == 30 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                              (LDCttQR.getDate() == 31 && parseInt(LDCttQR.getMonth()+1) == 12) ||
+                              (LDCttQR.getDate() == 1 && parseInt(LDCttQR.getMonth()+1) == 1) ||
+                              (LDCttQR.getDate() == 4 && parseInt(LDCttQR.getMonth()+1) == 7) ||
+                              LDCwDayttR === 0 || LDCwDayttR === 4 || LDCwDayttR === 5 || LDCwDayttR === 6 
+                              ){
+                                   if (LDCwDayttR === 4 || LDCwDayttR === 5) {
+                                        addaDay+=1;   
+                                   }
+                                   LDCttQR.setDate(LDCttQR.getDate() + 1);
+                                   LDCwDayttR= LDCttQR.getDay();
+                               
+                                   LDCttddQR = LDCttQR.getDate();
+                                   LDCttmmQR = LDCttQR.getMonth() + 1;
+                                   LDCttyQR = LDCttQR.getFullYear();
+                                   LDCttQRA= LDCttmmQR + '/' + LDCttddQR + '/' + LDCttyQR; 
+                              }
+                    }
+                    
+                    console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX THE MAN "+LDCttQRA);
+                    
+                    LDCttQR.setDate(LDCttQR.getDate() + 1);
+                    LDCttddQR = LDCttQR.getDate();
+                    LDCttmmQR = LDCttQR.getMonth() + 1;
+                    LDCttyQR = LDCttQR.getFullYear();
+                    LDCttQRA= LDCttmmQR + '/' + LDCttddQR + '/' + LDCttyQR; 
+                    LDCttD= LDCttQRA;
+     
+                    //console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX "+LDCttD);
+                    console.log("days to add: "+addaDay);
+                    
+               }     
+          } 
+          
      };
 });
+
+        
