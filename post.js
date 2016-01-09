@@ -7,6 +7,7 @@ $(document).ready(function(){
      var coursein= "";
      var externship= 0;
      var gradDay;
+     
      moment().format();
      
      function addTitle() {
@@ -1042,7 +1043,7 @@ $(document).ready(function(){
      
      // Web Developer Engineer start --------------------------------------------->
      
-      var WEB1010 = {
+     var WEB1010 = {
           courseCode: "WEB1010",
           hours: 60,
           days: Math.ceil(60/4)
@@ -1119,6 +1120,18 @@ $(document).ready(function(){
      var wdaArr9= [ROR1000, WEB3000, CAP2000, WEB1010, WEB1000, WEB2000, WEB2010, WEB2020, WEB2040, WEB2900, WEB2910];
      var wdaArr10= [WEB3000, CAP2000, WEB1010, WEB1000, WEB2000, WEB2010, WEB2020, WEB2040, WEB2900, WEB2910, ROR1000];
      var wdaArr11= [CAP2000, WEB1010, WEB1000, WEB2000, WEB2010, WEB2020, WEB2040, WEB2900, WEB2910, ROR1000, WEB3000];
+     
+     var wdaMasterArr1 = [wdaArr1, wdaArr2, wdaArr3, wdaArr4, wdaArr5, wdaArr6, wdaArr7, wdaArr8, wdaArr9, wdaArr10, wdaArr11];
+     var wdaMasterArr2 = [wdaArr2, wdaArr3, wdaArr4, wdaArr5, wdaArr6, wdaArr7, wdaArr8, wdaArr9, wdaArr10, wdaArr11, wdaArr1];
+     var wdaMasterArr3 = [wdaArr3, wdaArr4, wdaArr5, wdaArr6, wdaArr7, wdaArr8, wdaArr9, wdaArr10, wdaArr11, wdaArr1, wdaArr2];
+     var wdaMasterArr4 = [wdaArr4, wdaArr5, wdaArr6, wdaArr7, wdaArr8, wdaArr9, wdaArr10, wdaArr11, wdaArr1, wdaArr2, wdaArr3];
+     var wdaMasterArr5 = [wdaArr5, wdaArr6, wdaArr7, wdaArr8, wdaArr9, wdaArr10, wdaArr11, wdaArr1, wdaArr2, wdaArr3, wdaArr4];
+     var wdaMasterArr6 = [wdaArr6, wdaArr7, wdaArr8, wdaArr9, wdaArr10, wdaArr11, wdaArr1, wdaArr2, wdaArr3, wdaArr4, wdaArr5];
+     var wdaMasterArr7 = [wdaArr7, wdaArr8, wdaArr9, wdaArr10, wdaArr11, wdaArr1, wdaArr2, wdaArr3, wdaArr4, wdaArr5, wdaArr6];
+     var wdaMasterArr8 = [wdaArr8, wdaArr9, wdaArr10, wdaArr11, wdaArr1, wdaArr2, wdaArr3, wdaArr4, wdaArr5, wdaArr6, wdaArr7];
+     var wdaMasterArr9 = [wdaArr9, wdaArr10, wdaArr11, wdaArr1, wdaArr2, wdaArr3, wdaArr4, wdaArr5, wdaArr6, wdaArr7, wdaArr8];
+     var wdaMasterArr10 = [wdaArr10, wdaArr11, wdaArr1, wdaArr2, wdaArr3, wdaArr4, wdaArr5, wdaArr6, wdaArr7, wdaArr8, wdaArr9];
+     var wdaMasterArr11 = [wdaArr11, wdaArr1, wdaArr2, wdaArr3, wdaArr4, wdaArr5, wdaArr6, wdaArr7, wdaArr8, wdaArr9, wdaArr10];
      
      function checkWDA() {
           coursein= "Web Developer Engineer";
@@ -2000,10 +2013,10 @@ $(document).ready(function(){
           
           LDCttD= LDCttmm + '/' + LDCttdd + '/' + LDCtty;
           
-          for (var n= 0; n < arr.length; n++){
-               
+          for (var n=0; n < arr.length-1; n++){
+               console.log("pppppppppppppppppppppppppppppppppp "+arr[n].courseCode);
+               console.log("pppppppppppppppppppppppppppppppppp "+arr[n].days);
                for (var i= 1; i < (arr[n].days); i++) {
-                    console.log("pppppppppppppppppppppppppppppppppp "+arr[n].courseCode);
                     LDCttQ= LDCttD;
                     var LDCDatettQ= new Date(LDCttQ);
                     var LDCttQ= new Date(LDCDatettQ);
