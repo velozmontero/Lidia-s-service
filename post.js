@@ -1022,70 +1022,92 @@ $(document).ready(function(){
      var pct516Arr9= [PCT107, PCT108, PCTGEN110, PCTGEN120, PCT101, PCT102, PCT103, PCT104, PCT105, PCT106];
      var pct516Arr10= [PCT108, PCTGEN110, PCTGEN120, PCT101, PCT102, PCT103, PCT104, PCT105, PCT106, PCT107];
      
+     var pct516MasterArr1= [pct516Arr1, pct516Arr2, pct516Arr3, pct516Arr4, pct516Arr5, pct516Arr6, pct516Arr7, pct516Arr8, pct516Arr9, pct516Arr10];
+     var pct516MasterArr2= [pct516Arr2, pct516Arr3, pct516Arr4, pct516Arr5, pct516Arr6, pct516Arr7, pct516Arr8, pct516Arr9, pct516Arr10, pct516Arr1];
+     var pct516MasterArr3= [pct516Arr3, pct516Arr4, pct516Arr5, pct516Arr6, pct516Arr7, pct516Arr8, pct516Arr9, pct516Arr10, pct516Arr1, pct516Arr2];
+     var pct516MasterArr4= [pct516Arr4, pct516Arr5, pct516Arr6, pct516Arr7, pct516Arr8, pct516Arr9, pct516Arr10, pct516Arr1, pct516Arr2, pct516Arr3];
+     var pct516MasterArr5= [pct516Arr5, pct516Arr6, pct516Arr7, pct516Arr8, pct516Arr9, pct516Arr10, pct516Arr1, pct516Arr2, pct516Arr3, pct516Arr4];
+     var pct516MasterArr6= [pct516Arr6, pct516Arr7, pct516Arr8, pct516Arr9, pct516Arr10, pct516Arr1, pct516Arr2, pct516Arr3, pct516Arr4, pct516Arr5];
+     var pct516MasterArr7= [pct516Arr7, pct516Arr8, pct516Arr9, pct516Arr10, pct516Arr1, pct516Arr2, pct516Arr3, pct516Arr4, pct516Arr5, pct516Arr6];
+     var pct516MasterArr8= [pct516Arr8, pct516Arr9, pct516Arr10, pct516Arr1, pct516Arr2, pct516Arr3, pct516Arr4, pct516Arr5, pct516Arr6, pct516Arr7];
+     var pct516MasterArr9= [pct516Arr9, pct516Arr10, pct516Arr1, pct516Arr2, pct516Arr3, pct516Arr4, pct516Arr5, pct516Arr6, pct516Arr7, pct516Arr8];
+     var pct516MasterArr10= [pct516Arr10, pct516Arr1, pct516Arr2, pct516Arr3, pct516Arr4, pct516Arr5, pct516Arr6, pct516Arr7, pct516Arr8, pct516Arr9];
+     
      function checkPCT516() {
           coursein= "Patient Care Technician 516";
           if ($('#startClass').val() == "PCTGEN110") {
                arr= pct516Arr1;
+               masterArray= pct516MasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           if ($('#startClass').val() == "PCTGEN120") {
                arr= pct516Arr2;
+               masterArray= pct516MasterArr2;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PCT101") {
                arr= pct516Arr3;
+               masterArray= pct516MasterArr3;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PCT102") {
                arr= pct516Arr4;
+               masterArray= pct516MasterArr4;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PCT103") {
                arr= pct516Arr5;
+               masterArray= pct516MasterArr5;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PCT104") {
                arr= pct516Arr6;
+               masterArray= pct516MasterArr6;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PCT105") {
                arr= pct516Arr7;
+               masterArray= pct516MasterArr7;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PCT106") {
                arr= pct516Arr8;
+               masterArray= pct516MasterArr8;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PCT107") {
                arr= pct516Arr9;
+               masterArray= pct516MasterArr9;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PCT108") {
                arr= pct516Arr10;
+               masterArray= pct516MasterArr10;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else{
                arr= pct516Arr1;
+               masterArray= pct516MasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
@@ -1937,7 +1959,7 @@ $(document).ready(function(){
                           console.log("last day in class after filter 2: "+lastDayInClass);
                     }
                             
-                    if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516"){
+                    if (($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516") && addaDay > 0){
                          lastDay= new Date(lastDayInClass);
                          lastD= new Date(lastDay);
                          for (var i= 1; i < (addaDay); i++) {
