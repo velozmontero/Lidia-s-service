@@ -7,7 +7,9 @@ $(document).ready(function(){
      var coursein= "";
      var externship= 0;
      var gradDay;
-     
+     var masterArray;
+     var FFF=0;
+     var NNN=0;
      moment().format();
      
      function addTitle() {
@@ -1137,72 +1139,84 @@ $(document).ready(function(){
           coursein= "Web Developer Engineer";
           if ($('#startClass').val() == "WEB1010") {
                arr= wdaArr1;
+               masterArray= wdaMasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "WEB1000") {
                arr= wdaArr2;
+               masterArray= wdaMasterArr2;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "WEB2000") {
                arr= wdaArr3;
+               masterArray= wdaMasterArr3;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "WEB2010") {
                arr= wdaArr4;
+               masterArray= wdaMasterArr4;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "WEB2020") {
                arr= wdaArr5;
+               masterArray= wdaMasterArr5;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "WEB2040") {
                arr= wdaArr6;
+               masterArray= wdaMasterArr6;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "WEB2900") {
                arr= wdaArr7;
+               masterArray= wdaMasterArr7;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "WEB2910") {
                arr= wdaArr8;
+               masterArray= wdaMasterArr8;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "ROR1000") {
                arr= wdaArr9;
+               masterArray= wdaMasterArr9;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "WEB3000") {
                arr= wdaArr10;
+               masterArray= wdaMasterArr10;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "CAP2000") {
                arr= wdaArr11;
+               masterArray= wdaMasterArr11;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else{
                arr= wdaArr1;
+               masterArray= wdaMasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
@@ -1975,9 +1989,12 @@ $(document).ready(function(){
                     c++; 
                     tt= endDate;
                     addaDay= 0;
+                    FFF++;
+                    NNN=0;
                }
           }
-         
+          NNN=0;
+          FFF=0;
           getStartAndEndDate();
           $('#startDAte').val(tt);
           totalDays = 0;
@@ -2013,10 +2030,13 @@ $(document).ready(function(){
           
           LDCttD= LDCttmm + '/' + LDCttdd + '/' + LDCtty;
           
-          for (var n=0; n < arr.length-1; n++){
-               console.log("pppppppppppppppppppppppppppppppppp "+arr[n].courseCode);
-               console.log("pppppppppppppppppppppppppppppppppp "+arr[n].days);
-               for (var i= 1; i < (arr[n].days); i++) {
+          while (NNN < masterArray[FFF].length-1){
+               console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnn "+NNN);
+               
+               console.log("pppppppppppppppppppppppppppppppppp "+masterArray[NNN][FFF].courseCode);
+               console.log("pppppppppppppppppppppppppppppppppp "+masterArray[NNN][FFF].days);
+               
+               for (var i= 1; i < (masterArray[NNN][FFF].days); i++) {
                     LDCttQ= LDCttD;
                     var LDCDatettQ= new Date(LDCttQ);
                     var LDCttQ= new Date(LDCDatettQ);
@@ -2186,7 +2206,7 @@ $(document).ready(function(){
      
                //console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX "+LDCttD);
                console.log("days to add: "+addaDay);
-               
+               NNN++;
           }     
      } 
 });
