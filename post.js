@@ -1725,7 +1725,7 @@ $(document).ready(function(){
                     
                     var lastDay= new Date(lastDayInClass);
                     var lastD= new Date(lastDay);
-               
+                    
                     for (var i= 1; i < (totalDays+addaDay); i++) {
                          lastD.setDate(lastD.getDate() + 1);
                          var dOFDW= lastD.getDay();    
@@ -1982,75 +1982,12 @@ $(document).ready(function(){
       
           LDCtt.setDate(LDCtt.getDate());
           var LDCwDaytt= LDCtt.getDay();
-          while (
-               (LDCtt.getDate() == 24 && parseInt(LDCtt.getMonth()+1) == 12) ||
-               (LDCtt.getDate() == 25 && parseInt(LDCtt.getMonth()+1) == 12) ||
-               (LDCtt.getDate() == 26 && parseInt(LDCtt.getMonth()+1) == 12) ||
-               (LDCtt.getDate() == 27 && parseInt(LDCtt.getMonth()+1) == 12) ||
-               (LDCtt.getDate() == 28 && parseInt(LDCtt.getMonth()+1) == 12) ||
-               (LDCtt.getDate() == 29 && parseInt(LDCtt.getMonth()+1) == 12) ||
-               (LDCtt.getDate() == 30 && parseInt(LDCtt.getMonth()+1) == 12) ||
-               (LDCtt.getDate() == 31 && parseInt(LDCtt.getMonth()+1) == 12) ||
-               (LDCtt.getDate() == 1 && parseInt(LDCtt.getMonth()+1) == 1) ||
-               (LDCtt.getDate() == 4 && parseInt(LDCtt.getMonth()+1) == 7) ||
-               LDCwDaytt === 0 || LDCwDaytt === 4 || LDCwDaytt === 5 || LDCwDaytt === 6 
-          ) {
-               if (LDCwDaytt === 4 || LDCwDaytt === 5) {
-                    addaDay+=1;   
-               }
-               LDCtt.setDate(LDCtt.getDate() + 1);
-               LDCwDaytt= LDCtt.getDay();
-          }
           
           var LDCttdd = LDCtt.getDate();
           var LDCttmm = LDCtt.getMonth() + 1;
           var LDCtty = LDCtt.getFullYear();
           
           var LDCttD= LDCttmm + '/' + LDCttdd + '/' + LDCtty;
-          
-          //--------------------------
-          
-          for (var c in dates) {
-               
-               var nonWDE= new Date(dates[c]);
-               var nWorkingDE= new Date(nonWDE);
-               
-               nWorkingDE.setDate(nWorkingDE.getDate());
-               
-               var nwddE = nWorkingDE.getDate();
-               var nwmmE = nWorkingDE.getMonth() + 1;
-               var nwyE = nWorkingDE.getFullYear();
-               
-               var nonWorkingDayE= nwmmE + '/' + nwddE + '/' + nwyE;
-               
-               while(nonWorkingDayE == LDCttD || 
-                    (LDCtt.getDate() == 24 && parseInt(LDCtt.getMonth()+1) == 12) ||
-                         (LDCtt.getDate() == 25 && parseInt(LDCtt.getMonth()+1) == 12) ||
-                         (LDCtt.getDate() == 26 && parseInt(LDCtt.getMonth()+1) == 12) ||
-                         (LDCtt.getDate() == 27 && parseInt(LDCtt.getMonth()+1) == 12) ||
-                         (LDCtt.getDate() == 28 && parseInt(LDCtt.getMonth()+1) == 12) ||
-                         (LDCtt.getDate() == 29 && parseInt(LDCtt.getMonth()+1) == 12) ||
-                         (LDCtt.getDate() == 30 && parseInt(LDCtt.getMonth()+1) == 12) ||
-                         (LDCtt.getDate() == 31 && parseInt(LDCtt.getMonth()+1) == 12) ||
-                         (LDCtt.getDate() == 1 && parseInt(LDCtt.getMonth()+1) == 1) ||
-                         (LDCtt.getDate() == 4 && parseInt(LDCtt.getMonth()+1) == 7) ||
-                         LDCwDaytt === 0 || LDCwDaytt === 4 || LDCwDaytt === 5 || LDCwDaytt === 6 
-                    ) {
-                         if (LDCwDaytt === 4 || LDCwDaytt === 5) {
-                              addaDay+=1;   
-                         }
-                         LDCtt.setDate(LDCtt.getDate() + 1);
-                         LDCwDaytt= LDCtt.getDay();
-     
-                         LDCttdd = LDCtt.getDate();
-                         LDCttmm = LDCtt.getMonth() + 1;
-                         LDCtty = LDCtt.getFullYear();
-                         
-                         LDCttD= LDCttmm + '/' + LDCttdd + '/' + LDCtty;
-                    }
-          }
-          
-          //-------------------------------
           
           var testDay= LDCttD;
           console.log("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy "+LDCttD);
@@ -2063,7 +2000,7 @@ $(document).ready(function(){
           
           LDCttD= LDCttmm + '/' + LDCttdd + '/' + LDCtty;
           
-          for (var n= 1; n < arr.length; n++){
+          for (var n= 0; n < arr.length; n++){
                
                for (var i= 1; i < (arr[n].days); i++) {
                     console.log("pppppppppppppppppppppppppppppppppp "+arr[n].courseCode);
