@@ -440,88 +440,117 @@ $(document).ready(function(){
      var md416Arr12= [MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109];
      var md416Arr13= [GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110];
      
+     var md416MasterArr1 = [md416Arr1, md416Arr2, md416Arr3, md416Arr4, md416Arr5, md416Arr6, md416Arr7, md416Arr8, md416Arr9, md416Arr10, md416Arr11, md416Arr12, md416Arr13];
+     var md416MasterArr2 = [md416Arr2, md416Arr3, md416Arr4, md416Arr5, md416Arr6, md416Arr7, md416Arr8, md416Arr9, md416Arr10, md416Arr11, md416Arr12, md416Arr13, md416Arr1];
+     var md416MasterArr3 = [md416Arr3, md416Arr4, md416Arr5, md416Arr6, md416Arr7, md416Arr8, md416Arr9, md416Arr10, md416Arr11, md416Arr12, md416Arr13, md416Arr1, md416Arr2];
+     var md416MasterArr4 = [md416Arr4, md416Arr5, md416Arr6, md416Arr7, md416Arr8, md416Arr9, md416Arr10, md416Arr11, md416Arr12, md416Arr13, md416Arr1, md416Arr2, md416Arr3];
+     var md416MasterArr5 = [md416Arr5, md416Arr6, md416Arr7, md416Arr8, md416Arr9, md416Arr10, md416Arr11, md416Arr12, md416Arr13, md416Arr1, md416Arr2, md416Arr3, md416Arr4];
+     var md416MasterArr6 = [md416Arr6, md416Arr7, md416Arr8, md416Arr9, md416Arr10, md416Arr11, md416Arr12, md416Arr13, md416Arr1, md416Arr2, md416Arr3, md416Arr4, md416Arr5];
+     var md416MasterArr7 = [md416Arr7, md416Arr8, md416Arr9, md416Arr10, md416Arr11, md416Arr12, md416Arr13, md416Arr1, md416Arr2, md416Arr3, md416Arr4, md416Arr5, md416Arr6];
+     var md416MasterArr8 = [md416Arr8, md416Arr9, md416Arr10, md416Arr11, md416Arr12, md416Arr13, md416Arr1, md416Arr2, md416Arr3, md416Arr4, md416Arr5, md416Arr6, md416Arr7];
+     var md416MasterArr9 = [md416Arr9, md416Arr10, md416Arr11, md416Arr12, md416Arr13, md416Arr1, md416Arr2, md416Arr3, md416Arr4, md416Arr5, md416Arr6, md416Arr7, md416Arr8];
+     var md416MasterArr10 = [md416Arr10, md416Arr11, md416Arr12, md416Arr13, md416Arr1, md416Arr2, md416Arr3, md416Arr4, md416Arr5, md416Arr6, md416Arr7, md416Arr8, md416Arr9];
+     var md416MasterArr11 = [md416Arr11, md416Arr12, md416Arr13, md416Arr1, md416Arr2, md416Arr3, md416Arr4, md416Arr5, md416Arr6, md416Arr7, md416Arr8, md416Arr9, md416Arr10];
+     var md416MasterArr12 = [md416Arr12, md416Arr13, md416Arr1, md416Arr2, md416Arr3, md416Arr4, md416Arr5, md416Arr6, md416Arr7, md416Arr8, md416Arr9, md416Arr10, md416Arr11];
+     var md416MasterArr13 = [md416Arr13, md416Arr1, md416Arr2, md416Arr3, md416Arr4, md416Arr5, md416Arr6, md416Arr7, md416Arr8, md416Arr9, md416Arr10, md416Arr11, md416Arr12];
+     
+     
      function checkMA416() {
           coursein= "Medical Assistant 416";
           if ($('#startClass').val() == "GEN110") {
                arr= md416Arr1;
+               masterArray= md416MasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "GEN120") {
                arr= md416Arr2;
+               masterArray= md416MasterArr2;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "MAS101") {
                arr= md416Arr3;
+               masterArray= md416MasterArr3;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "MAS102") {
                arr= md416Arr4;
+               masterArray= md416MasterArr4;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "MAS103") {
                arr= md416Arr5;
+               masterArray= md416MasterArr5;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "MAS104") {
                arr= md416Arr6;
+               masterArray= md416MasterArr6;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "MAS105") {
                arr= md416Arr7;
+               masterArray= md416MasterArr7;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "MAS106") {
                arr= md416Arr8;
+               masterArray= md416MasterArr8;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "MAS107") {
                arr= md416Arr9;
+               masterArray= md416MasterArr9;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "MAS108") {
                arr= md416Arr10;
+               masterArray= md416MasterArr10;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "MAS109") {
                arr= md416Arr11;
+               masterArray= md416MasterArr11;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "MAS110") {
                arr= md416Arr12;
+               masterArray= md416MasterArr12;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "GEN120") {
                arr= md416Arr13;
+               masterArray= md416MasterArr13;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else{
                arr= md416Arr1;
+               masterArray= md416MasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
@@ -603,70 +632,92 @@ $(document).ready(function(){
      var phArr9= [PHH08, PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, CPR01];
      var phArr10= [PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, CPR01, PHH08];
      
+     var phMasterArr1= [phArr1, phArr2, phArr3, phArr4, phArr5, phArr6, phArr7, phArr8, phArr9, phArr10];
+     var phMasterArr2= [phArr2, phArr3, phArr4, phArr5, phArr6, phArr7, phArr8, phArr9, phArr10, phArr1];
+     var phMasterArr3= [phArr3, phArr4, phArr5, phArr6, phArr7, phArr8, phArr9, phArr10, phArr1, phArr2];
+     var phMasterArr4= [phArr4, phArr5, phArr6, phArr7, phArr8, phArr9, phArr10, phArr1, phArr2, phArr3];
+     var phMasterArr5= [phArr5, phArr6, phArr7, phArr8, phArr9, phArr10, phArr1, phArr2, phArr3, phArr4];
+     var phMasterArr6= [phArr6, phArr7, phArr8, phArr9, phArr10, phArr1, phArr2, phArr3, phArr4, phArr5];
+     var phMasterArr7= [phArr7, phArr8, phArr9, phArr10, phArr1, phArr2, phArr3, phArr4, phArr5, phArr6];
+     var phMasterArr8= [phArr8, phArr9, phArr10, phArr1, phArr2, phArr3, phArr4, phArr5, phArr6, phArr7];
+     var phMasterArr9= [phArr9, phArr10, phArr1, phArr2, phArr3, phArr4, phArr5, phArr6, phArr7, phArr8];
+     var phMasterArr10= [phArr10, phArr1, phArr2, phArr3, phArr4, phArr5, phArr6, phArr7, phArr8, phArr9];
+     
      function checkPHT() {
           coursein= "Pharmacy Technician";
           if ($('#startClass').val() == "PHA01") {
                arr= phArr1;
+               masterArray= phMasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PHB02") {
                arr= phArr2;
+               masterArray= phMasterArr2;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PHC03") {
                arr= phArr3;
+               masterArray= phMasterArr3;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PHD04") {
                arr= phArr4;
+               masterArray= phMasterArr4;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PHE05") {
                arr= phArr5;
+               masterArray= phMasterArr5;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PHF06") {
                arr= phArr6;
+               masterArray= phMasterArr6;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PHG07") {
                arr= phArr7;
+               masterArray= phMasterArr7;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "CPR01") {
                arr= phArr8;
+               masterArray= phMasterArr8;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PHH08") {
                arr= phArr9;
+               masterArray= phMasterArr9;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else if ($('#startClass').val() == "PHI09") {
                arr= phArr10;
+               masterArray= phMasterArr10;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
           }
           else{
                arr= phArr1;
+               masterArray= phMasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
                }
@@ -1779,8 +1830,8 @@ $(document).ready(function(){
                          var ly = lastD.getFullYear();
                          
                          lastDayInClass= lmm + '/' + ldd + '/' + ly;
-                         console.log("last day after filter 1: "+lastDayInClass);
-                         
+                         //console.log("last day after filter 1: "+lastDayInClass);
+                           
                          for (var l in dates) {
                               
                               var lastDin= new Date(dates[l]);
@@ -1813,9 +1864,9 @@ $(document).ready(function(){
                                    
                                    lastDayInClass= lmm + '/' + ldd + '/' + ly;
                                    dOFDW= lastD.getDay();
-                                   console.log("last day in class after filter 2: "+lastDayInClass);
                               }
-                         }     
+                         }
+                          console.log("last day in class after filter 2: "+lastDayInClass);
                     }
                             
                     
