@@ -1779,6 +1779,7 @@ $(document).ready(function(){
                          var ly = lastD.getFullYear();
                          
                          lastDayInClass= lmm + '/' + ldd + '/' + ly;
+                         console.log("last day after filter 1: "+lastDayInClass);
                          
                          for (var l in dates) {
                               
@@ -1812,7 +1813,7 @@ $(document).ready(function(){
                                    
                                    lastDayInClass= lmm + '/' + ldd + '/' + ly;
                                    dOFDW= lastD.getDay();
-                                   console.log("last day in class after filter: "+lastDayInClass);
+                                   console.log("last day in class after filter 2: "+lastDayInClass);
                               }
                          }     
                     }
