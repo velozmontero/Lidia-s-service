@@ -1797,6 +1797,74 @@ $(document).ready(function(){
                          }
                     }
                     
+                    if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516"){
+                         midDay= new Date(midPoint);
+                         midD= new Date(midDay);
+                         
+                         for (var i= 1; i < addaDay; i++) {
+                              midD.setDate(midD.getDate() + 1);
+                              var middOFDW= midD.getDay();
+                              
+                              while (
+                                   (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
+                                   (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7) ||
+                                   middOFDW === 0 || middOFDW === 6
+                                   ) {
+                                        midD.setDate(midD.getDate() + 1);
+                                        middOFDW= midD.getDay();
+                              }
+                              
+                              var middd = midD.getDate();
+                              var midmm = midD.getMonth() + 1;
+                              var midy = midD.getFullYear();
+                              
+                              midPoint= midmm + '/' + middd + '/' + midy;
+                              
+                              for (var q in dates) {
+                                   
+                                   var midDin= new Date(dates[q]);
+                                   var midDC= new Date(midDin);
+                                   
+                                   midDC.setDate(midDC.getDate());
+                                   
+                                   var midDCdd = midDC.getDate();
+                                   var midDCmm = midDC.getMonth() + 1;
+                                   var midDCy = midDC.getFullYear();
+                                   
+                                   var midDCInClass= midDCmm + '/' + midDCdd + '/' + midDCy;
+                                   
+                                   while(midDCInClass == midPoint || middOFDW === 0 || middOFDW === 6 ||
+                                        (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
+                                        (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7)  
+                                        ) {
+                                        midD.setDate(midD.getDate() + 1);
+                                        middd = midD.getDate();
+                                        midmm = midD.getMonth() + 1;
+                                        midy = midD.getFullYear();
+                                        
+                                        midPoint= midmm + '/' + middd + '/' + midy;
+                                        middOFDW= midD.getDay();
+                                   }
+                              }
+                         }
+                    }
+                    
                     //---------------------------------------------------------------------------------------------->
                     
                     //---------------------------------------------------------------------------------------------->
@@ -1804,7 +1872,7 @@ $(document).ready(function(){
                     var lastDay= new Date(lastDayInClass);
                     var lastD= new Date(lastDay);
                     
-                    for (var i= 1; i < (totalDays+addaDay); i++) {
+                    for (var i= 1; i < (totalDays); i++) {
                          lastD.setDate(lastD.getDate() + 1);
                          var dOFDW= lastD.getDay();    
                          
@@ -1869,7 +1937,74 @@ $(document).ready(function(){
                           console.log("last day in class after filter 2: "+lastDayInClass);
                     }
                             
-                    
+                    if ($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516"){
+                         lastDay= new Date(lastDayInClass);
+                         lastD= new Date(lastDay);
+                         for (var i= 1; i < (addaDay); i++) {
+                              lastD.setDate(lastD.getDate() + 1);
+                              var dOFDW= lastD.getDay();    
+                              
+                              while (
+                                   (lastD.getDate() == 24 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 25 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 26 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 27 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 28 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 29 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 30 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() == 31 && parseInt(lastD.getMonth()+1) == 12) ||
+                                   (lastD.getDate() ==  1 && parseInt(lastD.getMonth()+1) ==  1) ||
+                                   (lastD.getDate() ==  4 && parseInt(lastD.getMonth()+1) ==  7) ||
+                                   dOFDW === 0 || dOFDW === 6
+                                   ) {
+                                        lastD.setDate(lastD.getDate() + 1);
+                                        dOFDW= lastD.getDay();
+                              }
+                              
+                              var ldd = lastD.getDate();
+                              var lmm = lastD.getMonth() + 1;
+                              var ly = lastD.getFullYear();
+                              
+                              lastDayInClass= lmm + '/' + ldd + '/' + ly;
+                              //console.log("last day after filter 1: "+lastDayInClass);
+                                
+                              for (var l in dates) {
+                                   
+                                   var lastDin= new Date(dates[l]);
+                                   var lDC= new Date(lastDin);
+                                   
+                                   lDC.setDate(lDC.getDate());
+                                   
+                                   var lDCdd = lDC.getDate();
+                                   var lDCmm = lDC.getMonth() + 1;
+                                   var lDCy = lDC.getFullYear();
+                                   
+                                   var lDCInClass= lDCmm + '/' + lDCdd + '/' + lDCy;
+                                   
+                                   while(lDCInClass == lastDayInClass || dOFDW === 0 || dOFDW === 6 ||
+                                        (lastD.getDate() == 24 && parseInt(lastD.getMonth()+1) == 12) ||
+                                        (lastD.getDate() == 25 && parseInt(lastD.getMonth()+1) == 12) ||
+                                        (lastD.getDate() == 26 && parseInt(lastD.getMonth()+1) == 12) ||
+                                        (lastD.getDate() == 27 && parseInt(lastD.getMonth()+1) == 12) ||
+                                        (lastD.getDate() == 28 && parseInt(lastD.getMonth()+1) == 12) ||
+                                        (lastD.getDate() == 29 && parseInt(lastD.getMonth()+1) == 12) ||
+                                        (lastD.getDate() == 30 && parseInt(lastD.getMonth()+1) == 12) ||
+                                        (lastD.getDate() == 31 && parseInt(lastD.getMonth()+1) == 12) ||
+                                        (lastD.getDate() ==  1 && parseInt(lastD.getMonth()+1) ==  1) ||
+                                        (lastD.getDate() ==  4 && parseInt(lastD.getMonth()+1) ==  7) 
+                                        ) {
+                                        lastD.setDate(lastD.getDate() + 1);
+                                        ldd = lastD.getDate();
+                                        lmm = lastD.getMonth() + 1;
+                                        ly = lastD.getFullYear();
+                                        
+                                        lastDayInClass= lmm + '/' + ldd + '/' + ly;
+                                        dOFDW= lastD.getDay();
+                                   }
+                              }
+                               console.log("last day in class after filter 2: "+lastDayInClass);
+                         }
+                    }
                     
                     //---------------------------------------------------------------------------------------------->
                     
