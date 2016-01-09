@@ -1654,7 +1654,7 @@ $(document).ready(function(){
                     //---------------------------------------------------------------------------------------------->
                     var midDay= new Date(midPoint);
                     var midD= new Date(midDay);
-                    var halfDays= (addaDay+totalDays+externship)/2;
+                    var halfDays= Math.floor((addaDay+totalDays+externship)/2);
                     
                     for (var i= 1; i < halfDays; i++) {
                          midD.setDate(midD.getDate() + 1);
