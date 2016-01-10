@@ -1902,6 +1902,7 @@ $(document).ready(function(){
                     }
                     
                     //---------------------------------------------------------------------------------------------->
+                    
                     var midDayHHH= new Date(startPoint);
                     var midDHHH= new Date(midDayHHH);
                     var H= 0;
