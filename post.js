@@ -1962,11 +1962,11 @@ $(document).ready(function(){
                     if (($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516") && addaDay > 0){
                          lastDay= new Date(lastDayInClass);
                          lastD= new Date(lastDay);
-                         for (var i= 1; i < (addaDay); i++) {
+                         for (var i= 1  ; i < (addaDay); i++) {
                               lastD.setDate(lastD.getDate() + 1);
                               var dOFDW= lastD.getDay();    
                               
-                              while (
+                              while(
                                    (lastD.getDate() == 24 && parseInt(lastD.getMonth()+1) == 12) ||
                                    (lastD.getDate() == 25 && parseInt(lastD.getMonth()+1) == 12) ||
                                    (lastD.getDate() == 26 && parseInt(lastD.getMonth()+1) == 12) ||
