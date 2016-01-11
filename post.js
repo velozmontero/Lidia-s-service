@@ -1,4 +1,8 @@
 $(document).ready(function(){
+     var daysToAdd;
+     var midPoint;
+     var lastDayInClass;
+     var startingDate;
      var lastDayInClassDDD;
      var startDate;
      var addaDay= 0;
@@ -12,6 +16,10 @@ $(document).ready(function(){
      var masterArray;
      var FFF=0;
      var NNN=0;
+     var NNNN=0;
+     var getMeName;
+     var getMeDays;
+     var getMeHalfDays;
      moment().format();
      
      function addTitle() {
@@ -1442,7 +1450,7 @@ $(document).ready(function(){
      }
      
      function postInfo(){
-           addaDay= 0;     
+             
            //****************************************************  INITIALIZERS START  ****************************************************
           
           // medical assistant checking start---------------------->
@@ -1619,8 +1627,6 @@ $(document).ready(function(){
           
           $('#response').removeClass('hide');
           
-          var midPoint;
-          var lastDayInClass;
           var course= $('#course').val();
           var group= $('#group').val();
           
@@ -1990,29 +1996,20 @@ $(document).ready(function(){
                     var midDayHHH= new Date(startPoint);
                     var midDHHH= new Date(midDayHHH);
                     var D= 0;
-                    var H=0;
                     var externshipHours= externship*4;
+                    var H=0;
                     
-                    var totalH= (totalHours+externshipHours)/2;
+                    var totalH= Math.floor(((totalHours+externshipHours)/2)/4);
                     console.log("jhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhj "+totalH);
                     
                     var midDay= new Date(startDate);
                     var midD= new Date(midDay);
-                    var halfDays= Math.ceil((addaDay+totalDays+externship)/2);
+               
+                    var halfDays= Math.floor((totalDays+externship)/2);
                     
-                    while (H <= totalH) {
-                         
+                    for (var i= 0; i < totalH; i++) {
                          midD.setDate(midD.getDate() + 1);
-                         
                          var middOFDW= midD.getDay();
-                         
-                         var middd = midD.getDate();
-                         var midmm = midD.getMonth() + 1;
-                         var midy = midD.getFullYear();
-                         midPoint= midmm + '/' + middd + '/' + midy;
-                         
-                         midDay= new Date(midPoint);
-                         midD= new Date(midDay);
                          
                          while (
                               (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
@@ -2031,9 +2028,9 @@ $(document).ready(function(){
                                    middOFDW= midD.getDay();
                          }
                          
-                         middd = midD.getDate();
-                         midmm = midD.getMonth() + 1;
-                         midy = midD.getFullYear();
+                         var middd = midD.getDate();
+                         var midmm = midD.getMonth() + 1;
+                         var midy = midD.getFullYear();
                          
                          midPoint= midmm + '/' + middd + '/' + midy;
                          
@@ -2071,8 +2068,76 @@ $(document).ready(function(){
                                    middOFDW= midD.getDay();
                               }
                          }
-                         H+=4;
                     }
+                    
+                    if (($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516") && daysToAdd > 0){
+                         midDay= new Date(midPoint);
+                         midD= new Date(midDay);
+                         
+                         for (var i= 1; i < daysToAdd; i++) {
+                              midD.setDate(midD.getDate() + 1);
+                              var middOFDW= midD.getDay();
+                              
+                              while (
+                                   (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
+                                   (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7) ||
+                                   middOFDW === 0 || middOFDW === 6
+                                   ) {
+                                        midD.setDate(midD.getDate() + 1);
+                                        middOFDW= midD.getDay();
+                              }
+                              
+                              var middd = midD.getDate();
+                              var midmm = midD.getMonth() + 1;
+                              var midy = midD.getFullYear();
+                              
+                              midPoint= midmm + '/' + middd + '/' + midy;
+                              
+                              for (var q in dates) {
+                                   
+                                   var midDin= new Date(dates[q]);
+                                   var midDC= new Date(midDin);
+                                   
+                                   midDC.setDate(midDC.getDate());
+                                   
+                                   var midDCdd = midDC.getDate();
+                                   var midDCmm = midDC.getMonth() + 1;
+                                   var midDCy = midDC.getFullYear();
+                                   
+                                   var midDCInClass= midDCmm + '/' + midDCdd + '/' + midDCy;
+                                   
+                                   while(midDCInClass == midPoint || middOFDW === 0 || middOFDW === 6 ||
+                                        (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
+                                        (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7)  
+                                        ) {
+                                        midD.setDate(midD.getDate() + 1);
+                                        middd = midD.getDate();
+                                        midmm = midD.getMonth() + 1;
+                                        midy = midD.getFullYear();
+                                        
+                                        midPoint= midmm + '/' + middd + '/' + midy;
+                                        middOFDW= midD.getDay();
+                                   }
+                              }
+                         }
+                    }
+                
                     
                     while (startPoint !== gradDay) {
                          midDHHH.setDate(midDHHH.getDate() + 1);
@@ -2184,21 +2249,22 @@ $(document).ready(function(){
                               endDate = mm + '/' + dd + '/' + y;
                          }
                     }
-                    
+                    daysToAdd=0;
+                    totalH=0;
                     c++; 
                     tt= endDate;
                     addaDay= 0;
                     FFF++;
                     NNN=0;
+                    NNNN=0;
                }
           }
-          NNN=0;
           FFF=0;
           getStartAndEndDate();
           $('#startDAte').val(tt);
+          totalHours= 0;
           totalDays = 0;
           externship= 0;
-          addaDay= 0; 
      };
      
      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2229,13 +2295,23 @@ $(document).ready(function(){
           
           LDCttD= LDCttmm + '/' + LDCttdd + '/' + LDCtty;
           
+          for (var i= 0; i < ((arr.length)/2); i++){
+               getMeName= arr[i].courseCode;
+               getMeDays= arr[i].days;
+               getMeHalfDays= Math.ceil(getMeDays/2);
+          }
+          console.log("data "+ getMeName+" "+getMeDays+" "+getMeHalfDays);
+          
           while (NNN < (masterArray[FFF].length)-1){
+               
                console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnn "+NNN);
                
                console.log("pppppppppppppppppppppppppppppppppp "+masterArray[NNN][FFF].courseCode);
                console.log("pppppppppppppppppppppppppppppppppp "+masterArray[NNN][FFF].days);
+               var currentCourseCode= masterArray[NNN][FFF].courseCode;
                
                for (var i= 1; i < (masterArray[NNN][FFF].days); i++) {
+                    
                     LDCttQ= LDCttD;
                     var LDCDatettQ= new Date(LDCttQ);
                     var LDCttQ= new Date(LDCDatettQ);
@@ -2490,8 +2566,14 @@ $(document).ready(function(){
                LDCttD= LDCttQRA;
      
                console.log("ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg "+lastDayInClassDDD);
-               console.log("days to add: "+addaDay);
+               console.log(" Total days to add: "+addaDay);
                NNN++;
+               
+               if ( currentCourseCode == getMeName) {
+                    daysToAdd= addaDay;
+                    console.log("days to add: "+daysToAdd);
+               }
+               
           }
           
      } 
