@@ -3,6 +3,7 @@ $(document).ready(function(){
      var startDate;
      var addaDay= 0;
      var totalDays = 0;
+     var totalHours = 0;
      var dates= [];
      var arr= [];
      var coursein= "";
@@ -257,90 +258,105 @@ $(document).ready(function(){
                arr= mdArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "CPR01") {
                arr= mdArr2;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT02") {
                arr= mdArr3;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "HAE01") {
                arr= mdArr4;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAT01") {
                arr= mdArr5;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAT02") {
                arr= mdArr6;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS02") {
                arr= mdArr7;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS03") {
                arr= mdArr8;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS04") {
                arr= mdArr9;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS05") {
                arr= mdArr10;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS06") {
                arr= mdArr11;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS07") {
                arr= mdArr12;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "COM01") {
                arr= mdArr13;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "ECPS01") {
                arr= mdArr14;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else{
                arr= mdArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
      }
@@ -463,6 +479,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "GEN120") {
@@ -470,6 +487,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr2;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS101") {
@@ -477,6 +495,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr3;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS102") {
@@ -484,6 +503,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr4;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS103") {
@@ -491,6 +511,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr5;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS104") {
@@ -498,6 +519,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr6;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS105") {
@@ -505,6 +527,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr7;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS106") {
@@ -512,6 +535,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr8;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS107") {
@@ -519,6 +543,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr9;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS108") {
@@ -526,6 +551,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr10;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS109") {
@@ -533,6 +559,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr11;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "MAS110") {
@@ -540,6 +567,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr12;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "GEN120") {
@@ -547,6 +575,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr13;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else{
@@ -554,6 +583,7 @@ $(document).ready(function(){
                masterArray= md416MasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
      }
@@ -651,6 +681,7 @@ $(document).ready(function(){
                masterArray= phMasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PHB02") {
@@ -658,6 +689,7 @@ $(document).ready(function(){
                masterArray= phMasterArr2;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PHC03") {
@@ -665,6 +697,7 @@ $(document).ready(function(){
                masterArray= phMasterArr3;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PHD04") {
@@ -672,6 +705,7 @@ $(document).ready(function(){
                masterArray= phMasterArr4;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PHE05") {
@@ -679,6 +713,7 @@ $(document).ready(function(){
                masterArray= phMasterArr5;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PHF06") {
@@ -686,6 +721,7 @@ $(document).ready(function(){
                masterArray= phMasterArr6;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PHG07") {
@@ -693,6 +729,7 @@ $(document).ready(function(){
                masterArray= phMasterArr7;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "CPR01") {
@@ -700,6 +737,7 @@ $(document).ready(function(){
                masterArray= phMasterArr8;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PHH08") {
@@ -707,6 +745,7 @@ $(document).ready(function(){
                masterArray= phMasterArr9;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PHI09") {
@@ -714,6 +753,7 @@ $(document).ready(function(){
                masterArray= phMasterArr10;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else{
@@ -721,6 +761,7 @@ $(document).ready(function(){
                masterArray= phMasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
      }
@@ -845,114 +886,133 @@ $(document).ready(function(){
                arr= pctArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT11") {
                arr= pctArr2;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT12") {
                arr= pctArr3;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT13") {
                arr= pctArr4;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT14") {
                arr= pctArr5;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT15") {
                arr= pctArr6;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "ECP01") {
                arr= pctArr7;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT01") {
                arr= pctArr8;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "BLSF01") {
                arr= pctArr9;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT02") {
                arr= pctArr10;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "HAE01") {
                arr= pctArr11;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT03") {
                arr= pctArr12;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT04") {
                arr= pctArr13;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT06") {
                arr= pctArr14;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT05") {
                arr= pctArr15;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT07") {
                arr= pctArr16;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT08") {
                arr= pctArr17;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT09") {
                arr= pctArr18;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else{
                arr= pctArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
      }
@@ -1041,6 +1101,8 @@ $(document).ready(function(){
                masterArray= pct516MasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
+                    
                }
           }
           if ($('#startClass').val() == "PCTGEN120") {
@@ -1048,6 +1110,7 @@ $(document).ready(function(){
                masterArray= pct516MasterArr2;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT101") {
@@ -1055,6 +1118,7 @@ $(document).ready(function(){
                masterArray= pct516MasterArr3;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT102") {
@@ -1062,6 +1126,7 @@ $(document).ready(function(){
                masterArray= pct516MasterArr4;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT103") {
@@ -1069,6 +1134,7 @@ $(document).ready(function(){
                masterArray= pct516MasterArr5;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT104") {
@@ -1076,6 +1142,7 @@ $(document).ready(function(){
                masterArray= pct516MasterArr6;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT105") {
@@ -1083,6 +1150,7 @@ $(document).ready(function(){
                masterArray= pct516MasterArr7;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT106") {
@@ -1090,6 +1158,7 @@ $(document).ready(function(){
                masterArray= pct516MasterArr8;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT107") {
@@ -1097,6 +1166,7 @@ $(document).ready(function(){
                masterArray= pct516MasterArr9;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "PCT108") {
@@ -1104,6 +1174,7 @@ $(document).ready(function(){
                masterArray= pct516MasterArr10;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else{
@@ -1111,6 +1182,7 @@ $(document).ready(function(){
                masterArray= pct516MasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
      }
@@ -1216,6 +1288,7 @@ $(document).ready(function(){
                masterArray= wdaMasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "WEB1000") {
@@ -1223,6 +1296,7 @@ $(document).ready(function(){
                masterArray= wdaMasterArr2;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "WEB2000") {
@@ -1230,6 +1304,7 @@ $(document).ready(function(){
                masterArray= wdaMasterArr3;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "WEB2010") {
@@ -1237,6 +1312,7 @@ $(document).ready(function(){
                masterArray= wdaMasterArr4;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "WEB2020") {
@@ -1244,6 +1320,7 @@ $(document).ready(function(){
                masterArray= wdaMasterArr5;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "WEB2040") {
@@ -1251,6 +1328,7 @@ $(document).ready(function(){
                masterArray= wdaMasterArr6;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "WEB2900") {
@@ -1258,6 +1336,7 @@ $(document).ready(function(){
                masterArray= wdaMasterArr7;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "WEB2910") {
@@ -1265,6 +1344,7 @@ $(document).ready(function(){
                masterArray= wdaMasterArr8;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "ROR1000") {
@@ -1272,6 +1352,7 @@ $(document).ready(function(){
                masterArray= wdaMasterArr9;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "WEB3000") {
@@ -1279,6 +1360,7 @@ $(document).ready(function(){
                masterArray= wdaMasterArr10;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else if ($('#startClass').val() == "CAP2000") {
@@ -1286,6 +1368,7 @@ $(document).ready(function(){
                masterArray= wdaMasterArr11;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
           else{
@@ -1293,6 +1376,7 @@ $(document).ready(function(){
                masterArray= wdaMasterArr1;
                for (var t in arr){
                     totalDays+= arr[t].days;
+                    totalHours+= arr[t].hours;
                }
           }
      }
@@ -1905,7 +1989,90 @@ $(document).ready(function(){
                     
                     var midDayHHH= new Date(startPoint);
                     var midDHHH= new Date(midDayHHH);
-                    var H= 0;
+                    var D= 0;
+                    var H=0;
+                    var externshipHours= externship*4;
+                    
+                    var totalH= (totalHours+externshipHours)/2;
+                    console.log("jhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhj "+totalH);
+                    
+                    var midDay= new Date(startDate);
+                    var midD= new Date(midDay);
+                    var halfDays= Math.ceil((addaDay+totalDays+externship)/2);
+                    
+                    while (H <= totalH) {
+                         
+                         midD.setDate(midD.getDate() + 1);
+                         
+                         var middOFDW= midD.getDay();
+                         
+                         var middd = midD.getDate();
+                         var midmm = midD.getMonth() + 1;
+                         var midy = midD.getFullYear();
+                         midPoint= midmm + '/' + middd + '/' + midy;
+                         
+                         midDay= new Date(midPoint);
+                         midD= new Date(midDay);
+                         
+                         while (
+                              (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
+                              (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
+                              (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
+                              (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
+                              (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
+                              (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
+                              (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
+                              (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
+                              (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
+                              (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7) ||
+                              middOFDW === 0 || middOFDW === 6
+                              ) {
+                                   midD.setDate(midD.getDate() + 1);
+                                   middOFDW= midD.getDay();
+                         }
+                         
+                         middd = midD.getDate();
+                         midmm = midD.getMonth() + 1;
+                         midy = midD.getFullYear();
+                         
+                         midPoint= midmm + '/' + middd + '/' + midy;
+                         
+                         for (var q in dates) {
+                              
+                              var midDin= new Date(dates[q]);
+                              var midDC= new Date(midDin);
+                              
+                              midDC.setDate(midDC.getDate());
+                              
+                              var midDCdd = midDC.getDate();
+                              var midDCmm = midDC.getMonth() + 1;
+                              var midDCy = midDC.getFullYear();
+                              
+                              var midDCInClass= midDCmm + '/' + midDCdd + '/' + midDCy;
+                              
+                              while(midDCInClass == midPoint || middOFDW === 0 || middOFDW === 6 ||
+                                   (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
+                                   (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7)  
+                                   ) {
+                                   midD.setDate(midD.getDate() + 1);
+                                   middd = midD.getDate();
+                                   midmm = midD.getMonth() + 1;
+                                   midy = midD.getFullYear();
+                                   
+                                   midPoint= midmm + '/' + middd + '/' + midy;
+                                   middOFDW= midD.getDay();
+                              }
+                         }
+                         H+=4;
+                    }
                     
                     while (startPoint !== gradDay) {
                          midDHHH.setDate(midDHHH.getDate() + 1);
@@ -1916,24 +2083,10 @@ $(document).ready(function(){
                          var midyHHH = midDHHH.getFullYear();
                          
                          startPoint= midmmHHH + '/' + midddHHH + '/' + midyHHH;
-                         H++;
+                         D++;
                          console.log("hnhnhnhnhnhnhnhnhnhnhnhnh "+startPoint); 
                     }
                     console.log("hnhnhnhnhnhnhnhnhnhnhnhnhlklkkklklklklklklklklklklklklkl "+H); 
-                    
-                    var midDay= new Date(startDate);
-                    var midD= new Date(midDay);
-                    
-                    for (var i= 1; i < H/2; i++) {
-                         midD.setDate(midD.getDate() + 1);
-                         
-                         var middd = midD.getDate();
-                         var midmm = midD.getMonth() + 1;
-                         var midy = midD.getFullYear();
-                         
-                         midPoint= midmm + '/' + middd + '/' + midy;
-                         
-                    }
                     
                     //---------------------------------------------------------------------------------------------->
                     
