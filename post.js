@@ -2004,138 +2004,6 @@ $(document).ready(function(){
                
                     var halfDays= Math.floor((totalDays+externship)/2);
                     
-                    /*for (var i= 0; i < totalH; i++) {
-                         midD.setDate(midD.getDate() + 1);
-                         var middOFDW= midD.getDay();
-                         
-                         while (
-                              (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
-                              (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
-                              (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
-                              (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
-                              (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
-                              (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
-                              (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
-                              (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
-                              (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
-                              (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7) ||
-                              middOFDW === 0 || middOFDW === 6
-                              ) {
-                                   midD.setDate(midD.getDate() + 1);
-                                   middOFDW= midD.getDay();
-                         }
-                         
-                         var middd = midD.getDate();
-                         var midmm = midD.getMonth() + 1;
-                         var midy = midD.getFullYear();
-                         
-                         midPoint= midmm + '/' + middd + '/' + midy;
-                         
-                         for (var q in dates) {
-                              
-                              var midDin= new Date(dates[q]);
-                              var midDC= new Date(midDin);
-                              
-                              midDC.setDate(midDC.getDate());
-                              
-                              var midDCdd = midDC.getDate();
-                              var midDCmm = midDC.getMonth() + 1;
-                              var midDCy = midDC.getFullYear();
-                              
-                              var midDCInClass= midDCmm + '/' + midDCdd + '/' + midDCy;
-                              
-                              while(midDCInClass == midPoint || middOFDW === 0 || middOFDW === 6 ||
-                                   (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
-                                   (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7)  
-                                   ) {
-                                   midD.setDate(midD.getDate() + 1);
-                                   middd = midD.getDate();
-                                   midmm = midD.getMonth() + 1;
-                                   midy = midD.getFullYear();
-                                   
-                                   midPoint= midmm + '/' + middd + '/' + midy;
-                                   middOFDW= midD.getDay();
-                              }
-                         }
-                    }
-                    
-                    if (($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516") && daysToAdd > 0){
-                         midDay= new Date(midPoint);
-                         midD= new Date(midDay);
-                         
-                         for (var i= 1; i < daysToAdd; i++) {
-                              midD.setDate(midD.getDate() + 1);
-                              var middOFDW= midD.getDay();
-                              
-                              while (
-                                   (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
-                                   (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
-                                   (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7) ||
-                                   middOFDW === 0 || middOFDW === 6
-                                   ) {
-                                        midD.setDate(midD.getDate() + 1);
-                                        middOFDW= midD.getDay();
-                              }
-                              
-                              var middd = midD.getDate();
-                              var midmm = midD.getMonth() + 1;
-                              var midy = midD.getFullYear();
-                              
-                              midPoint= midmm + '/' + middd + '/' + midy;
-                              
-                              for (var q in dates) {
-                                   
-                                   var midDin= new Date(dates[q]);
-                                   var midDC= new Date(midDin);
-                                   
-                                   midDC.setDate(midDC.getDate());
-                                   
-                                   var midDCdd = midDC.getDate();
-                                   var midDCmm = midDC.getMonth() + 1;
-                                   var midDCy = midDC.getFullYear();
-                                   
-                                   var midDCInClass= midDCmm + '/' + midDCdd + '/' + midDCy;
-                                   
-                                   while(midDCInClass == midPoint || middOFDW === 0 || middOFDW === 6 ||
-                                        (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
-                                        (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
-                                        (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
-                                        (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
-                                        (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
-                                        (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
-                                        (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
-                                        (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
-                                        (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
-                                        (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7)  
-                                        ) {
-                                        midD.setDate(midD.getDate() + 1);
-                                        middd = midD.getDate();
-                                        midmm = midD.getMonth() + 1;
-                                        midy = midD.getFullYear();
-                                        
-                                        midPoint= midmm + '/' + middd + '/' + midy;
-                                        middOFDW= midD.getDay();
-                                   }
-                              }
-                         }
-                    }*/
-                
-                    
                     while (startPoint !== gradDay) {
                          midDHHH.setDate(midDHHH.getDate() + 1);
                          var middOFDWHHH= midDHHH.getDay();
@@ -2287,7 +2155,7 @@ $(document).ready(function(){
           var testDay= LDCttD;
           //console.log("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy "+LDCttD);
           
-          while (NNNN < ((masterArray[FFF].length)-1)/2){
+          while (NNNN < (masterArray[FFF].length)/2){
                getMeName= masterArray[NNNN][FFF].courseCode;
                getMeDays= masterArray[NNNN][FFF].days;
                getMeHalfDays= Math.ceil(getMeDays/2);
