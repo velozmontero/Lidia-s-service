@@ -1,5 +1,7 @@
 $(document).ready(function(){
+     var H=0;
      var daysToAdd;
+     var midPointDD;
      var midPoint;
      var lastDayInClass;
      var startingDate;
@@ -1686,9 +1688,9 @@ $(document).ready(function(){
                     var sy = sDate.getFullYear();
                     
                     startDate= smm + '/' + sdd + '/' + sy;
-                    console.log("start date after checking holidays, thursdays, fridays and weekends: "+startDate);
+                    //console.log("start date after checking holidays, thursdays, fridays and weekends: "+startDate);
                     tt= smm + '/' + sdd + '/' + sy;
-                    console.log("tt date: "+tt);
+                    //console.log("tt date: "+tt);
                     
                     for (var o in dates) {
                          
@@ -1757,7 +1759,7 @@ $(document).ready(function(){
                     console.log("start date after loop: "+startDate);
                     
                     //---------------->
-                    console.log("tt date after loop: "+tt);
+                    //console.log("tt date after loop: "+tt);
                     var date = new Date(tt);
                     var newdate = new Date(date);
                
@@ -1996,18 +1998,13 @@ $(document).ready(function(){
                     var midDayHHH= new Date(startPoint);
                     var midDHHH= new Date(midDayHHH);
                     var D= 0;
-                    var externshipHours= externship*4;
-                    var H=0;
-                    
-                    var totalH= Math.floor(((totalHours+externshipHours)/2)/4);
-                    console.log("jhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhj "+totalH);
                     
                     var midDay= new Date(startDate);
                     var midD= new Date(midDay);
                
                     var halfDays= Math.floor((totalDays+externship)/2);
                     
-                    for (var i= 0; i < totalH; i++) {
+                    /*for (var i= 0; i < totalH; i++) {
                          midD.setDate(midD.getDate() + 1);
                          var middOFDW= midD.getDay();
                          
@@ -2136,7 +2133,7 @@ $(document).ready(function(){
                                    }
                               }
                          }
-                    }
+                    }*/
                 
                     
                     while (startPoint !== gradDay) {
@@ -2149,9 +2146,11 @@ $(document).ready(function(){
                          
                          startPoint= midmmHHH + '/' + midddHHH + '/' + midyHHH;
                          D++;
-                         console.log("hnhnhnhnhnhnhnhnhnhnhnhnh "+startPoint); 
+                         //console.log("hnhnhnhnhnhnhnhnhnhnhnhnh "+startPoint); 
                     }
-                    console.log("hnhnhnhnhnhnhnhnhnhnhnhnhlklkkklklklklklklklklklklklklkl "+H); 
+                    //console.log("hnhnhnhnhnhnhnhnhnhnhnhnhlklkkklklklklklklklklklklklklkl "+D); 
+                    
+                    midPoint=midPointDD;
                     
                     //---------------------------------------------------------------------------------------------->
                     
@@ -2269,7 +2268,8 @@ $(document).ready(function(){
      
      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           
-     function getStartDay(){     
+     function getStartDay(){
+          
           var LDCttQ;
           var LDCttS= startDate;
           var LDCDatett= new Date(LDCttS);
@@ -2285,33 +2285,28 @@ $(document).ready(function(){
           var LDCttD= LDCttmm + '/' + LDCttdd + '/' + LDCtty;
           
           var testDay= LDCttD;
-          console.log("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy "+LDCttD);
+          //console.log("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy "+LDCttD);
           
-          LDCtt.setDate(LDCtt.getDate() + 1);
-          LDCwDaytt= LDCtt.getDay();
-          LDCttdd = LDCtt.getDate();
-          LDCttmm = LDCtt.getMonth() + 1;
-          LDCtty = LDCtt.getFullYear();
-          
-          LDCttD= LDCttmm + '/' + LDCttdd + '/' + LDCtty;
-          
-          for (var i= 0; i < ((arr.length)/2); i++){
-               getMeName= arr[i].courseCode;
-               getMeDays= arr[i].days;
+          while (NNNN < ((masterArray[FFF].length)-1)/2){
+               getMeName= masterArray[NNNN][FFF].courseCode;
+               getMeDays= masterArray[NNNN][FFF].days;
                getMeHalfDays= Math.ceil(getMeDays/2);
-          }
-          console.log("data "+ getMeName+" "+getMeDays+" "+getMeHalfDays);
+               NNNN++;
+          } 
           
-          while (NNN < (masterArray[FFF].length)-1){
+          var theDays= 0;
+          
+          while (NNN < masterArray[FFF].length){
                
-               console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnn "+NNN);
+               //console.log("data "+ getMeName+" "+getMeDays+" "+getMeHalfDays);
                
-               console.log("pppppppppppppppppppppppppppppppppp "+masterArray[NNN][FFF].courseCode);
-               console.log("pppppppppppppppppppppppppppppppppp "+masterArray[NNN][FFF].days);
+               //console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnn "+NNN);
+
                var currentCourseCode= masterArray[NNN][FFF].courseCode;
                
-               for (var i= 1; i < (masterArray[NNN][FFF].days); i++) {
+               for (var i= 0; i < (theDays); i++) {
                     
+                    console.log("this is sparta H "+H);
                     LDCttQ= LDCttD;
                     var LDCDatettQ= new Date(LDCttQ);
                     var LDCttQ= new Date(LDCDatettQ);
@@ -2397,9 +2392,20 @@ $(document).ready(function(){
                               
                               LDCttQ=LDCttQFG;
                     }
+                    LDCttQZZ.setDate(LDCttQZZ.getDate() + 1);
+                    LDCwDayttZZ= LDCttQZZ.getDay();
+                
+                    LDCttddQ = LDCttQZZ.getDate();
+                    LDCttmmQ = LDCttQZZ.getMonth() + 1;
+                    LDCttyQ = LDCttQZZ.getFullYear();
+                         
+                    LDCttQFG= LDCttmmQ + '/' + LDCttddQ + '/' + LDCttyQ;
+                    
                     LDCttD= LDCttQ;
                     //console.log("DAY IN LOOP: "+LDCttQ+"DAY OF THE WEEK "+ LDCwDaytt);
                }
+               
+               theDays=  masterArray[NNN][FFF].days;
                var LDCttQR= LDCttD;
                var LDCDatettQR= new Date(LDCttQR);
                var LDCttQR= new Date(LDCDatettQR);
@@ -2419,7 +2425,7 @@ $(document).ready(function(){
                     LDCwDayttR === 0 || LDCwDayttR === 4 || LDCwDayttR === 5 || LDCwDayttR === 6 
                     ) {
                          if (LDCwDayttR === 4 || LDCwDayttR === 5) {
-                              addaDay+=1;   
+                              addaDay+=1;
                          }
                          LDCttQR.setDate(LDCttQR.getDate() + 1);
                          LDCwDayttR= LDCttQR.getDay();
@@ -2458,7 +2464,7 @@ $(document).ready(function(){
                          LDCwDayttR === 0 || LDCwDayttR === 4 || LDCwDayttR === 5 || LDCwDayttR === 6 
                          ){
                               if (LDCwDayttR === 4 || LDCwDayttR === 5) {
-                                   addaDay+=1;   
+                                   addaDay+=1;
                               }
                               LDCttQR.setDate(LDCttQR.getDate() + 1);
                               LDCwDayttR= LDCttQR.getDay();
@@ -2470,13 +2476,17 @@ $(document).ready(function(){
                          }
                }
                
-               console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX THE MAN "+LDCttQRA);
+               console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX THE MAN "+LDCttQRA+ " course "+masterArray[NNN][FFF].courseCode +" days "+masterArray[NNN][FFF].days);
                
                var lastDD= new Date(LDCttQRA);
                var lastDDD= new Date(lastDD);
                
-               for (var i= 1; i < (masterArray[NNN][FFF].days); i++) {
-                    lastDDD.setDate(lastDDD.getDate() + 1);
+               var losDias= masterArray[NNN][FFF].days;
+               if (losDias== 1) {
+                    losDias= 2;
+               }
+               
+               for (var i= 1; i <= (losDias); i++) {
                
                     var DDDddDAY = lastDDD.getDay();
                     var DDDdd = lastDDD.getDate();
@@ -2555,27 +2565,25 @@ $(document).ready(function(){
                                    lastDayInClassDDD= DDDmm + '/' + DDDdd + '/' + DDDy; 
                               }
                     }
-                    
+                    losDias= masterArray[NNN][FFF].days;
+                    lastDDD.setDate(lastDDD.getDate() + 1);
                }
                
-               LDCttQR.setDate(LDCttQR.getDate() + 1);
+               LDCttQR.setDate(LDCttQR.getDate());
                LDCttddQR = LDCttQR.getDate();
                LDCttmmQR = LDCttQR.getMonth() + 1;
                LDCttyQR = LDCttQR.getFullYear();
                LDCttQRA= LDCttmmQR + '/' + LDCttddQR + '/' + LDCttyQR; 
                LDCttD= LDCttQRA;
-     
-               console.log("ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg "+lastDayInClassDDD);
-               console.log(" Total days to add: "+addaDay);
+               
+               //console.log("ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg "+lastDayInClassDDD);
+               //console.log(" Total days to add: "+addaDay);
                NNN++;
-               
+               NNNN++;
                if ( currentCourseCode == getMeName) {
-                    daysToAdd= addaDay;
-                    console.log("days to add: "+daysToAdd);
+                   midPointDD = lastDayInClassDDD;      
                }
-               
           }
-          
      } 
 });
 
