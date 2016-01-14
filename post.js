@@ -2072,7 +2072,7 @@ $(document).ready(function(){
                     }
                     
                     
-                    /*if (($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516") && daysToAdd > 0){
+                    if ($('#course').val() == "ma416"){
                          midDay= new Date(midPoint);
                          midD= new Date(midDay);
                          
@@ -2138,7 +2138,7 @@ $(document).ready(function(){
                                    }
                               }
                          }
-                    }*/
+                    }
                     //---------------------------------------------------------------------------------------------->
                     
                     //-------------------------------------------------------------------------------------------------->
@@ -2468,9 +2468,6 @@ $(document).ready(function(){
                var lastDDD= new Date(lastDD);
                
                var losDias= masterArray[NNN][FFF].days;
-               /*if (losDias== 1) {
-                    losDias= 2;
-               }*/
                
                for (var i= 0; i < (losDias); i++) {
                
@@ -2567,7 +2564,7 @@ $(document).ready(function(){
                NNNN++;
                if ( currentCourseCode == getMeName) {
                     midPointDD = lastDayInClassDDD;
-                    daysToAdd= addaDay;
+                    daysToAdd= getMeHalfDays;
                }
           }
      } 
