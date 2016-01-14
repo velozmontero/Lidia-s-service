@@ -447,25 +447,25 @@ $(document).ready(function(){
           days: Math.ceil(60/4)
      };
      
-     var GEN120= {
-          courseCode: "GEN120",
+     var GEN120000= {
+          courseCode: "GEN120000",
           hours: 60,
           days: Math.ceil(60/4)
      };
      
-     var md416Arr1= [GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120];
-     var md416Arr2= [GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110];
-     var md416Arr3= [MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120];
-     var md416Arr4= [MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101];
-     var md416Arr5= [MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102];
-     var md416Arr6= [MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103];
-     var md416Arr7= [MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104];
-     var md416Arr8= [MAS106, MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105];
-     var md416Arr9= [MAS107, MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106];
-     var md416Arr10= [MAS108, MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107];
-     var md416Arr11= [MAS109, MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108];
-     var md416Arr12= [MAS110, GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109];
-     var md416Arr13= [GEN120, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110];
+     var md416Arr1= [GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120000];
+     var md416Arr2= [GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120000, GEN110];
+     var md416Arr3= [MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120000, GEN110, GEN120];
+     var md416Arr4= [MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120000, GEN110, GEN120, MAS101];
+     var md416Arr5= [MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120000, GEN110, GEN120, MAS101, MAS102];
+     var md416Arr6= [MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120000, GEN110, GEN120, MAS101, MAS102, MAS103];
+     var md416Arr7= [MAS105, MAS106, MAS107, MAS108, MAS109, MAS110, GEN120000, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104];
+     var md416Arr8= [MAS106, MAS107, MAS108, MAS109, MAS110, GEN120000, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105];
+     var md416Arr9= [MAS107, MAS108, MAS109, MAS110, GEN120000, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106];
+     var md416Arr10= [MAS108, MAS109, MAS110, GEN120000, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107];
+     var md416Arr11= [MAS109, MAS110, GEN120000, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108];
+     var md416Arr12= [MAS110, GEN120000, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109];
+     var md416Arr13= [GEN120000, GEN110, GEN120, MAS101, MAS102, MAS103, MAS104, MAS105, MAS106, MAS107, MAS108, MAS109, MAS110];
      
      var md416MasterArr1 = [md416Arr1, md416Arr2, md416Arr3, md416Arr4, md416Arr5, md416Arr6, md416Arr7, md416Arr8, md416Arr9, md416Arr10, md416Arr11, md416Arr12, md416Arr13];
      var md416MasterArr2 = [md416Arr2, md416Arr3, md416Arr4, md416Arr5, md416Arr6, md416Arr7, md416Arr8, md416Arr9, md416Arr10, md416Arr11, md416Arr12, md416Arr13, md416Arr1];
@@ -580,7 +580,7 @@ $(document).ready(function(){
                     totalHours+= arr[t].hours;
                }
           }
-          else if ($('#startClass').val() == "GEN120") {
+          else if ($('#startClass').val() == "GEN120000") {
                arr= md416Arr13;
                masterArray= md416MasterArr13;
                for (var t in arr){
@@ -615,7 +615,7 @@ $(document).ready(function(){
      };
      
      var PHC03= {
-          courseCode: "PHB02",
+          courseCode: "PHC03",
           hours: 80,
           days: Math.ceil(80/4)
      };
@@ -628,8 +628,8 @@ $(document).ready(function(){
      
      var PHE05= {
           courseCode: "PHE05",
-          hours: 76,
-          days: Math.ceil(76/4)
+          hours: 80,
+          days: Math.ceil(80/4)
      };
      
      var PHF06= {
@@ -644,12 +644,6 @@ $(document).ready(function(){
           days: Math.ceil(80/4)
      };
      
-     var CPR01= {
-          courseCode: "CPR01",
-          hours: 4,
-          days: Math.ceil(4/4)
-     };
-     
      var PHH08= {
           courseCode: "PHH08",
           hours: 80,
@@ -662,27 +656,26 @@ $(document).ready(function(){
           days: Math.ceil(80/4)
      };
      
-     var phArr1= [PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, CPR01, PHH08, PHI09];
-     var phArr2= [PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, CPR01, PHH08, PHI09, PHA01];
-     var phArr3= [PHC03, PHD04, PHE05, PHF06, PHG07, CPR01, PHH08, PHI09, PHA01, PHB02];
-     var phArr4= [PHD04, PHE05, PHF06, PHG07, CPR01, PHH08, PHI09, PHA01, PHB02, PHC03];
-     var phArr5= [PHE05, PHF06, PHG07, CPR01, PHH08, PHI09, PHA01, PHB02, PHC03, PHD04];
-     var phArr6= [PHF06, PHG07, CPR01, PHH08, PHI09, PHA01, PHB02, PHC03, PHD04, PHE05];
-     var phArr7= [PHG07, CPR01, PHH08, PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06];
-     var phArr8= [CPR01, PHH08, PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07];
-     var phArr9= [PHH08, PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, CPR01];
-     var phArr10= [PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, CPR01, PHH08];
+     var phArr1= [PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, PHH08, PHI09];
+     var phArr2= [PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, PHH08, PHI09, PHA01];
+     var phArr3= [PHC03, PHD04, PHE05, PHF06, PHG07, PHH08, PHI09, PHA01, PHB02];
+     var phArr4= [PHD04, PHE05, PHF06, PHG07, PHH08, PHI09, PHA01, PHB02, PHC03];
+     var phArr5= [PHE05, PHF06, PHG07, PHH08, PHI09, PHA01, PHB02, PHC03, PHD04];
+     var phArr6= [PHF06, PHG07, PHH08, PHI09, PHA01, PHB02, PHC03, PHD04, PHE05];
+     var phArr7= [PHG07, PHH08, PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06];
+     var phArr8= [PHH08, PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07];
+     var phArr9= [PHI09, PHA01, PHB02, PHC03, PHD04, PHE05, PHF06, PHG07, PHH08];
      
-     var phMasterArr1= [phArr1, phArr2, phArr3, phArr4, phArr5, phArr6, phArr7, phArr8, phArr9, phArr10];
-     var phMasterArr2= [phArr2, phArr3, phArr4, phArr5, phArr6, phArr7, phArr8, phArr9, phArr10, phArr1];
-     var phMasterArr3= [phArr3, phArr4, phArr5, phArr6, phArr7, phArr8, phArr9, phArr10, phArr1, phArr2];
-     var phMasterArr4= [phArr4, phArr5, phArr6, phArr7, phArr8, phArr9, phArr10, phArr1, phArr2, phArr3];
-     var phMasterArr5= [phArr5, phArr6, phArr7, phArr8, phArr9, phArr10, phArr1, phArr2, phArr3, phArr4];
-     var phMasterArr6= [phArr6, phArr7, phArr8, phArr9, phArr10, phArr1, phArr2, phArr3, phArr4, phArr5];
-     var phMasterArr7= [phArr7, phArr8, phArr9, phArr10, phArr1, phArr2, phArr3, phArr4, phArr5, phArr6];
-     var phMasterArr8= [phArr8, phArr9, phArr10, phArr1, phArr2, phArr3, phArr4, phArr5, phArr6, phArr7];
-     var phMasterArr9= [phArr9, phArr10, phArr1, phArr2, phArr3, phArr4, phArr5, phArr6, phArr7, phArr8];
-     var phMasterArr10= [phArr10, phArr1, phArr2, phArr3, phArr4, phArr5, phArr6, phArr7, phArr8, phArr9];
+     var phMasterArr1= [phArr1, phArr2, phArr3, phArr4, phArr5, phArr6, phArr7, phArr8, phArr9];
+     var phMasterArr2= [phArr2, phArr3, phArr4, phArr5, phArr6, phArr7, phArr8, phArr9, phArr1];
+     var phMasterArr3= [phArr3, phArr4, phArr5, phArr6, phArr7, phArr8, phArr9, phArr1, phArr2];
+     var phMasterArr4= [phArr4, phArr5, phArr6, phArr7, phArr8, phArr9, phArr1, phArr2, phArr3];
+     var phMasterArr5= [phArr5, phArr6, phArr7, phArr8, phArr9, phArr1, phArr2, phArr3, phArr4];
+     var phMasterArr6= [phArr6, phArr7, phArr8, phArr9, phArr1, phArr2, phArr3, phArr4, phArr5];
+     var phMasterArr7= [phArr7, phArr8, phArr9, phArr1, phArr2, phArr3, phArr4, phArr5, phArr6];
+     var phMasterArr8= [phArr8, phArr9, phArr1, phArr2, phArr3, phArr4, phArr5, phArr6, phArr7];
+     var phMasterArr9= [phArr9, phArr1, phArr2, phArr3, phArr4, phArr5, phArr6, phArr7, phArr8];
+    
      
      function checkPHT() {
           coursein= "Pharmacy Technician";
@@ -742,7 +735,7 @@ $(document).ready(function(){
                     totalHours+= arr[t].hours;
                }
           }
-          else if ($('#startClass').val() == "CPR01") {
+          else if ($('#startClass').val() == "PHH08") {
                arr= phArr8;
                masterArray= phMasterArr8;
                for (var t in arr){
@@ -750,17 +743,9 @@ $(document).ready(function(){
                     totalHours+= arr[t].hours;
                }
           }
-          else if ($('#startClass').val() == "PHH08") {
+          else if ($('#startClass').val() == "PHI09") {
                arr= phArr9;
                masterArray= phMasterArr9;
-               for (var t in arr){
-                    totalDays+= arr[t].days;
-                    totalHours+= arr[t].hours;
-               }
-          }
-          else if ($('#startClass').val() == "PHI09") {
-               arr= phArr10;
-               masterArray= phMasterArr10;
                for (var t in arr){
                     totalDays+= arr[t].days;
                     totalHours+= arr[t].hours;
@@ -1998,9 +1983,6 @@ $(document).ready(function(){
                     var midDayHHH= new Date(startPoint);
                     var midDHHH= new Date(midDayHHH);
                     var D= 0;
-                    
-                    var midDay= new Date(startDate);
-                    var midD= new Date(midDay);
                
                     var halfDays= Math.floor((totalDays+externship)/2);
                     
@@ -2011,15 +1993,152 @@ $(document).ready(function(){
                          var midddHHH = midDHHH.getDate();
                          var midmmHHH = midDHHH.getMonth() + 1;
                          var midyHHH = midDHHH.getFullYear();
-                         
+                         var totalH= Math.ceil(totalDays/2);
                          startPoint= midmmHHH + '/' + midddHHH + '/' + midyHHH;
                          D++;
                          //console.log("hnhnhnhnhnhnhnhnhnhnhnhnh "+startPoint); 
                     }
                     //console.log("hnhnhnhnhnhnhnhnhnhnhnhnhlklkkklklklklklklklklklklklklkl "+D); 
-                    
+                    if (($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516")){
                     midPoint=midPointDD;
+                    }
+                    else{
+                         var midDay= new Date(startDate);
+                         var midD= new Date(midDay);
+                         
+                         
+                         for (var i= 0; i < totalH; i++) {
+                              midD.setDate(midD.getDate() + 1);
+                              var middOFDW= midD.getDay();
+                              
+                              while (
+                                   (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
+                                   (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7) ||
+                                   middOFDW === 0 || middOFDW === 6
+                                   ) {
+                                        midD.setDate(midD.getDate() + 1);
+                                        middOFDW= midD.getDay();
+                              }
+                              
+                              var middd = midD.getDate();
+                              var midmm = midD.getMonth() + 1;
+                              var midy = midD.getFullYear();
+                              
+                              midPoint= midmm + '/' + middd + '/' + midy;
+                              
+                              for (var q in dates) {
+                                   
+                                   var midDin= new Date(dates[q]);
+                                   var midDC= new Date(midDin);
+                                   
+                                   midDC.setDate(midDC.getDate());
+                                   
+                                   var midDCdd = midDC.getDate();
+                                   var midDCmm = midDC.getMonth() + 1;
+                                   var midDCy = midDC.getFullYear();
+                                   
+                                   var midDCInClass= midDCmm + '/' + midDCdd + '/' + midDCy;
+                                   
+                                   while(midDCInClass == midPoint || middOFDW === 0 || middOFDW === 6 ||
+                                        (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
+                                        (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7)  
+                                        ) {
+                                        midD.setDate(midD.getDate() + 1);
+                                        middd = midD.getDate();
+                                        midmm = midD.getMonth() + 1;
+                                        midy = midD.getFullYear();
+                                        
+                                        midPoint= midmm + '/' + middd + '/' + midy;
+                                        middOFDW= midD.getDay();
+                                   }
+                              }
+                         }    
+                    }
                     
+                    
+                    /*if (($('#course').val() == "wda" || $('#course').val() == "pht" || $('#course').val() == "ma416" || $('#course').val() == "pct516") && daysToAdd > 0){
+                         midDay= new Date(midPoint);
+                         midD= new Date(midDay);
+                         
+                         for (var i= 1; i < daysToAdd; i++) {
+                              midD.setDate(midD.getDate() + 1);
+                              var middOFDW= midD.getDay();
+                              
+                              while (
+                                   (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
+                                   (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
+                                   (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7) ||
+                                   middOFDW === 0 || middOFDW === 6
+                                   ) {
+                                        midD.setDate(midD.getDate() + 1);
+                                        middOFDW= midD.getDay();
+                              }
+                              
+                              var middd = midD.getDate();
+                              var midmm = midD.getMonth() + 1;
+                              var midy = midD.getFullYear();
+                              
+                              midPoint= midmm + '/' + middd + '/' + midy;
+                              
+                              for (var q in dates) {
+                                   
+                                   var midDin= new Date(dates[q]);
+                                   var midDC= new Date(midDin);
+                                   
+                                   midDC.setDate(midDC.getDate());
+                                   
+                                   var midDCdd = midDC.getDate();
+                                   var midDCmm = midDC.getMonth() + 1;
+                                   var midDCy = midDC.getFullYear();
+                                   
+                                   var midDCInClass= midDCmm + '/' + midDCdd + '/' + midDCy;
+                                   
+                                   while(midDCInClass == midPoint || middOFDW === 0 || middOFDW === 6 ||
+                                        (midD.getDate() == 24 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 25 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 26 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 27 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 28 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 29 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 30 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() == 31 && parseInt(midD.getMonth()+1) == 12) ||
+                                        (midD.getDate() ==  1 && parseInt(midD.getMonth()+1) ==  1) ||
+                                        (midD.getDate() ==  4 && parseInt(midD.getMonth()+1) ==  7)  
+                                        ) {
+                                        midD.setDate(midD.getDate() + 1);
+                                        middd = midD.getDate();
+                                        midmm = midD.getMonth() + 1;
+                                        midy = midD.getFullYear();
+                                        
+                                        midPoint= midmm + '/' + middd + '/' + midy;
+                                        middOFDW= midD.getDay();
+                                   }
+                              }
+                         }
+                    }*/
                     //---------------------------------------------------------------------------------------------->
                     
                     //-------------------------------------------------------------------------------------------------->
@@ -2153,7 +2272,6 @@ $(document).ready(function(){
           var LDCttD= LDCttmm + '/' + LDCttdd + '/' + LDCtty;
           
           var testDay= LDCttD;
-          //console.log("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy "+LDCttD);
           
           while (NNNN < (masterArray[FFF].length)/2){
                getMeName= masterArray[NNNN][FFF].courseCode;
@@ -2350,11 +2468,11 @@ $(document).ready(function(){
                var lastDDD= new Date(lastDD);
                
                var losDias= masterArray[NNN][FFF].days;
-               if (losDias== 1) {
+               /*if (losDias== 1) {
                     losDias= 2;
-               }
+               }*/
                
-               for (var i= 1; i <= (losDias); i++) {
+               for (var i= 0; i < (losDias); i++) {
                
                     var DDDddDAY = lastDDD.getDay();
                     var DDDdd = lastDDD.getDate();
@@ -2421,7 +2539,6 @@ $(document).ready(function(){
                               (lastDDD.getDate() == 4 && parseInt(lastDDD.getMonth()+1) == 7) ||
                               DDDddDAY === 0 || DDDddDAY === 6 
                               ){
-          
                                    lastDDD.setDate(lastDDD.getDate() + 1);
                                    DDDddDAY= lastDDD.getDay();
                                
@@ -2449,7 +2566,8 @@ $(document).ready(function(){
                NNN++;
                NNNN++;
                if ( currentCourseCode == getMeName) {
-                   midPointDD = lastDayInClassDDD;      
+                    midPointDD = lastDayInClassDDD;
+                    daysToAdd= addaDay;
                }
           }
      } 
